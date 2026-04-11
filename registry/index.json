@@ -1,0 +1,96 @@
+{
+  "generated": "2026-04-11T17:41:36.250Z",
+  "count": 10,
+  "codes": [
+    {
+      "code": "NEG-400-validation-format",
+      "category": "validation",
+      "httpStatus": 400,
+      "severity": "error",
+      "title": "Invalid Format",
+      "messageKey": "validation.format",
+      "_path": "registry/validation/NEG-400-validation-format"
+    },
+    {
+      "code": "NEG-400-validation-required",
+      "category": "validation",
+      "httpStatus": 400,
+      "severity": "error",
+      "title": "Required Field Missing",
+      "messageKey": "validation.required",
+      "_path": "registry/validation/NEG-400-validation-required"
+    },
+    {
+      "code": "NEG-401-auth-unauthorized",
+      "category": "auth",
+      "httpStatus": 401,
+      "severity": "error",
+      "title": "Sign in Required",
+      "messageKey": "auth.unauthorized",
+      "_path": "registry/auth/NEG-401-auth-unauthorized"
+    },
+    {
+      "code": "NEG-403-permission-forbidden",
+      "category": "permission",
+      "httpStatus": 403,
+      "severity": "error",
+      "title": "Access Denied",
+      "messageKey": "permission.forbidden",
+      "_path": "registry/permission/NEG-403-permission-forbidden"
+    },
+    {
+      "code": "NEG-404-resource-not-found",
+      "category": "resource",
+      "httpStatus": 404,
+      "severity": "error",
+      "title": "Not Found",
+      "messageKey": "resource.not-found",
+      "_path": "registry/resource/NEG-404-resource-not-found"
+    },
+    {
+      "code": "NEG-408-timeout",
+      "category": "timeout",
+      "httpStatus": 408,
+      "severity": "warning",
+      "title": "Request Timed Out",
+      "messageKey": "timeout.request",
+      "_path": "registry/timeout/NEG-408-timeout"
+    },
+    {
+      "code": "NEG-429-rate-limit",
+      "category": "rate-limit",
+      "httpStatus": 429,
+      "severity": "warning",
+      "title": "Too Many Requests",
+      "messageKey": "rate-limit.exceeded",
+      "_path": "registry/rate-limit/NEG-429-rate-limit"
+    },
+    {
+      "code": "NEG-500-server-internal",
+      "category": "server",
+      "httpStatus": 500,
+      "severity": "error",
+      "title": "Something Went Wrong",
+      "messageKey": "server.internal",
+      "_path": "registry/server/NEG-500-server-internal"
+    },
+    {
+      "code": "NEG-000-network-offline",
+      "category": "network",
+      "httpStatus": null,
+      "severity": "warning",
+      "title": "No Internet Connection",
+      "messageKey": "network.offline",
+      "_path": "registry/network/NEG-000-network-offline"
+    },
+    {
+      "code": "NEG-402-payment-declined",
+      "category": "payment",
+      "httpStatus": 402,
+      "severity": "error",
+      "title": "Payment Declined",
+      "messageKey": "payment.declined",
+      "_path": "registry/payment/NEG-402-payment-declined"
+    }
+  ]
+}
