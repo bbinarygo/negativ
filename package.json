@@ -1,0 +1,13 @@
+{
+  "name": "negativ",
+  "version": "1.0.0",
+  "description": "The open knowledge hub for everything that can go wrong.",
+  "license": "CC-BY-SA-4.0",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "migrate": "node scripts/migrate.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}
