@@ -1,0 +1,8 @@
+{
+    "extends": "network-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "No Internet Connection",
+    "copyMessageKey": "network.offline",
+    "illustration": "wifi off / no signal icon",
+    "cta": "Try again"
+}

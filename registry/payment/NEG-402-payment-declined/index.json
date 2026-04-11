@@ -1,5 +1,5 @@
 {
-    "code": "NEG-payment-declined",
+    "code": "NEG-402-payment-declined",
     "category": "payment",
     "httpStatus": 402,
     "severity": "error",

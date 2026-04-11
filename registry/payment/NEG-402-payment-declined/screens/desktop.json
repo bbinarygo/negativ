@@ -1,0 +1,25 @@
+{
+    "extends": "client-error",
+    "layout": "inline form error",
+    "copyTitle": "Payment Declined",
+    "copyMessageKey": "payment.declined",
+    "illustration": "credit card with X icon",
+    "cta": "Try another card",
+    "patterns": {
+        "inline": {
+            "description": "Inline error on payment form",
+            "usage": "Checkout flows"
+        },
+        "modal": {
+            "description": "Recovery modal with payment update form",
+            "usage": "Subscription renewal"
+        }
+    },
+    "figmaNote": "Sensitive context — keep tone calm, avoid blame. Duplicate for light/dark.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+        "shadcn": "<p className=\"text-sm text-destructive\">{t('payment.declined')}</p>",
+        "material": "<FormHelperText error>{t('payment.declined')}</FormHelperText>",
+        "ant": "<Form.Item validateStatus=\"error\" help={t('payment.declined')} />"
+    }
+}

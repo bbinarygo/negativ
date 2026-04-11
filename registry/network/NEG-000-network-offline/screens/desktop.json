@@ -1,0 +1,25 @@
+{
+    "extends": "network-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "No Internet Connection",
+    "copyMessageKey": "network.offline",
+    "illustration": "wifi off / no signal icon",
+    "cta": "Try again",
+    "patterns": {
+        "fullPage": {
+            "description": "Full-screen offline state",
+            "usage": "App-level network loss"
+        },
+        "banner": {
+            "description": "Persistent top banner when offline",
+            "usage": "Progressive web apps"
+        }
+    },
+    "figmaNote": "Duplicate component → variants for light/dark. Use offline/no-wifi illustration.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex flex-col items-center gap-6 text-slate-700 bg-white p-10 rounded-3xl shadow-sm\"",
+        "shadcn": "<Alert variant=\"destructive\"><AlertTitle>No Internet Connection</AlertTitle><AlertDescription>{t('network.offline')}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"error\">{t('network.offline')}</Alert>",
+        "ant": "<Alert message=\"No Internet Connection\" description={t('network.offline')} type=\"error\" showIcon />"
+    }
+}

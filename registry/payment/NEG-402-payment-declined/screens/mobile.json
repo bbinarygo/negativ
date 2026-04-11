@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "inline form error",
+    "copyTitle": "Payment Declined",
+    "copyMessageKey": "payment.declined",
+    "illustration": "credit card with X icon",
+    "cta": "Try another card"
+}

@@ -1,5 +1,5 @@
 {
-    "code": "NEG-network-offline",
+    "code": "NEG-000-network-offline",
     "category": "network",
     "httpStatus": null,
     "severity": "warning",
