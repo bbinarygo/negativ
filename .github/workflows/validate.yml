@@ -1,0 +1,33 @@
+name: Validate Negativ Registry
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate registry + generate index
+        run: npm run validate
+
+      - name: Check required files exist
+        run: |
+          test -f schemas/error-code.schema.json && echo "✅ error-code schema present" || exit 1
+          test -f schemas/screen.schema.json && echo "✅ screen schema present" || exit 1
+          test -f schemas/localization.schema.json && echo "✅ localization schema present" || exit 1
+          test -f localization/tokens/en.json && echo "✅ English tokens present" || exit 1
+          test -f registry/index.json && echo "✅ registry index present" || exit 1
