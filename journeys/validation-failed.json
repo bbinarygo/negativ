@@ -1,0 +1,21 @@
+{
+    "journeyId": "validation-failed",
+    "title": "Form Validation Failed → Recovery Flow",
+    "description": "Typical negative journey for form errors (NEG-400-validation-required + NEG-400-validation-format)",
+    "mermaid": "graph TD\n    A[User submits form] --> B{Validation errors?}\n    B -->|Yes| C[NEG-400-validation-required or NEG-400-validation-format]\n    C --> D[Highlight invalid fields + show messages]\n    D --> E{User corrects?}\n    E -->|Yes| F[Re-submit form]\n    F -->|Success| G[Happy path]\n    F -->|Fail again| C",
+    "steps": [
+        {
+            "step": 1,
+            "trigger": "Backend returns 400",
+            "screen": "NEG-400-validation-required or NEG-400-validation-format",
+            "userAction": "Correct fields"
+        },
+        {
+            "step": 2,
+            "trigger": "User fixes issues",
+            "screen": "Inline error messages",
+            "userAction": "Submit again"
+        }
+    ],
+    "localizationNote": "All screens reuse centralized messageKeys"
+}

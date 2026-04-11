@@ -1,0 +1,27 @@
+{
+    "journeyId": "payment-failed",
+    "title": "Payment Failed → Recovery Flow",
+    "description": "Complete negative journey when payment is declined (NEG-402 + related codes)",
+    "mermaid": "graph TD\n    A[User submits payment] --> B{Payment API response?}\n    B -->|402 Declined| C[NEG-402-payment-declined screen]\n    C --> D{Recovery choice?}\n    D -->|Update card| E[Enter new details]\n    D -->|Contact support| F[Support escalation]\n    D -->|Cancel| G[Return to cart]\n    E --> H[Retry payment]\n    H -->|Success| I[Order confirmed]\n    H -->|Fail again| C\n    B -->|Network error| J[NEG-000-network-offline]",
+    "steps": [
+        {
+            "step": 1,
+            "trigger": "Payment returns 402",
+            "screen": "NEG-402-payment-declined",
+            "userAction": "Choose recovery option"
+        },
+        {
+            "step": 2,
+            "trigger": "User updates card",
+            "screen": "NEG-400-validation-format (if invalid)",
+            "userAction": "Retry"
+        },
+        {
+            "step": 3,
+            "trigger": "Still fails",
+            "screen": "NEG-500-server-internal or support",
+            "userAction": "Escalate"
+        }
+    ],
+    "localizationNote": "All screens reuse centralized messageKeys"
+}

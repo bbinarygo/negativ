@@ -1,0 +1,11 @@
+.negativ-inline {
+    @apply flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-xl border border-red-200;
+}
+
+.negativ-modal {
+    @apply fixed inset-0 flex items-center justify-center bg-black/50;
+}
+
+.negativ-banner {
+    @apply fixed bottom-4 left-4 right-4 md:left-auto md:right-auto;
+}

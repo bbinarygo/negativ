@@ -1,0 +1,23 @@
+{
+    "masterComponent": "Negativ/ErrorScreen",
+    "variants": [
+        "light",
+        "dark",
+        "rtl",
+        "inline",
+        "modal",
+        "banner",
+        "full-page"
+    ],
+    "props": [
+        "errorCode",
+        "messageKey",
+        "illustration"
+    ],
+    "autoLayout": "true",
+    "exportFormats": [
+        "SVG",
+        "PNG",
+        "Figma tokens"
+    ]
+}

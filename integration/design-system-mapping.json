@@ -1,0 +1,13 @@
+{
+    "title": "Negativ → Design System Mapping",
+    "description": "How every Negativ screen maps to popular design systems and component libraries",
+    "mappings": {
+        "tailwind": "Use utility classes from tailwind-patterns.css + messageKey",
+        "shadcn/ui": "Import Alert + use messageKey via next-intl or react-i18next",
+        "material-ui": "Use Alert + AlertTitle + localization hook",
+        "ant-design": "Use Alert component with type=error",
+        "figma": "See figma-component-spec.json — master component with variants",
+        "storybook": "See storybook-example.stories.tsx"
+    },
+    "integrationRule": "Every screen must resolve copy via messageKey from data/localization/messages/"
+}
