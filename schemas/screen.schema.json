@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Negativ Screen Schema",
+  "type": "object",
+  "required": ["copyMessageKey"],
+  "properties": {
+    "extends": {
+      "type": "string",
+      "description": "Base pattern ID from screens/patterns/. Inherits defaults."
+    },
+    "layout": { "type": "string" },
+    "copyTitle": { "type": "string" },
+    "copyMessageKey": { "type": "string" },
+    "illustration": { "type": "string" },
+    "cta": { "type": "string" },
+    "patterns": { "type": "object" },
+    "accessibility": { "type": "object" },
+    "figmaNote": { "type": "string" },
+    "designSystemIntegrations": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Negativ Error Code Schema v2 — with configurable localization",
+    "type": "object",
+    "required": [
+        "code",
+        "category",
+        "title",
+        "messageKey",
+        "recoveryAction"
+    ],
+    "properties": {
+        "code": {
+            "type": "string",
+            "pattern": "^NEG-[A-Za-z0-9-]+$"
+        },
+        "category": {
+            "type": "string",
+            "enum": [
+                "validation",
+                "auth",
+                "permission",
+                "resource",
+                "timeout",
+                "rate-limit",
+                "server",
+                "network",
+                "payment"
+            ]
+        },
+        "httpStatus": {
+            "type": [
+                "integer",
+                "null"
+            ]
+        },
+        "severity": {
+            "type": "string",
+            "enum": [
+                "info",
+                "warning",
+                "error"
+            ],
+            "default": "error"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "messageKey": {
+            "type": "string",
+            "pattern": "^[a-z0-9-\\.]+$",
+            "description": "Reusable ICU message key (e.g. validation.required)"
+        },
+        "recoveryAction": {
+            "type": "string"
+        },
+        "platforms": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": [
+                "web",
+                "mobile",
+                "tablet"
+            ]
+        },
+        "accessibility": {
+            "type": "object",
+            "properties": {
+                "ariaRole": {
+                    "type": "string"
+                },
+                "ariaLive": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
