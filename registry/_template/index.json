@@ -1,0 +1,15 @@
+{
+  "code": "NEG-000-category-subcode",
+  "category": "validation",
+  "httpStatus": null,
+  "severity": "error",
+  "title": "Short Human-Readable Title",
+  "description": "One sentence describing when this error occurs.",
+  "messageKey": "category.subcode",
+  "recoveryAction": "One sentence telling the user what to do next.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "alert",
+    "ariaLive": "polite"
+  }
+}

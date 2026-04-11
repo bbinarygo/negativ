@@ -1,0 +1,8 @@
+{
+  "extends": "client-error",
+  "layout": "full-screen illustration",
+  "copyTitle": "Short Human-Readable Title",
+  "copyMessageKey": "category.subcode",
+  "illustration": "describe illustration here",
+  "cta": "Action label"
+}
