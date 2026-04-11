@@ -1,0 +1,12 @@
+{
+  "patternId": "network-error",
+  "description": "Base pattern for network connectivity errors.",
+  "defaults": {
+    "layout": "full-screen illustration",
+    "accessibility": {
+      "ariaRole": "alert",
+      "ariaLive": "assertive"
+    },
+    "figmaNote": "Duplicate component → variants for light/dark. Use offline/no-wifi illustration."
+  }
+}

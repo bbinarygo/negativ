@@ -1,0 +1,12 @@
+{
+  "patternId": "server-error",
+  "description": "Base pattern for 5xx server errors and timeout errors.",
+  "defaults": {
+    "layout": "centered illustration",
+    "accessibility": {
+      "ariaRole": "alert",
+      "ariaLive": "assertive"
+    },
+    "figmaNote": "Duplicate component → create variants for light/dark + RTL. Use warning-level illustration (broken server, cloud with lightning)."
+  }
+}

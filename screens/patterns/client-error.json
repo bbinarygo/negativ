@@ -1,0 +1,12 @@
+{
+  "patternId": "client-error",
+  "description": "Base pattern for 4xx client errors (validation, resource, rate-limit, payment).",
+  "defaults": {
+    "layout": "centered illustration",
+    "accessibility": {
+      "ariaRole": "alert",
+      "ariaLive": "polite"
+    },
+    "figmaNote": "Duplicate component → create variants for light/dark + RTL. Resolve copy via messageKey from localization/tokens/."
+  }
+}

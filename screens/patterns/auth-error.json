@@ -1,0 +1,12 @@
+{
+  "patternId": "auth-error",
+  "description": "Base pattern for authentication and permission errors.",
+  "defaults": {
+    "layout": "centered illustration",
+    "accessibility": {
+      "ariaRole": "alert",
+      "ariaLive": "polite"
+    },
+    "figmaNote": "Duplicate component → variants for light/dark + RTL. Use lock/shield illustration."
+  }
+}
