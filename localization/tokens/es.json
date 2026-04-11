@@ -1,0 +1,12 @@
+{
+    "validation.required": "Por favor completa {count, plural, one {el campo obligatorio} other {los campos obligatorios}}.",
+    "validation.format": "Por favor ingresa un {field} válido (ej. email@ejemplo.com).",
+    "auth.unauthorized": "Por favor inicia sesión para continuar.",
+    "permission.forbidden": "Lo sentimos, no tienes acceso a esta función.",
+    "resource.not-found": "No pudimos encontrar lo que buscabas.",
+    "timeout.request": "La solicitud tardó demasiado. Inténtalo de nuevo.",
+    "rate-limit.exceeded": "Por favor espera unos momentos antes de intentarlo de nuevo.",
+    "server.internal": "Lo sentimos, algo salió mal de nuestro lado.",
+    "network.offline": "Parece que estás sin conexión. Revisa tu conexión.",
+    "payment.declined": "Tu pago fue rechazado. Intenta con otro método."
+}
