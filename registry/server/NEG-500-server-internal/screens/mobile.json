@@ -1,0 +1,8 @@
+{
+    "extends": "server-error",
+    "layout": "full-screen",
+    "copyTitle": "Something Went Wrong",
+    "copyMessageKey": "server.internal",
+    "illustration": "sad robot / error graphic",
+    "cta": "Try again or contact support"
+}

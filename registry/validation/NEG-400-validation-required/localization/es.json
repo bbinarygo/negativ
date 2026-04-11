@@ -1,0 +1,3 @@
+{
+    "validation.required": "Por favor completa {count, plural, one {el campo obligatorio} other {los campos obligatorios}}."
+}

@@ -1,0 +1,19 @@
+{
+    "code": "NEG-500-server-internal",
+    "category": "server",
+    "httpStatus": 500,
+    "severity": "error",
+    "title": "Something Went Wrong",
+    "description": "An unexpected server error occurred.",
+    "messageKey": "server.internal",
+    "recoveryAction": "Try again in a few moments or contact support.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "assertive"
+    }
+}

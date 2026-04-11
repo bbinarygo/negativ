@@ -1,0 +1,19 @@
+{
+    "code": "NEG-403-permission-forbidden",
+    "category": "permission",
+    "httpStatus": 403,
+    "severity": "error",
+    "title": "Access Denied",
+    "description": "You do not have permission to perform this action.",
+    "messageKey": "permission.forbidden",
+    "recoveryAction": "Contact your administrator or check your account permissions.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "assertive"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "code": "NEG-400-validation-format",
+    "category": "validation",
+    "httpStatus": 400,
+    "severity": "error",
+    "title": "Invalid Format",
+    "description": "The entered value does not match the expected format.",
+    "messageKey": "validation.format",
+    "recoveryAction": "Correct the format and submit again.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "assertive"
+    }
+}

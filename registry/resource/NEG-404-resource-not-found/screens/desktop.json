@@ -1,0 +1,25 @@
+{
+    "extends": "client-error",
+    "layout": "centered illustration",
+    "copyTitle": "Not Found",
+    "copyMessageKey": "resource.not-found",
+    "illustration": "broken link / 404 graphic",
+    "cta": "Go home",
+    "patterns": {
+        "fullPage": {
+            "description": "Classic 404 page",
+            "usage": "Missing pages/resources"
+        },
+        "emptyState": {
+            "description": "Empty state with search suggestion",
+            "usage": "Search results"
+        }
+    },
+    "figmaNote": "Duplicate this component → variants for light/dark + RTL. Copy text is resolved via messageKey from localization/messages/",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex flex-col items-center gap-6 text-slate-700 bg-white p-10 rounded-3xl shadow-sm\"",
+        "shadcn": "<Alert variant=\"default\"><AlertTitle>{title}</AlertTitle><AlertDescription>{t(messageKey)}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"info\" icon={<SearchOffIcon/>}>{t(messageKey)}</Alert>",
+        "ant": "<Alert message={title} description={t(messageKey)} type=\"info\" showIcon />"
+    }
+}

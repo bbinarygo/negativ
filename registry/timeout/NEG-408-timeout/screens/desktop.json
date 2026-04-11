@@ -1,0 +1,25 @@
+{
+    "extends": "server-error",
+    "layout": "inline banner + retry button",
+    "copyTitle": "Request Timed Out",
+    "copyMessageKey": "timeout.request",
+    "illustration": "hourglass icon",
+    "cta": "Retry",
+    "patterns": {
+        "banner": {
+            "description": "Inline retry banner",
+            "usage": "API calls"
+        },
+        "modal": {
+            "description": "Timeout modal with retry",
+            "usage": "Long-running actions"
+        }
+    },
+    "figmaNote": "Duplicate this component → variants for light/dark + RTL. Copy text is resolved via messageKey from localization/messages/",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex items-center gap-3 text-orange-600 bg-orange-50 p-4 rounded-xl border border-orange-200\"",
+        "shadcn": "<Alert variant=\"default\"><AlertTitle>{title}</AlertTitle><AlertDescription>{t(messageKey)}</AlertDescription><Button>Retry</Button></Alert>",
+        "material": "<Alert severity=\"warning\" icon={<TimerIcon/>}>{t(messageKey)}</Alert>",
+        "ant": "<Alert message={title} description={t(messageKey)} type=\"warning\" showIcon />"
+    }
+}

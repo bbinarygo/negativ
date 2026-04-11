@@ -1,0 +1,19 @@
+{
+    "code": "NEG-408-timeout",
+    "category": "timeout",
+    "httpStatus": 408,
+    "severity": "warning",
+    "title": "Request Timed Out",
+    "description": "The server took too long to respond.",
+    "messageKey": "timeout.request",
+    "recoveryAction": "Wait a moment and retry.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+    }
+}

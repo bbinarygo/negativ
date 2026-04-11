@@ -1,0 +1,19 @@
+{
+    "code": "NEG-404-resource-not-found",
+    "category": "resource",
+    "httpStatus": 404,
+    "severity": "error",
+    "title": "Not Found",
+    "description": "The requested resource could not be located.",
+    "messageKey": "resource.not-found",
+    "recoveryAction": "Check the URL or go back to the homepage.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+    }
+}

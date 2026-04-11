@@ -1,0 +1,25 @@
+{
+    "extends": "auth-error",
+    "layout": "full-page message",
+    "copyTitle": "Access Denied",
+    "copyMessageKey": "permission.forbidden",
+    "illustration": "shield icon",
+    "cta": "Contact admin",
+    "patterns": {
+        "fullPage": {
+            "description": "Full-page permission wall",
+            "usage": "Role-based access"
+        },
+        "emptyState": {
+            "description": "Empty state with contact CTA",
+            "usage": "Team dashboards"
+        }
+    },
+    "figmaNote": "Duplicate this component → variants for light/dark + RTL. Copy text is resolved via messageKey from localization/messages/",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex flex-col items-center gap-4 text-red-700 bg-red-50 p-8 rounded-3xl border border-red-300\"",
+        "shadcn": "<Alert variant=\"destructive\"><AlertTitle>{title}</AlertTitle><AlertDescription>{t(messageKey)}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"error\" icon={<BlockIcon/>}>{t(messageKey)}</Alert>",
+        "ant": "<Alert message={title} description={t(messageKey)} type=\"error\" showIcon />"
+    }
+}

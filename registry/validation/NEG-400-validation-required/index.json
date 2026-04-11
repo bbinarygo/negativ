@@ -1,0 +1,19 @@
+{
+    "code": "NEG-400-validation-required",
+    "category": "validation",
+    "httpStatus": 400,
+    "severity": "error",
+    "title": "Required Field Missing",
+    "description": "One or more required fields were not provided.",
+    "messageKey": "validation.required",
+    "recoveryAction": "Complete the highlighted fields and try again.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "assertive"
+    }
+}

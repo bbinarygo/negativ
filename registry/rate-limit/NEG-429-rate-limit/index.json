@@ -1,0 +1,19 @@
+{
+    "code": "NEG-429-rate-limit",
+    "category": "rate-limit",
+    "httpStatus": 429,
+    "severity": "warning",
+    "title": "Too Many Requests",
+    "description": "You have exceeded the allowed number of requests.",
+    "messageKey": "rate-limit.exceeded",
+    "recoveryAction": "Wait until the rate limit resets.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+    }
+}

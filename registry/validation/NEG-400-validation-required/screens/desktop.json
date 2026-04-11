@@ -1,0 +1,37 @@
+{
+    "extends": "client-error",
+    "layout": "inline-toast + highlighted fields",
+    "copyTitle": "Required Field Missing",
+    "copyMessageKey": "validation.required",
+    "illustration": "simple red asterisk + outline on empty fields",
+    "cta": "none (auto-focus first field)",
+    "patterns": {
+        "inline": {
+            "description": "Highlight fields + small toast below",
+            "usage": "Forms, checkout flows",
+            "components": [
+                "form-field-error",
+                "inline-toast"
+            ]
+        },
+        "modal": {
+            "description": "Centered modal listing missing fields",
+            "usage": "Complex multi-field forms",
+            "components": [
+                "modal",
+                "error-list"
+            ]
+        },
+        "banner": {
+            "description": "Top or bottom banner for mobile",
+            "usage": "Quick mobile feedback"
+        }
+    },
+    "figmaNote": "Duplicate this component in Figma → variants for light/dark + RTL. Copy text is resolved via messageKey from localization/messages/",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex items-center gap-2 text-red-600 bg-red-50 p-3 rounded-lg border border-red-200\"",
+        "shadcn": "<Alert variant=\"destructive\"><AlertTitle>{title}</AlertTitle><AlertDescription>{t(messageKey)}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"error\" icon={<ErrorIcon/>}>{t(messageKey)}</Alert>",
+        "ant": "<Alert message={title} description={t(messageKey)} type=\"error\" showIcon />"
+    }
+}

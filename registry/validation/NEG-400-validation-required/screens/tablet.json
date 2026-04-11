@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "centered modal (medium size)",
+    "copyTitle": "Required Field Missing",
+    "copyMessageKey": "validation.required",
+    "illustration": "icon + list of missing fields",
+    "cta": "none"
+}

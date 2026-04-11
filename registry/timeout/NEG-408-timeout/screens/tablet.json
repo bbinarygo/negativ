@@ -1,0 +1,8 @@
+{
+    "extends": "server-error",
+    "layout": "inline banner",
+    "copyTitle": "Request Timed Out",
+    "copyMessageKey": "timeout.request",
+    "illustration": "hourglass icon",
+    "cta": "Retry"
+}

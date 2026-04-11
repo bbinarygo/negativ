@@ -1,0 +1,19 @@
+{
+    "code": "NEG-payment-declined",
+    "category": "payment",
+    "httpStatus": 402,
+    "severity": "error",
+    "title": "Payment Declined",
+    "description": "Your payment method was declined by the provider.",
+    "messageKey": "payment.declined",
+    "recoveryAction": "Update your payment details or try a different card.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "assertive"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "full-screen banner at bottom",
+    "copyTitle": "Invalid Format",
+    "copyMessageKey": "validation.format",
+    "illustration": "red exclamation on field",
+    "cta": "none"
+}

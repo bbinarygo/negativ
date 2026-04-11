@@ -1,0 +1,19 @@
+{
+    "code": "NEG-401-auth-unauthorized",
+    "category": "auth",
+    "httpStatus": 401,
+    "severity": "error",
+    "title": "Sign in Required",
+    "description": "You need to be signed in to access this resource.",
+    "messageKey": "auth.unauthorized",
+    "recoveryAction": "Go to the sign-in page or refresh the session.",
+    "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+    ],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+    }
+}

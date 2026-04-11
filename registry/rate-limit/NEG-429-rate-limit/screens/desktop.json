@@ -1,0 +1,25 @@
+{
+    "extends": "client-error",
+    "layout": "toast notification",
+    "copyTitle": "Too Many Requests",
+    "copyMessageKey": "rate-limit.exceeded",
+    "illustration": "clock icon",
+    "cta": "Wait & retry later",
+    "patterns": {
+        "inline": {
+            "description": "Toast with countdown",
+            "usage": "API-heavy apps"
+        },
+        "banner": {
+            "description": "Persistent banner",
+            "usage": "Rate-limited flows"
+        }
+    },
+    "figmaNote": "Duplicate this component → variants for light/dark + RTL. Copy text is resolved via messageKey from localization/messages/",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex items-center gap-2 text-yellow-600 bg-yellow-50 p-3 rounded-lg border border-yellow-200\"",
+        "shadcn": "<Alert variant=\"default\"><AlertTitle>{title}</AlertTitle><AlertDescription>{t(messageKey)}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"warning\" icon={<HourglassIcon/>}>{t(messageKey)}</Alert>",
+        "ant": "<Alert message={title} description={t(messageKey)} type=\"warning\" showIcon />"
+    }
+}

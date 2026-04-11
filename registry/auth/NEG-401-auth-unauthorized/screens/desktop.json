@@ -1,0 +1,29 @@
+{
+    "extends": "auth-error",
+    "layout": "centered modal",
+    "copyTitle": "Sign in Required",
+    "copyMessageKey": "auth.unauthorized",
+    "illustration": "lock icon",
+    "cta": "Sign in button",
+    "patterns": {
+        "modal": {
+            "description": "Centered sign-in prompt",
+            "usage": "Protected routes",
+            "components": [
+                "modal",
+                "cta-button"
+            ]
+        },
+        "fullPage": {
+            "description": "Full-screen login wall",
+            "usage": "Session timeout"
+        }
+    },
+    "figmaNote": "Duplicate this component → variants for light/dark + RTL. Copy text is resolved via messageKey from localization/messages/",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex flex-col items-center gap-4 text-amber-600 bg-amber-50 p-6 rounded-2xl border border-amber-200\"",
+        "shadcn": "<Alert variant=\"default\"><AlertTitle>{title}</AlertTitle><AlertDescription>{t(messageKey)}</AlertDescription><Button>Sign In</Button></Alert>",
+        "material": "<Alert severity=\"warning\" icon={<LockIcon/>}>{t(messageKey)}</Alert>",
+        "ant": "<Alert message={title} description={t(messageKey)} type=\"warning\" showIcon />"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "Not Found",
+    "copyMessageKey": "resource.not-found",
+    "illustration": "broken link / 404 graphic",
+    "cta": "Go home"
+}

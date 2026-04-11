@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "toast notification",
+    "copyTitle": "Too Many Requests",
+    "copyMessageKey": "rate-limit.exceeded",
+    "illustration": "clock icon",
+    "cta": "Wait & retry later"
+}

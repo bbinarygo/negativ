@@ -1,0 +1,25 @@
+{
+    "extends": "server-error",
+    "layout": "full-page error page",
+    "copyTitle": "Something Went Wrong",
+    "copyMessageKey": "server.internal",
+    "illustration": "sad robot / error graphic",
+    "cta": "Try again or contact support",
+    "patterns": {
+        "fullPage": {
+            "description": "Generic 5xx error page",
+            "usage": "Server failures"
+        },
+        "emptyState": {
+            "description": "Empty state with support link",
+            "usage": "Critical flows"
+        }
+    },
+    "figmaNote": "Duplicate this component → variants for light/dark + RTL. Copy text is resolved via messageKey from localization/messages/",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex flex-col items-center gap-6 text-red-700 bg-red-50 p-12 rounded-3xl\"",
+        "shadcn": "<Alert variant=\"destructive\"><AlertTitle>{title}</AlertTitle><AlertDescription>{t(messageKey)}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"error\" icon={<ErrorIcon/>}>{t(messageKey)}</Alert>",
+        "ant": "<Alert message={title} description={t(messageKey)} type=\"error\" showIcon />"
+    }
+}
