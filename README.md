@@ -48,6 +48,18 @@ It provides:
 3. Use `registry/index.json` for a full machine-readable snapshot of all codes.
 4. Need a specific error? Open an issue or submit a PR (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 
+### LLM Usage
+
+Paste `llm-context.md` directly into your system prompt, or load `llm-context.json` programmatically:
+
+- **Raw Markdown:** `https://raw.githubusercontent.com/bbinarygo/negativ/main/llm-context.md`
+- **Raw JSON:** `https://raw.githubusercontent.com/bbinarygo/negativ/main/llm-context.json`
+
+Regenerate after registry changes:
+```bash
+npm run llm-context
+```
+
 ### Project Structure
 
 ```
