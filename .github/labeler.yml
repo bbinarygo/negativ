@@ -1,0 +1,15 @@
+new-code:
+  - changed-files:
+    - any-glob-to-any-file: "registry/**"
+
+translation:
+  - changed-files:
+    - any-glob-to-any-file: "localization/**"
+
+vertical-pack:
+  - changed-files:
+    - any-glob-to-any-file: "verticals/**"
+
+improvement:
+  - changed-files:
+    - any-glob-to-any-file: "registry/**"
