@@ -12,6 +12,8 @@ const ROOT = path.join(__dirname, '..');
 const REGISTRY_DIR = path.join(ROOT, 'registry');
 const SCHEMAS_DIR = path.join(ROOT, 'schemas');
 const LOCALIZATION_TOKENS_EN = path.join(ROOT, 'localization/tokens/en.json');
+const VERTICALS_DIR = path.join(ROOT, 'verticals');
+const VALID_VERTICALS = ['fintech', 'healthtech', 'ecommerce'];
 
 const ajv = new Ajv({ strict: false });
 
@@ -29,6 +31,7 @@ const REQUIRED_PLATFORMS = ['desktop', 'mobile'];
 
 let errors = 0;
 const index = [];
+let totalVerticalCodes = 0;
 
 function err(msg) {
   console.error(`  ❌ ${msg}`);
@@ -119,13 +122,86 @@ for (const category of VALID_CATEGORIES) {
   }
 }
 
+// Validate verticals and generate per-vertical indexes
+if (fs.existsSync(VERTICALS_DIR)) {
+  for (const vertical of VALID_VERTICALS) {
+    const verticalDir = path.join(VERTICALS_DIR, vertical);
+    if (!fs.existsSync(verticalDir)) continue;
+    const verticalIndex = [];
+
+    const codeDirs = fs.readdirSync(verticalDir).filter(d => {
+      return fs.statSync(path.join(verticalDir, d)).isDirectory() && !d.startsWith('_');
+    });
+
+    for (const codeDir of codeDirs) {
+      const atomDir = path.join(verticalDir, codeDir);
+      const indexPath = path.join(atomDir, 'index.json');
+      console.log(`Checking ${vertical}/${codeDir}…`);
+
+      if (!checkExists(indexPath, 'index.json')) continue;
+      const code = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+
+      if (!validateErrorCode(code)) {
+        err(`index.json schema invalid: ${JSON.stringify(validateErrorCode.errors)}`);
+      }
+      if (code.code !== codeDir) {
+        err(`Folder name "${codeDir}" must match code field "${code.code}"`);
+      }
+      if (code.category !== vertical) {
+        err(`Category "${code.category}" in index.json must match vertical folder "${vertical}"`);
+      }
+      for (const platform of REQUIRED_PLATFORMS) {
+        const screenPath = path.join(atomDir, 'screens', `${platform}.json`);
+        if (checkExists(screenPath, `screens/${platform}.json`)) {
+          const screen = JSON.parse(fs.readFileSync(screenPath, 'utf8'));
+          if (!validateScreen(screen)) {
+            err(`screens/${platform}.json schema invalid: ${JSON.stringify(validateScreen.errors)}`);
+          }
+        }
+      }
+      const locEnPath = path.join(atomDir, 'localization', 'en.json');
+      if (checkExists(locEnPath, 'localization/en.json')) {
+        const locEn = JSON.parse(fs.readFileSync(locEnPath, 'utf8'));
+        if (!validateLocalization(locEn)) {
+          err(`localization/en.json schema invalid: ${JSON.stringify(validateLocalization.errors)}`);
+        }
+        if (!locEn[code.messageKey]) {
+          err(`localization/en.json missing messageKey "${code.messageKey}"`);
+        }
+      }
+      checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
+
+      verticalIndex.push({
+        code: code.code,
+        category: code.category,
+        httpStatus: code.httpStatus,
+        severity: code.severity,
+        title: code.title,
+        messageKey: code.messageKey,
+        _path: `verticals/${vertical}/${codeDir}`,
+      });
+    }
+
+    const verticalIndexPath = path.join(verticalDir, 'index.json');
+    fs.writeFileSync(verticalIndexPath, JSON.stringify({
+      generated: new Date().toISOString(),
+      vertical,
+      count: verticalIndex.length,
+      codes: verticalIndex,
+    }, null, 2) + '\n');
+    console.log(`\n📦 Generated verticals/${vertical}/index.json (${verticalIndex.length} codes)`);
+    totalVerticalCodes += verticalIndex.length;
+  }
+}
+
 // Generate registry/index.json
 const indexPath = path.join(REGISTRY_DIR, 'index.json');
 fs.writeFileSync(indexPath, JSON.stringify({ generated: new Date().toISOString(), count: index.length, codes: index }, null, 2) + '\n');
 console.log(`\n📦 Generated registry/index.json (${index.length} codes)`);
 
 if (errors === 0) {
-  console.log(`\n✅ All ${index.length} error codes passed validation!`);
+  const verticalNote = totalVerticalCodes > 0 ? ` + ${totalVerticalCodes} vertical codes` : '';
+  console.log(`\n✅ All ${index.length} registry codes${verticalNote} passed validation!`);
 } else {
   console.error(`\n❌ ${errors} validation error(s) found.`);
   process.exit(1);
