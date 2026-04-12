@@ -24,6 +24,12 @@ jobs:
       - name: Validate registry + generate index
         run: npm run validate
 
+      - name: Build @negativ/core
+        run: npm run build:core
+
+      - name: Generate LLM context pack
+        run: npm run llm-context
+
       - name: Check required files exist
         run: |
           test -f schemas/error-code.schema.json && echo "✅ error-code schema present" || exit 1
@@ -31,3 +37,55 @@ jobs:
           test -f schemas/localization.schema.json && echo "✅ localization schema present" || exit 1
           test -f localization/tokens/en.json && echo "✅ English tokens present" || exit 1
           test -f registry/index.json && echo "✅ registry index present" || exit 1
+          test -f llm-context.json && echo "✅ llm-context.json present" || exit 1
+          test -f llm-context.md && echo "✅ llm-context.md present" || exit 1
+          test -f packages/core/dist/index.d.ts && echo "✅ @negativ/core built" || exit 1
+
+      - name: Post PR summary comment
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const index = JSON.parse(fs.readFileSync('registry/index.json', 'utf8'));
+            const supported = JSON.parse(fs.readFileSync('localization/supported-language.json', 'utf8'));
+            const llmCtx = JSON.parse(fs.readFileSync('llm-context.json', 'utf8'));
+            const categories = [...new Set(index.codes.map(c => c.category))].sort();
+
+            const body = [
+              '## ✅ Negativ CI — All checks passed',
+              '',
+              '| Check | Result |',
+              '|---|---|',
+              `| Registry validation | ✅ ${index.count} codes |`,
+              `| @negativ/core build | ✅ types compiled |`,
+              `| LLM context pack | ✅ ${llmCtx.errorCodes.length} codes · ${llmCtx.journeys.length} journeys |`,
+              '',
+              '**Registry stats**',
+              `- **Codes:** ${index.count} across ${categories.length} categories (${categories.join(', ')})`,
+              `- **v1 Languages:** ${supported.v1Languages.join(', ')}`,
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const botComment = comments.find(
+              c => c.user.type === 'Bot' && c.body.includes('Negativ CI')
+            );
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
