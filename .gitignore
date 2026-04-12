@@ -2,3 +2,6 @@ node_modules
 .DS_Store
 dist
 *.log
+
+# AI planning docs — local only
+docs/superpowers/
