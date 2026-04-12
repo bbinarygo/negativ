@@ -1,0 +1,25 @@
+name: Improve existing entry
+description: Fix or improve an existing error code in the registry
+labels: ["improvement", "needs-review"]
+body:
+  - type: input
+    id: code
+    attributes:
+      label: Which error code?
+      placeholder: NEG-401-auth-session-expired
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong or missing?
+      placeholder: The recovery action is vague — "Try again" doesn't tell the user what to do.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Show the before/after or describe the fix
+    validations:
+      required: true

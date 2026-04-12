@@ -1,0 +1,29 @@
+name: Translation / localization
+description: Add or improve a language translation
+labels: ["translation", "needs-review"]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language (BCP 47 code)
+      placeholder: "de (German)"
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: All error codes (complete language pack)
+        - label: Specific codes only (list below)
+        - label: Fix existing translation
+  - type: textarea
+    id: codes
+    attributes:
+      label: Which codes? (if not all)
+      placeholder: NEG-401-auth-session-expired, NEG-403-permission-forbidden
+  - type: textarea
+    id: notes
+    attributes:
+      label: Cultural / tone notes
+      description: Anything the reviewer should know about this language's tone or conventions

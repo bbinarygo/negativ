@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Add a new error code
+    url: https://github.com/bbinarygo/negativ/blob/main/CONTRIBUTING.md
+    about: Follow the contributing guide to add a new error code (wizard coming soon)
+  - name: Ask a question
+    url: https://github.com/bbinarygo/negativ/discussions
+    about: Start a discussion for questions, ideas, or feedback

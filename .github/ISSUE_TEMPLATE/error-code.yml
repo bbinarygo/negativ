@@ -1,0 +1,74 @@
+name: New error code
+description: Add a new error code to the registry
+labels: ["new-code", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in the fields below. Run `npm run validate` locally before submitting.
+        Paste the generated JSON from the validator in the "JSON output" field.
+  - type: input
+    id: code
+    attributes:
+      label: Error code slug
+      description: "Format: NEG-<httpStatus>-<category>-<subcode> (e.g. NEG-422-validation-duplicate)"
+      placeholder: NEG-422-validation-duplicate
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - validation
+        - auth
+        - permission
+        - resource
+        - timeout
+        - rate-limit
+        - server
+        - network
+        - payment
+        - fintech
+        - healthtech
+        - ecommerce
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - error
+        - warning
+        - info
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: User-facing title
+      placeholder: Duplicate entry
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Internal description
+      description: Describes when/why this error occurs (not shown to end users)
+      placeholder: Occurs when a user tries to create a resource that already exists.
+    validations:
+      required: true
+  - type: input
+    id: recovery
+    attributes:
+      label: Recovery action (primary CTA label)
+      placeholder: Try a different name
+    validations:
+      required: true
+  - type: textarea
+    id: json
+    attributes:
+      label: Full index.json output
+      description: Paste the complete JSON that will go in `registry/<category>/<code>/index.json`
+      render: json
