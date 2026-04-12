@@ -6,5 +6,8 @@ dist
 # AI planning docs — local only
 docs/superpowers/
 
+# Visual brainstorming sessions
+.superpowers/
+
 # Git worktrees
 .worktrees/
