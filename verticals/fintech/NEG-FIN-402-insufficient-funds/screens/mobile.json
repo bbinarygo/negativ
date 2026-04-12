@@ -1,10 +1,7 @@
 {
   "extends": "client-error",
-  "copyMessageKey": "fintech.insufficient-funds",
   "layout": "inline",
-  "designSystemIntegrations": {
-    "tailwind": "border border-red-300 bg-red-50 text-red-800 rounded p-4",
-    "shadcn": "Alert variant='destructive'",
-    "material": "Alert severity='error'"
-  }
+  "copyTitle": "Insufficient Funds",
+  "copyMessageKey": "fintech.insufficient-funds",
+  "cta": "Add funds"
 }

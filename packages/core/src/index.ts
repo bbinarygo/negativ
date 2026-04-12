@@ -15,7 +15,10 @@ export type Category =
   | 'rate-limit'
   | 'server'
   | 'network'
-  | 'payment';
+  | 'payment'
+  | 'fintech'
+  | 'healthtech'
+  | 'ecommerce';
 
 // ── Interfaces ─────────────────────────────────────────────────────────────
 

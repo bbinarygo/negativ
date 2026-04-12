@@ -1,10 +1,7 @@
 {
   "extends": "auth-error",
-  "copyMessageKey": "fintech.account-frozen",
   "layout": "inline",
-  "designSystemIntegrations": {
-    "tailwind": "border border-red-300 bg-red-50 text-red-800 rounded p-4",
-    "shadcn": "Alert variant='destructive'",
-    "material": "Alert severity='error'"
-  }
+  "copyTitle": "Account Frozen",
+  "copyMessageKey": "fintech.account-frozen",
+  "cta": "Contact support"
 }

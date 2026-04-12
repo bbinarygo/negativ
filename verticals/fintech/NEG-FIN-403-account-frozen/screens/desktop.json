@@ -1,7 +1,21 @@
 {
   "extends": "auth-error",
-  "copyMessageKey": "fintech.account-frozen",
   "layout": "inline",
+  "copyTitle": "Account Frozen",
+  "copyMessageKey": "fintech.account-frozen",
+  "illustration": "locked account or snowflake icon",
+  "cta": "Contact support",
+  "patterns": {
+    "inline": {
+      "description": "Inline error on login or transaction attempt",
+      "usage": "Banking apps, wallet services"
+    },
+    "fullPage": {
+      "description": "Full-page block with support contact details",
+      "usage": "Post-login check or critical freeze during session"
+    }
+  },
+  "figmaNote": "Duplicate component → variants for light/dark + RTL.",
   "designSystemIntegrations": {
     "tailwind": "border border-red-300 bg-red-50 text-red-800 rounded p-4",
     "shadcn": "Alert variant='destructive'",

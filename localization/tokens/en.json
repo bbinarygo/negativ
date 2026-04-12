@@ -20,5 +20,9 @@
   "network.offline": "It looks like you're offline. Check your connection.",
   "network.slow": "Your connection is slow. This may take longer than usual.",
   "payment.declined": "Your payment was declined. Please try another method.",
-  "payment.expired": "Your card has expired. Please update your payment details."
+  "payment.expired": "Your card has expired. Please update your payment details.",
+  "fintech.insufficient-funds": "Your account doesn't have enough funds to complete this transaction.",
+  "fintech.account-frozen": "Your account has been temporarily frozen. Please contact support.",
+  "fintech.kyc-failed": "We couldn't verify your identity. Please check your details and try again.",
+  "fintech.transaction-limit": "You've reached your transaction limit. Try again after the limit resets."
 }

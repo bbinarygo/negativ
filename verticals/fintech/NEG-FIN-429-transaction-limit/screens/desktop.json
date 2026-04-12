@@ -1,7 +1,21 @@
 {
   "extends": "client-error",
-  "copyMessageKey": "fintech.transaction-limit",
   "layout": "inline",
+  "copyTitle": "Transaction Limit Reached",
+  "copyMessageKey": "fintech.transaction-limit",
+  "illustration": "hourglass or limit gauge icon",
+  "cta": "Try after limit resets",
+  "patterns": {
+    "inline": {
+      "description": "Inline warning on transaction submit",
+      "usage": "Payment flows, transfer screens"
+    },
+    "banner": {
+      "description": "Persistent banner showing limit reset time",
+      "usage": "Trading platforms, high-frequency payment apps"
+    }
+  },
+  "figmaNote": "Duplicate component → variants for light/dark + RTL.",
   "designSystemIntegrations": {
     "tailwind": "border border-yellow-300 bg-yellow-50 text-yellow-800 rounded p-4",
     "shadcn": "Alert variant='warning'",

@@ -1,7 +1,21 @@
 {
   "extends": "client-error",
-  "copyMessageKey": "fintech.kyc-failed",
   "layout": "inline",
+  "copyTitle": "Identity Verification Failed",
+  "copyMessageKey": "fintech.kyc-failed",
+  "illustration": "document with warning or face-scan icon",
+  "cta": "Check details and retry",
+  "patterns": {
+    "inline": {
+      "description": "Inline error within KYC / onboarding form",
+      "usage": "Account opening, identity verification flows"
+    },
+    "fullPage": {
+      "description": "Full-page failure with support link",
+      "usage": "Hard KYC failure requiring manual review"
+    }
+  },
+  "figmaNote": "Duplicate component → variants for light/dark + RTL.",
   "designSystemIntegrations": {
     "tailwind": "border border-red-300 bg-red-50 text-red-800 rounded p-4",
     "shadcn": "Alert variant='destructive'",

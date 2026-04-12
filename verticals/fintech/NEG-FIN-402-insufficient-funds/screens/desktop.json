@@ -1,7 +1,21 @@
 {
   "extends": "client-error",
-  "copyMessageKey": "fintech.insufficient-funds",
   "layout": "inline",
+  "copyTitle": "Insufficient Funds",
+  "copyMessageKey": "fintech.insufficient-funds",
+  "illustration": "empty wallet or declined card icon",
+  "cta": "Add funds or use another method",
+  "patterns": {
+    "inline": {
+      "description": "Inline error below payment amount or method selector",
+      "usage": "Checkout flows, top-up screens"
+    },
+    "toast": {
+      "description": "Toast notification on failed transaction attempt",
+      "usage": "One-click payment or auto-debit contexts"
+    }
+  },
+  "figmaNote": "Duplicate component → variants for light/dark + RTL.",
   "designSystemIntegrations": {
     "tailwind": "border border-red-300 bg-red-50 text-red-800 rounded p-4",
     "shadcn": "Alert variant='destructive'",

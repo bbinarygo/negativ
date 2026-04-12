@@ -169,6 +169,9 @@ if (fs.existsSync(VERTICALS_DIR)) {
           err(`localization/en.json missing messageKey "${code.messageKey}"`);
         }
       }
+      if (!tokensEn[code.messageKey]) {
+        err(`messageKey "${code.messageKey}" not found in localization/tokens/en.json`);
+      }
       checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
 
       verticalIndex.push({
