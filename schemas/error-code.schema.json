@@ -25,7 +25,10 @@
                 "rate-limit",
                 "server",
                 "network",
-                "payment"
+                "payment",
+                "fintech",
+                "healthtech",
+                "ecommerce"
             ]
         },
         "httpStatus": {
