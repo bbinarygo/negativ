@@ -1,0 +1,28 @@
+{
+    "journeyId": "session-expired",
+    "title": "Session Expiry → Re-authentication Flow",
+    "description": "Negative journey when a user's session token expires mid-usage.",
+    "mermaid": "graph TD\n    A[User performs action] --> B{Token valid?}\n    B -->|Expired| C[NEG-401-auth-session-expired screen]\n    C --> D{User action?}\n    D -->|Sign in again| E[Auth flow]\n    D -->|Dismiss| F[Redirect to login page]\n    E -->|Success| G[Return to original action]\n    E -->|Fail| H[NEG-401-auth-unauthorized]\n    B -->|Network error| I[NEG-000-network-offline]",
+    "steps": [
+        {
+            "step": 1,
+            "trigger": "API call returns 401 with session-expired code",
+            "screen": "NEG-401-auth-session-expired",
+            "userAction": "Sign in again or dismiss"
+        },
+        {
+            "step": 2,
+            "trigger": "User re-authenticates successfully",
+            "screen": "Return to original page/action",
+            "userAction": "Resume task"
+        },
+        {
+            "step": 3,
+            "trigger": "Re-authentication fails",
+            "screen": "NEG-401-auth-unauthorized",
+            "userAction": "Retry or contact support"
+        }
+    ],
+    "errorCodes": ["NEG-401-auth-session-expired", "NEG-401-auth-unauthorized", "NEG-000-network-offline"],
+    "localizationNote": "All screens reuse centralized messageKeys from localization/tokens/"
+}

@@ -1,0 +1,28 @@
+{
+    "journeyId": "auth-failure",
+    "title": "Authentication Failure → Recovery Flow",
+    "description": "Negative journey when a user fails to authenticate (wrong credentials, locked account).",
+    "mermaid": "graph TD\n    A[User submits credentials] --> B{Auth API response?}\n    B -->|401 Wrong credentials| C[NEG-401-auth-unauthorized screen]\n    C --> D{User action?}\n    D -->|Retry| A\n    D -->|Forgot password| E[Password reset flow]\n    D -->|Contact support| F[Support escalation]\n    E --> G[Reset email sent]\n    G --> H[User resets password]\n    H --> A\n    B -->|429 Too many attempts| I[NEG-429-rate-limit-exceeded screen]\n    I --> J[Wait + retry]\n    B -->|Network error| K[NEG-000-network-offline screen]",
+    "steps": [
+        {
+            "step": 1,
+            "trigger": "Auth API returns 401",
+            "screen": "NEG-401-auth-unauthorized",
+            "userAction": "Retry or initiate password reset"
+        },
+        {
+            "step": 2,
+            "trigger": "Too many failed attempts → 429",
+            "screen": "NEG-429-rate-limit-exceeded",
+            "userAction": "Wait for cooldown period"
+        },
+        {
+            "step": 3,
+            "trigger": "User requests password reset",
+            "screen": "Password reset confirmation (success state)",
+            "userAction": "Check email"
+        }
+    ],
+    "errorCodes": ["NEG-401-auth-unauthorized", "NEG-429-rate-limit-exceeded", "NEG-000-network-offline"],
+    "localizationNote": "All screens reuse centralized messageKeys from localization/tokens/"
+}
