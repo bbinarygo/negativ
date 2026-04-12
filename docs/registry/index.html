@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registry — negativ</title>
+  <meta name="description" content="Browse all negativ error codes with filters by category and severity." />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="../">negativ</a>
+  <div class="nav-links">
+    <a href="./">Registry</a>
+    <a href="../contribute/">Contribute</a>
+    <a class="nav-gh" href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">&#9733; GitHub</a>
+  </div>
+</nav>
+
+<div class="filter-bar">
+  <select id="filter-cat"></select>
+  <select id="filter-sev"></select>
+  <input id="filter-q" type="text" placeholder="Search codes&hellip;" autocomplete="off" />
+  <span id="filter-count" class="filter-count"></span>
+</div>
+
+<div id="card-grid" class="card-grid"></div>
+
+<div id="toast" class="toast"></div>
+
+<footer class="footer">
+  <span>negativ</span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+  <a href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">GitHub</a>
+  <span class="footer-mono">npm install @negativ/core</span>
+</footer>
+
+<script src="../assets/js/registry.js"></script>
+</body>
+</html>
