@@ -5,3 +5,6 @@ dist
 
 # AI planning docs — local only
 docs/superpowers/
+
+# Git worktrees
+.worktrees/
