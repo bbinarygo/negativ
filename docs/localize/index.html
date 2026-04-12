@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localization &mdash; negativ</title>
+  <meta name="description" content="Translation completeness dashboard for all negativ error codes." />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="../">negativ</a>
+  <div class="nav-links">
+    <a href="../registry/">Registry</a>
+    <a href="../contribute/">Contribute</a>
+    <a class="nav-gh" href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">&#9733; GitHub</a>
+  </div>
+</nav>
+
+<div style="max-width:900px;margin:2rem auto;padding:0 2rem">
+  <h1 style="font-size:1.4rem;margin-bottom:0.4rem">Localization</h1>
+  <p style="color:var(--text2);font-size:0.9rem;margin-bottom:1.5rem">Translation completeness across all supported languages. Click "Contribute &rarr;" to open a pre-filled GitHub Issue.</p>
+
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--radius);overflow:hidden">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);font-size:0.8rem;color:var(--text3)">
+          <th style="padding:0.6rem 1rem;text-align:left">Language</th>
+          <th style="padding:0.6rem 1rem;text-align:left">Total keys</th>
+          <th style="padding:0.6rem 1rem;text-align:left">Translated</th>
+          <th style="padding:0.6rem 1rem;text-align:left">Missing</th>
+          <th style="padding:0.6rem 1rem;text-align:left">Progress</th>
+          <th style="padding:0.6rem 1rem;text-align:left">Action</th>
+        </tr>
+      </thead>
+      <tbody id="lang-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>negativ</span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+  <a href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+<script src="../assets/js/localize.js"></script>
+</body>
+</html>
