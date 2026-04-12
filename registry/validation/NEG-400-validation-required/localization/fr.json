@@ -1,0 +1,3 @@
+{
+    "validation.required": "Veuillez remplir le{count, plural, one {s} other {}} champ{count, plural, one {} other {s}} obligatoire{count, plural, one {} other {s}}."
+}

@@ -1,0 +1,3 @@
+{
+    "validation.length": "此字段过长，请使用{maxLength}个字符或更少。"
+}
