@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribute &mdash; negativ</title>
+  <meta name="description" content="Add a new error code to the negativ registry in 3 steps." />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="../">negativ</a>
+  <div class="nav-links">
+    <a href="../registry/">Registry</a>
+    <a href="./">Contribute</a>
+    <a class="nav-gh" href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">&#9733; GitHub</a>
+  </div>
+</nav>
+
+<div class="wiz-container">
+  <h1 style="font-size:1.4rem;margin-bottom:0.5rem;">Add a new error code</h1>
+  <p style="color:var(--text2);font-size:0.9rem;margin-bottom:1.5rem;">3 steps. Your contribution opens as a pre-filled GitHub Issue for review.</p>
+
+  <div class="wiz-progress">
+    <div class="progress-pip active"></div>
+    <div class="progress-pip"></div>
+    <div class="progress-pip"></div>
+  </div>
+
+  <!-- Step 1: Identity -->
+  <div class="wiz-step">
+    <h2>Step 1 of 3 &mdash; Identity</h2>
+    <div class="field">
+      <label for="w-code">Error code slug *</label>
+      <input id="w-code" type="text" placeholder="NEG-422-validation-duplicate" autocomplete="off" />
+      <div class="field-hint">Format: NEG-&lt;httpStatus&gt;-&lt;category&gt;-&lt;subcode&gt;</div>
+      <div class="field-err" id="err-code" hidden></div>
+    </div>
+    <div class="wiz-row">
+      <div class="field">
+        <label for="w-category">Category *</label>
+        <select id="w-category">
+          <option value="">Select category&hellip;</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="w-severity">Severity *</label>
+        <select id="w-severity">
+          <option value="error">error</option>
+          <option value="warning">warning</option>
+          <option value="info">info</option>
+        </select>
+      </div>
+    </div>
+    <div class="field" style="max-width:200px">
+      <label for="w-status">HTTP status (optional)</label>
+      <input id="w-status" type="number" placeholder="422" min="100" max="599" />
+    </div>
+    <div class="wiz-actions">
+      <button class="btn-primary" onclick="wizardNext()">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Content + live preview -->
+  <div class="wiz-step" hidden>
+    <h2>Step 2 of 3 &mdash; Content</h2>
+    <div class="wiz-split">
+      <div>
+        <div class="field">
+          <label for="w-title">User-facing title *</label>
+          <input id="w-title" type="text" placeholder="Duplicate entry" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="w-description">Internal description *</label>
+          <textarea id="w-description" placeholder="Occurs when a user tries to create a resource that already exists."></textarea>
+          <div class="field-hint">Not shown to end users &mdash; explains when this error fires</div>
+        </div>
+        <div class="field">
+          <label for="w-recovery">Recovery action (CTA label) *</label>
+          <input id="w-recovery" type="text" placeholder="Try a different name" autocomplete="off" />
+          <div class="field-hint">The primary button label shown to the user</div>
+        </div>
+        <div class="field-err" id="err-content" hidden></div>
+      </div>
+      <div class="live-preview">
+        <h3>Live preview</h3>
+        <div class="screen-preview">
+          <div class="preview-title" id="prev-title">Error title</div>
+          <div class="preview-msg"   id="prev-msg">Error description appears here.</div>
+          <span class="preview-cta"  id="prev-cta">Recovery action</span>
+        </div>
+      </div>
+    </div>
+    <div class="wiz-actions">
+      <button class="btn-secondary" onclick="wizardBack()">&larr; Back</button>
+      <button class="btn-primary" onclick="wizardNext()">Review &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Review + submit -->
+  <div class="wiz-step" hidden>
+    <h2>Step 3 of 3 &mdash; Review &amp; submit</h2>
+    <p style="color:var(--text2);font-size:0.85rem;margin-bottom:1rem;">This is the <code>index.json</code> that will be contributed. Review it, then submit as a GitHub Issue.</p>
+    <pre class="review-json" id="review-json"></pre>
+    <ul class="review-errors" id="review-errors" hidden></ul>
+    <div class="wiz-actions">
+      <button class="btn-secondary" onclick="wizardBack()">&larr; Back</button>
+      <button class="btn-primary" id="btn-submit" onclick="wizardSubmit()">Submit as GitHub Issue &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<footer class="footer">
+  <span>negativ</span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+  <a href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+<script src="../assets/js/wizard.js"></script>
+</body>
+</html>
