@@ -202,6 +202,32 @@ const indexPath = path.join(REGISTRY_DIR, 'index.json');
 fs.writeFileSync(indexPath, JSON.stringify({ generated: new Date().toISOString(), count: index.length, codes: index }, null, 2) + '\n');
 console.log(`\n📦 Generated registry/index.json (${index.length} codes)`);
 
+// ── Playbooks index ──────────────────────────────────────────────────────
+const playbooksDir = path.join(__dirname, '..', 'playbooks');
+const playbookFiles = fs.readdirSync(playbooksDir).filter(f => f.endsWith('.md'));
+const playbookIndex = playbookFiles.map(filename => {
+  const raw = fs.readFileSync(path.join(playbooksDir, filename), 'utf8');
+  const lines = raw.split('\n');
+  // Title: first line starting with "# "
+  const titleLine = lines.find(l => l.startsWith('# ')) || '';
+  const title = titleLine.replace(/^# /, '').trim();
+  // Summary: first non-empty paragraph after the title (skip "---" separators)
+  let summary = '';
+  let pastTitle = false;
+  for (const line of lines) {
+    if (!pastTitle) { if (line.startsWith('# ')) pastTitle = true; continue; }
+    if (line.startsWith('#') || line.startsWith('---')) continue;
+    if (line.trim()) { summary = line.trim(); break; }
+  }
+  const slug = filename.replace(/\.md$/, '');
+  return { slug, title, summary, path: `playbooks/${filename}` };
+});
+fs.writeFileSync(
+  path.join(playbooksDir, 'index.json'),
+  JSON.stringify({ count: playbookIndex.length, playbooks: playbookIndex }, null, 2) + '\n'
+);
+console.log(`\n📦 Generated playbooks/index.json (${playbookIndex.length} playbooks)`);
+
 if (errors === 0) {
   const verticalNote = totalVerticalCodes > 0 ? ` + ${totalVerticalCodes} vertical codes` : '';
   console.log(`\n✅ All ${index.length} registry codes${verticalNote} passed validation!`);

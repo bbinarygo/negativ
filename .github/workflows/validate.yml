@@ -40,6 +40,7 @@ jobs:
           test -f llm-context.json && echo "✅ llm-context.json present" || exit 1
           test -f llm-context.md && echo "✅ llm-context.md present" || exit 1
           test -f packages/core/dist/index.d.ts && echo "✅ @negativ/core built" || exit 1
+          test -f playbooks/index.json && echo "✅ playbooks index present" || exit 1
 
       - name: Post PR summary comment
         if: github.event_name == 'pull_request'

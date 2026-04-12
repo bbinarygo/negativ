@@ -1,0 +1,23 @@
+{
+  "count": 3,
+  "playbooks": [
+    {
+      "slug": "accessibility-checklist",
+      "title": "Accessibility Checklist for Error States",
+      "summary": "Error states require extra care for accessibility. Users who rely on screen readers, keyboard navigation, or high contrast modes are most likely to struggle when something goes wrong.",
+      "path": "playbooks/accessibility-checklist.md"
+    },
+    {
+      "slug": "localization-tone-guide",
+      "title": "Negativ Localization & Tone Guidelines",
+      "summary": "**Core tone for negative cases** (use this in every translation):",
+      "path": "playbooks/localization-tone-guide.md"
+    },
+    {
+      "slug": "writing-error-messages",
+      "title": "Writing Error Messages",
+      "summary": "The four rules every error message must follow in Negativ.",
+      "path": "playbooks/writing-error-messages.md"
+    }
+  ]
+}
