@@ -5,6 +5,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/negativ/negativ)](https://github.com/negativ/negativ)
 [![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-green)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
+[![Docs site](https://img.shields.io/badge/docs-negativ.dev-7c3aed)](https://bbinarygo.github.io/negativ)
+[![Good first issues](https://img.shields.io/github/issues/bbinarygo/negativ/good%20first%20issue?color=7057ff)](https://github.com/bbinarygo/negativ/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
 ### Problem Space
 Today’s products are built for happy paths only. Teams pour energy into polished onboarding and success states—yet 20-40% of real user sessions hit exceptions: validation failures, network issues, permission errors, edge cases, outages.
@@ -40,6 +42,14 @@ It provides:
 - **Design System Integration Layer** — Ready-to-use mappings for Tailwind, Shadcn/UI, Material, Ant Design, Figma, Storybook + React starter
 
 **Philosophy:** Stronger core matters more than chasing platforms. We ship knowledge, not another SaaS.
+
+### First Contribution in 3 Steps
+
+| Step | Action |
+|---|---|
+| ① | [Browse the registry](https://bbinarygo.github.io/negativ/registry/) — find a gap or pick a `good first issue` |
+| ② | Fill the [contributor wizard](https://bbinarygo.github.io/negativ/contribute/) — validates your JSON client-side |
+| ③ | Submit — the wizard opens a pre-filled GitHub Issue for review |
 
 ### Quick Start
 
