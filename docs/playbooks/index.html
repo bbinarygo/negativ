@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playbooks &mdash; negativ</title>
+  <meta name="description" content="Best-practice playbooks for negative UX — error messages, accessibility, and more." />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="../">negativ</a>
+  <div class="nav-links">
+    <a href="../registry/">Registry</a>
+    <a href="../contribute/">Contribute</a>
+    <a class="nav-gh" href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">&#9733; GitHub</a>
+  </div>
+</nav>
+
+<div style="max-width:900px;margin:2rem auto;padding:0 2rem">
+  <h1 style="font-size:1.4rem;margin-bottom:0.4rem">Playbooks</h1>
+  <p style="color:var(--text2);font-size:0.9rem;margin-bottom:1.5rem">Best-practice guides for writing error messages, localization tone, and accessibility.</p>
+  <div id="playbook-grid" class="card-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+    <div class="skeleton-card skeleton"></div>
+    <div class="skeleton-card skeleton"></div>
+    <div class="skeleton-card skeleton"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>negativ</span>
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+  <a href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+<script>
+  const RAW = 'https://raw.githubusercontent.com/bbinarygo/negativ/main/';
+  async function init() {
+    const grid = document.getElementById('playbook-grid');
+    try {
+      const res = await fetch(RAW + 'playbooks/index.json');
+      const data = await res.json();
+      grid.innerHTML = data.playbooks.map(function(p) {
+        var ghURL = 'https://github.com/bbinarygo/negativ/blob/main/' + p.path;
+        return '<div class="reg-card">' +
+          '<div class="card-meta">' +
+            '<span class="code-badge" style="font-family:var(--font)">' + esc(p.title) + '</span>' +
+          '</div>' +
+          '<div class="screen-preview" style="min-height:60px">' +
+            '<div class="preview-msg" style="-webkit-line-clamp:3">' + esc(p.summary) + '</div>' +
+          '</div>' +
+          '<div class="card-actions">' +
+            '<a class="card-btn" href="' + esc(ghURL) + '" target="_blank" rel="noopener">Read &rarr;</a>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    } catch {
+      grid.innerHTML = '<div class="empty-state"><p>Could not load playbooks. <a href="https://github.com/bbinarygo/negativ/tree/main/playbooks">View on GitHub &rarr;</a></p></div>';
+    }
+  }
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
