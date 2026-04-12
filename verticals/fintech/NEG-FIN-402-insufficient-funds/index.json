@@ -1,0 +1,12 @@
+{
+  "code": "NEG-FIN-402-insufficient-funds",
+  "category": "fintech",
+  "httpStatus": 402,
+  "severity": "error",
+  "title": "Insufficient Funds",
+  "description": "The account does not have enough funds to complete this transaction.",
+  "messageKey": "fintech.insufficient-funds",
+  "recoveryAction": "Add funds to your account or use a different payment method.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" }
+}

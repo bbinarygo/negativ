@@ -1,0 +1,43 @@
+{
+  "generated": "2026-04-12T08:48:03.170Z",
+  "vertical": "fintech",
+  "count": 4,
+  "codes": [
+    {
+      "code": "NEG-FIN-402-insufficient-funds",
+      "category": "fintech",
+      "httpStatus": 402,
+      "severity": "error",
+      "title": "Insufficient Funds",
+      "messageKey": "fintech.insufficient-funds",
+      "_path": "verticals/fintech/NEG-FIN-402-insufficient-funds"
+    },
+    {
+      "code": "NEG-FIN-403-account-frozen",
+      "category": "fintech",
+      "httpStatus": 403,
+      "severity": "error",
+      "title": "Account Frozen",
+      "messageKey": "fintech.account-frozen",
+      "_path": "verticals/fintech/NEG-FIN-403-account-frozen"
+    },
+    {
+      "code": "NEG-FIN-422-kyc-failed",
+      "category": "fintech",
+      "httpStatus": 422,
+      "severity": "error",
+      "title": "Identity Verification Failed",
+      "messageKey": "fintech.kyc-failed",
+      "_path": "verticals/fintech/NEG-FIN-422-kyc-failed"
+    },
+    {
+      "code": "NEG-FIN-429-transaction-limit",
+      "category": "fintech",
+      "httpStatus": 429,
+      "severity": "warning",
+      "title": "Transaction Limit Reached",
+      "messageKey": "fintech.transaction-limit",
+      "_path": "verticals/fintech/NEG-FIN-429-transaction-limit"
+    }
+  ]
+}

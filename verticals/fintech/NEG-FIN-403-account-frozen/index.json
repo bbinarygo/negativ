@@ -1,0 +1,12 @@
+{
+  "code": "NEG-FIN-403-account-frozen",
+  "category": "fintech",
+  "httpStatus": 403,
+  "severity": "error",
+  "title": "Account Frozen",
+  "description": "Your account has been temporarily frozen.",
+  "messageKey": "fintech.account-frozen",
+  "recoveryAction": "Contact support to resolve this.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

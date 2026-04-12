@@ -1,0 +1,12 @@
+{
+  "code": "NEG-FIN-429-transaction-limit",
+  "category": "fintech",
+  "httpStatus": 429,
+  "severity": "warning",
+  "title": "Transaction Limit Reached",
+  "description": "You've reached your transaction limit for this period.",
+  "messageKey": "fintech.transaction-limit",
+  "recoveryAction": "Try again after the limit resets, or contact support to adjust your limit.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

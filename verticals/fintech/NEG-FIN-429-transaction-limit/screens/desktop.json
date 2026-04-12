@@ -1,0 +1,10 @@
+{
+  "extends": "client-error",
+  "copyMessageKey": "fintech.transaction-limit",
+  "layout": "inline",
+  "designSystemIntegrations": {
+    "tailwind": "border border-yellow-300 bg-yellow-50 text-yellow-800 rounded p-4",
+    "shadcn": "Alert variant='warning'",
+    "material": "Alert severity='warning'"
+  }
+}

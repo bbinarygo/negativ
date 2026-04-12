@@ -1,0 +1,12 @@
+{
+  "code": "NEG-FIN-422-kyc-failed",
+  "category": "fintech",
+  "httpStatus": 422,
+  "severity": "error",
+  "title": "Identity Verification Failed",
+  "description": "We couldn't verify your identity.",
+  "messageKey": "fintech.kyc-failed",
+  "recoveryAction": "Check your details are correct and try again, or contact support.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" }
+}
