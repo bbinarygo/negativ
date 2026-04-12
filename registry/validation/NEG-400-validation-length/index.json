@@ -1,0 +1,12 @@
+{
+    "code": "NEG-400-validation-length",
+    "category": "validation",
+    "httpStatus": 400,
+    "severity": "error",
+    "title": "Input Too Long",
+    "description": "The submitted value exceeds the maximum allowed length.",
+    "messageKey": "validation.length",
+    "recoveryAction": "Shorten your input to meet the character limit.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

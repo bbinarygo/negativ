@@ -1,0 +1,8 @@
+{
+    "extends": "server-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "Down for Maintenance",
+    "copyMessageKey": "server.unavailable",
+    "illustration": "tools / hard hat icon",
+    "cta": "Check status page"
+}

@@ -1,0 +1,12 @@
+{
+    "code": "NEG-409-resource-conflict",
+    "category": "resource",
+    "httpStatus": 409,
+    "severity": "error",
+    "title": "Already Exists",
+    "description": "The resource being created conflicts with an existing one.",
+    "messageKey": "resource.conflict",
+    "recoveryAction": "Use a different name or identifier.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

@@ -1,0 +1,18 @@
+{
+    "extends": "network-error",
+    "layout": "banner",
+    "copyTitle": "Slow Connection",
+    "copyMessageKey": "network.slow",
+    "illustration": "wifi signal with one or two bars",
+    "cta": "Dismiss",
+    "patterns": {
+        "banner": { "description": "Non-blocking top banner", "usage": "Background data loading" }
+    },
+    "figmaNote": "Use warning amber — non-blocking, informational.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex items-center gap-3 bg-amber-50 text-amber-800 px-4 py-2 rounded\"",
+        "shadcn": "<Alert variant=\"default\"><AlertDescription>{t('network.slow')}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"warning\">{t('network.slow')}</Alert>",
+        "ant": "<Alert message={t('network.slow')} type=\"warning\" showIcon closable />"
+    }
+}

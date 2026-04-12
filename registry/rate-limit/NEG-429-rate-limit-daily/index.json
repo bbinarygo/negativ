@@ -1,0 +1,12 @@
+{
+    "code": "NEG-429-rate-limit-daily",
+    "category": "rate-limit",
+    "httpStatus": 429,
+    "severity": "warning",
+    "title": "Daily Limit Reached",
+    "description": "The user has exhausted their daily quota.",
+    "messageKey": "rate-limit.daily",
+    "recoveryAction": "Come back tomorrow or upgrade your plan.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

@@ -1,0 +1,8 @@
+{
+    "extends": "server-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "Gateway Timeout",
+    "copyMessageKey": "timeout.gateway",
+    "illustration": "server with clock icon",
+    "cta": "Try again"
+}

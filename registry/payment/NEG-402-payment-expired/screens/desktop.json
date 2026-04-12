@@ -1,0 +1,19 @@
+{
+    "extends": "client-error",
+    "layout": "inline form error",
+    "copyTitle": "Card Expired",
+    "copyMessageKey": "payment.expired",
+    "illustration": "credit card with X or expired stamp",
+    "cta": "Update payment details",
+    "patterns": {
+        "inline": { "description": "Inline error on card expiry field", "usage": "Checkout flows" },
+        "modal": { "description": "Update card modal", "usage": "Subscription renewal" }
+    },
+    "figmaNote": "Sensitive context — keep tone calm, avoid blame.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+        "shadcn": "<p className=\"text-sm text-destructive\">{t('payment.expired')}</p>",
+        "material": "<FormHelperText error>{t('payment.expired')}</FormHelperText>",
+        "ant": "<Form.Item validateStatus=\"error\" help={t('payment.expired')} />"
+    }
+}

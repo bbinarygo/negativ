@@ -1,0 +1,8 @@
+{
+    "extends": "auth-error",
+    "layout": "banner",
+    "copyTitle": "Read-Only Access",
+    "copyMessageKey": "permission.read-only",
+    "illustration": "eye icon (view only)",
+    "cta": "Request access"
+}

@@ -1,0 +1,19 @@
+{
+    "extends": "server-error",
+    "layout": "centered illustration",
+    "copyTitle": "Gateway Timeout",
+    "copyMessageKey": "timeout.gateway",
+    "illustration": "server with clock or spinning loader",
+    "cta": "Try again",
+    "patterns": {
+        "fullPage": { "description": "Full-page timeout with retry", "usage": "Page-level timeouts" },
+        "inline": { "description": "Inline retry within a widget", "usage": "Dashboard components, data tables" }
+    },
+    "figmaNote": "Pair with a countdown or retry spinner.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex flex-col items-center gap-6 text-slate-700 bg-white p-10 rounded-3xl shadow-sm\"",
+        "shadcn": "<Alert variant=\"destructive\"><AlertTitle>Gateway Timeout</AlertTitle><AlertDescription>{t('timeout.gateway')}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"error\">{t('timeout.gateway')}</Alert>",
+        "ant": "<Alert message=\"Gateway Timeout\" description={t('timeout.gateway')} type=\"error\" showIcon />"
+    }
+}

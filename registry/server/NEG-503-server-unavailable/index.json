@@ -1,0 +1,12 @@
+{
+    "code": "NEG-503-server-unavailable",
+    "category": "server",
+    "httpStatus": 503,
+    "severity": "warning",
+    "title": "Down for Maintenance",
+    "description": "The service is temporarily unavailable due to planned maintenance.",
+    "messageKey": "server.unavailable",
+    "recoveryAction": "We'll be back shortly. Check our status page for updates.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

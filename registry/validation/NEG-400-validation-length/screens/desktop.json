@@ -1,0 +1,18 @@
+{
+    "extends": "client-error",
+    "layout": "inline form error",
+    "copyTitle": "Input Too Long",
+    "copyMessageKey": "validation.length",
+    "illustration": "character counter indicator",
+    "cta": "Shorten your input",
+    "patterns": {
+        "inline": { "description": "Inline beneath input with character count", "usage": "Text inputs with max length" }
+    },
+    "figmaNote": "Pair with a character counter component.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+        "shadcn": "<p className=\"text-sm text-destructive\">{t('validation.length', { maxLength })}</p>",
+        "material": "<FormHelperText error>{t('validation.length', { maxLength })}</FormHelperText>",
+        "ant": "<Form.Item validateStatus=\"error\" help={t('validation.length', { maxLength })} />"
+    }
+}

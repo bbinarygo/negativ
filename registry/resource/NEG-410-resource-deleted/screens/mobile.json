@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "No Longer Available",
+    "copyMessageKey": "resource.deleted",
+    "illustration": "tombstone or empty box icon",
+    "cta": "Go back"
+}

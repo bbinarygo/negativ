@@ -1,0 +1,18 @@
+{
+    "extends": "client-error",
+    "layout": "inline form error",
+    "copyTitle": "Conflicting Input",
+    "copyMessageKey": "validation.conflict",
+    "illustration": "warning icon near input field",
+    "cta": "Try a different value",
+    "patterns": {
+        "inline": { "description": "Inline beneath the input field", "usage": "Form fields with uniqueness constraints" }
+    },
+    "figmaNote": "Duplicate component → variants for light/dark + RTL.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+        "shadcn": "<p className=\"text-sm text-destructive\">{t('validation.conflict')}</p>",
+        "material": "<FormHelperText error>{t('validation.conflict')}</FormHelperText>",
+        "ant": "<Form.Item validateStatus=\"error\" help={t('validation.conflict')} />"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "code": "NEG-403-permission-read-only",
+    "category": "permission",
+    "httpStatus": 403,
+    "severity": "info",
+    "title": "Read-Only Access",
+    "description": "The user can view but not modify this resource.",
+    "messageKey": "permission.read-only",
+    "recoveryAction": "Contact your administrator to request edit access.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "status", "ariaLive": "polite" }
+}

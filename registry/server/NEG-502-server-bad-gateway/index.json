@@ -1,0 +1,12 @@
+{
+    "code": "NEG-502-server-bad-gateway",
+    "category": "server",
+    "httpStatus": 502,
+    "severity": "error",
+    "title": "Service Unavailable",
+    "description": "The server received an invalid response from an upstream service.",
+    "messageKey": "server.bad-gateway",
+    "recoveryAction": "Try again in a few minutes.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" }
+}

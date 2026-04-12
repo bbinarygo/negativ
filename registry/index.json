@@ -1,6 +1,6 @@
 {
-  "generated": "2026-04-11T17:50:11.621Z",
-  "count": 10,
+  "generated": "2026-04-12T02:07:39.185Z",
+  "count": 22,
   "codes": [
     {
       "code": "NEG-400-validation-format",
@@ -12,6 +12,15 @@
       "_path": "registry/validation/NEG-400-validation-format"
     },
     {
+      "code": "NEG-400-validation-length",
+      "category": "validation",
+      "httpStatus": 400,
+      "severity": "error",
+      "title": "Input Too Long",
+      "messageKey": "validation.length",
+      "_path": "registry/validation/NEG-400-validation-length"
+    },
+    {
       "code": "NEG-400-validation-required",
       "category": "validation",
       "httpStatus": 400,
@@ -19,6 +28,24 @@
       "title": "Required Field Missing",
       "messageKey": "validation.required",
       "_path": "registry/validation/NEG-400-validation-required"
+    },
+    {
+      "code": "NEG-422-validation-conflict",
+      "category": "validation",
+      "httpStatus": 422,
+      "severity": "error",
+      "title": "Conflicting Input",
+      "messageKey": "validation.conflict",
+      "_path": "registry/validation/NEG-422-validation-conflict"
+    },
+    {
+      "code": "NEG-401-auth-session-expired",
+      "category": "auth",
+      "httpStatus": 401,
+      "severity": "warning",
+      "title": "Session Expired",
+      "messageKey": "auth.session-expired",
+      "_path": "registry/auth/NEG-401-auth-session-expired"
     },
     {
       "code": "NEG-401-auth-unauthorized",
@@ -39,6 +66,15 @@
       "_path": "registry/permission/NEG-403-permission-forbidden"
     },
     {
+      "code": "NEG-403-permission-read-only",
+      "category": "permission",
+      "httpStatus": 403,
+      "severity": "info",
+      "title": "Read-Only Access",
+      "messageKey": "permission.read-only",
+      "_path": "registry/permission/NEG-403-permission-read-only"
+    },
+    {
       "code": "NEG-404-resource-not-found",
       "category": "resource",
       "httpStatus": 404,
@@ -46,6 +82,24 @@
       "title": "Not Found",
       "messageKey": "resource.not-found",
       "_path": "registry/resource/NEG-404-resource-not-found"
+    },
+    {
+      "code": "NEG-409-resource-conflict",
+      "category": "resource",
+      "httpStatus": 409,
+      "severity": "error",
+      "title": "Already Exists",
+      "messageKey": "resource.conflict",
+      "_path": "registry/resource/NEG-409-resource-conflict"
+    },
+    {
+      "code": "NEG-410-resource-deleted",
+      "category": "resource",
+      "httpStatus": 410,
+      "severity": "error",
+      "title": "No Longer Available",
+      "messageKey": "resource.deleted",
+      "_path": "registry/resource/NEG-410-resource-deleted"
     },
     {
       "code": "NEG-408-timeout",
@@ -57,6 +111,15 @@
       "_path": "registry/timeout/NEG-408-timeout"
     },
     {
+      "code": "NEG-504-timeout-gateway",
+      "category": "timeout",
+      "httpStatus": 504,
+      "severity": "error",
+      "title": "Gateway Timeout",
+      "messageKey": "timeout.gateway",
+      "_path": "registry/timeout/NEG-504-timeout-gateway"
+    },
+    {
       "code": "NEG-429-rate-limit",
       "category": "rate-limit",
       "httpStatus": 429,
@@ -64,6 +127,15 @@
       "title": "Too Many Requests",
       "messageKey": "rate-limit.exceeded",
       "_path": "registry/rate-limit/NEG-429-rate-limit"
+    },
+    {
+      "code": "NEG-429-rate-limit-daily",
+      "category": "rate-limit",
+      "httpStatus": 429,
+      "severity": "warning",
+      "title": "Daily Limit Reached",
+      "messageKey": "rate-limit.daily",
+      "_path": "registry/rate-limit/NEG-429-rate-limit-daily"
     },
     {
       "code": "NEG-500-server-internal",
@@ -75,6 +147,24 @@
       "_path": "registry/server/NEG-500-server-internal"
     },
     {
+      "code": "NEG-502-server-bad-gateway",
+      "category": "server",
+      "httpStatus": 502,
+      "severity": "error",
+      "title": "Service Unavailable",
+      "messageKey": "server.bad-gateway",
+      "_path": "registry/server/NEG-502-server-bad-gateway"
+    },
+    {
+      "code": "NEG-503-server-unavailable",
+      "category": "server",
+      "httpStatus": 503,
+      "severity": "warning",
+      "title": "Down for Maintenance",
+      "messageKey": "server.unavailable",
+      "_path": "registry/server/NEG-503-server-unavailable"
+    },
+    {
       "code": "NEG-000-network-offline",
       "category": "network",
       "httpStatus": null,
@@ -84,6 +174,15 @@
       "_path": "registry/network/NEG-000-network-offline"
     },
     {
+      "code": "NEG-000-network-slow",
+      "category": "network",
+      "httpStatus": null,
+      "severity": "warning",
+      "title": "Slow Connection",
+      "messageKey": "network.slow",
+      "_path": "registry/network/NEG-000-network-slow"
+    },
+    {
       "code": "NEG-402-payment-declined",
       "category": "payment",
       "httpStatus": 402,
@@ -91,6 +190,15 @@
       "title": "Payment Declined",
       "messageKey": "payment.declined",
       "_path": "registry/payment/NEG-402-payment-declined"
+    },
+    {
+      "code": "NEG-402-payment-expired",
+      "category": "payment",
+      "httpStatus": 402,
+      "severity": "error",
+      "title": "Card Expired",
+      "messageKey": "payment.expired",
+      "_path": "registry/payment/NEG-402-payment-expired"
     }
   ]
 }

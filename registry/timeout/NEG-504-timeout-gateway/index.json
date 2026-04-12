@@ -1,0 +1,12 @@
+{
+    "code": "NEG-504-timeout-gateway",
+    "category": "timeout",
+    "httpStatus": 504,
+    "severity": "error",
+    "title": "Gateway Timeout",
+    "description": "An upstream service did not respond in time.",
+    "messageKey": "timeout.gateway",
+    "recoveryAction": "Wait a moment and try again.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" }
+}

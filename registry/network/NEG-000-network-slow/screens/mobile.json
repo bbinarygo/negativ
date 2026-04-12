@@ -1,0 +1,8 @@
+{
+    "extends": "network-error",
+    "layout": "banner",
+    "copyTitle": "Slow Connection",
+    "copyMessageKey": "network.slow",
+    "illustration": "wifi signal with one or two bars",
+    "cta": "Dismiss"
+}

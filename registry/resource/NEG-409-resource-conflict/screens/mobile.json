@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "inline or modal",
+    "copyTitle": "Already Exists",
+    "copyMessageKey": "resource.conflict",
+    "illustration": "duplicate documents icon",
+    "cta": "Use a different name"
+}

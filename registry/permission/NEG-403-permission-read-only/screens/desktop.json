@@ -1,0 +1,18 @@
+{
+    "extends": "auth-error",
+    "layout": "banner",
+    "copyTitle": "Read-Only Access",
+    "copyMessageKey": "permission.read-only",
+    "illustration": "eye icon (view only)",
+    "cta": "Request access",
+    "patterns": {
+        "banner": { "description": "Persistent top-of-page banner", "usage": "Shared documents, admin views" }
+    },
+    "figmaNote": "Use info-level color (blue), not error red.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex items-center gap-3 bg-blue-50 text-blue-800 px-4 py-2 rounded\"",
+        "shadcn": "<Alert variant=\"default\"><AlertDescription>{t('permission.read-only')}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"info\">{t('permission.read-only')}</Alert>",
+        "ant": "<Alert message={t('permission.read-only')} type=\"info\" showIcon />"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "inline form error",
+    "copyTitle": "Card Expired",
+    "copyMessageKey": "payment.expired",
+    "illustration": "credit card with expired stamp",
+    "cta": "Update payment details"
+}

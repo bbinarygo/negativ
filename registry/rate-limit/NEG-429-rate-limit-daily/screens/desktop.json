@@ -1,0 +1,19 @@
+{
+    "extends": "client-error",
+    "layout": "centered illustration",
+    "copyTitle": "Daily Limit Reached",
+    "copyMessageKey": "rate-limit.daily",
+    "illustration": "gauge at full or bucket overflowing",
+    "cta": "Upgrade plan",
+    "patterns": {
+        "banner": { "description": "Persistent banner warning as limit approaches", "usage": "API quota dashboards" },
+        "fullPage": { "description": "Full block when limit is hit", "usage": "Freemium products" }
+    },
+    "figmaNote": "Use warning-level color (amber), not error red.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"flex flex-col items-center gap-6 text-amber-700 bg-amber-50 p-10 rounded-3xl\"",
+        "shadcn": "<Alert variant=\"default\"><AlertTitle>Daily Limit Reached</AlertTitle><AlertDescription>{t('rate-limit.daily')}</AlertDescription></Alert>",
+        "material": "<Alert severity=\"warning\">{t('rate-limit.daily')}</Alert>",
+        "ant": "<Alert message=\"Daily Limit Reached\" description={t('rate-limit.daily')} type=\"warning\" showIcon />"
+    }
+}

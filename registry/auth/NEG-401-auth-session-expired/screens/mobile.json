@@ -1,0 +1,8 @@
+{
+    "extends": "auth-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "Session Expired",
+    "copyMessageKey": "auth.session-expired",
+    "illustration": "clock or lock with timer icon",
+    "cta": "Sign in again"
+}

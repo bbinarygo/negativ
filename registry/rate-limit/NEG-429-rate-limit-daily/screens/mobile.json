@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "Daily Limit Reached",
+    "copyMessageKey": "rate-limit.daily",
+    "illustration": "gauge at full",
+    "cta": "Upgrade plan"
+}

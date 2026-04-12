@@ -1,0 +1,15 @@
+{
+    "code": "NEG-401-auth-session-expired",
+    "category": "auth",
+    "httpStatus": 401,
+    "severity": "warning",
+    "title": "Session Expired",
+    "description": "The user's session token has expired and they need to re-authenticate.",
+    "messageKey": "auth.session-expired",
+    "recoveryAction": "Sign in again to continue.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+    }
+}

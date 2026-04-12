@@ -1,0 +1,12 @@
+{
+    "code": "NEG-422-validation-conflict",
+    "category": "validation",
+    "httpStatus": 422,
+    "severity": "error",
+    "title": "Conflicting Input",
+    "description": "The submitted value conflicts with an existing entry.",
+    "messageKey": "validation.conflict",
+    "recoveryAction": "Use a different value that doesn't conflict with existing entries.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

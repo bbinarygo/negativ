@@ -1,0 +1,19 @@
+{
+    "extends": "client-error",
+    "layout": "inline or modal",
+    "copyTitle": "Already Exists",
+    "copyMessageKey": "resource.conflict",
+    "illustration": "duplicate documents icon",
+    "cta": "Use a different name",
+    "patterns": {
+        "inline": { "description": "Inline error on name/identifier field", "usage": "Username, project name, slug creation" },
+        "modal": { "description": "Confirmation dialog before overwrite", "usage": "File upload, import flows" }
+    },
+    "figmaNote": "Duplicate component → variants for light/dark.",
+    "designSystemIntegrations": {
+        "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+        "shadcn": "<p className=\"text-sm text-destructive\">{t('resource.conflict')}</p>",
+        "material": "<FormHelperText error>{t('resource.conflict')}</FormHelperText>",
+        "ant": "<Form.Item validateStatus=\"error\" help={t('resource.conflict')} />"
+    }
+}

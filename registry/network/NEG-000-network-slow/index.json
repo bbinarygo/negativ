@@ -1,0 +1,12 @@
+{
+    "code": "NEG-000-network-slow",
+    "category": "network",
+    "httpStatus": null,
+    "severity": "warning",
+    "title": "Slow Connection",
+    "description": "The user's network is connected but too slow to complete the request.",
+    "messageKey": "network.slow",
+    "recoveryAction": "Move closer to your router or switch to a better network.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "status", "ariaLive": "polite" }
+}

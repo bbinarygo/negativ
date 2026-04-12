@@ -1,0 +1,12 @@
+{
+    "code": "NEG-410-resource-deleted",
+    "category": "resource",
+    "httpStatus": 410,
+    "severity": "error",
+    "title": "No Longer Available",
+    "description": "The resource existed but has been permanently deleted.",
+    "messageKey": "resource.deleted",
+    "recoveryAction": "Go back or search for an alternative.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}

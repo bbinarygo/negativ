@@ -1,0 +1,8 @@
+{
+    "extends": "server-error",
+    "layout": "full-screen illustration",
+    "copyTitle": "Service Unavailable",
+    "copyMessageKey": "server.bad-gateway",
+    "illustration": "broken server icon",
+    "cta": "Try again"
+}

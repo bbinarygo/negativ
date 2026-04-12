@@ -1,0 +1,8 @@
+{
+    "extends": "client-error",
+    "layout": "inline form error",
+    "copyTitle": "Conflicting Input",
+    "copyMessageKey": "validation.conflict",
+    "illustration": "warning icon near input field",
+    "cta": "Try a different value"
+}

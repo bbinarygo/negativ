@@ -1,0 +1,12 @@
+{
+    "code": "NEG-402-payment-expired",
+    "category": "payment",
+    "httpStatus": 402,
+    "severity": "error",
+    "title": "Card Expired",
+    "description": "The payment card used has passed its expiration date.",
+    "messageKey": "payment.expired",
+    "recoveryAction": "Update your payment details with a valid card.",
+    "platforms": ["web", "mobile", "tablet"],
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+}
