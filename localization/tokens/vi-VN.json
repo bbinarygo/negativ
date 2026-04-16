@@ -1,0 +1,14 @@
+{
+  "validation.required": "Quý khách vui lòng điền vào trường bắt buộc.",
+  "validation.format": "Quý khách vui lòng nhập {field} hợp lệ (ví dụ: email@example.com).",
+  "validation.length": "Trường này quá dài. Quý khách vui lòng sử dụng tối đa {maxLength} ký tự.",
+  "auth.unauthorized": "Quý khách vui lòng đăng nhập để tiếp tục.",
+  "auth.session-expired": "Phiên làm việc của Quý khách đã hết hạn. Vui lòng đăng nhập lại.",
+  "permission.forbidden": "Xin lỗi, Quý khách không có quyền truy cập tính năng này.",
+  "permission.read-only": "Quý khách chỉ có quyền xem và không thể thực hiện thay đổi.",
+  "resource.not-found": "Chúng tôi không tìm thấy nội dung Quý khách yêu cầu.",
+  "rate-limit.exceeded": "Quý khách vui lòng chờ một lúc trước khi thử lại.",
+  "rate-limit.daily": "Quý khách đã đạt giới hạn hôm nay. Hãy quay lại vào ngày mai.",
+  "payment.declined": "Thanh toán của Quý khách bị từ chối. Vui lòng thử phương thức thanh toán khác.",
+  "payment.expired": "Thẻ của Quý khách đã hết hạn. Vui lòng cập nhật thông tin thanh toán."
+}
