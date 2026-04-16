@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-12T02:47:52.798Z",
+  "generated": "2026-04-16T18:29:38.758Z",
   "count": 22,
   "codes": [
     {
@@ -45,7 +45,11 @@
       "severity": "warning",
       "title": "Session Expired",
       "messageKey": "auth.session-expired",
-      "_path": "registry/auth/NEG-401-auth-session-expired"
+      "_path": "registry/auth/NEG-401-auth-session-expired",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-401-auth-unauthorized",
@@ -54,7 +58,11 @@
       "severity": "error",
       "title": "Sign in Required",
       "messageKey": "auth.unauthorized",
-      "_path": "registry/auth/NEG-401-auth-unauthorized"
+      "_path": "registry/auth/NEG-401-auth-unauthorized",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-403-permission-forbidden",
@@ -189,7 +197,11 @@
       "severity": "error",
       "title": "Payment Declined",
       "messageKey": "payment.declined",
-      "_path": "registry/payment/NEG-402-payment-declined"
+      "_path": "registry/payment/NEG-402-payment-declined",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-402-payment-expired",
@@ -198,7 +210,15 @@
       "severity": "error",
       "title": "Card Expired",
       "messageKey": "payment.expired",
-      "_path": "registry/payment/NEG-402-payment-expired"
+      "_path": "registry/payment/NEG-402-payment-expired",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     }
+  ],
+  "availableLocales": [
+    "en-US",
+    "vi-VN"
   ]
 }
