@@ -1,5 +1,5 @@
 # Negativ Error Code Registry — LLM Context Pack
-_Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https://github.com/bbinarygo/negativ_
+_Generated: 2026-04-16T18:34:27.171Z · 22 codes · 6 languages · 2 locale variants (en-US, vi-VN) · Source: https://github.com/bbinarygo/negativ_
 
 ## Error Codes (22)
 
@@ -40,6 +40,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "请输入有效的{field}（例如：email@example.com）。"
   - ar: "يرجى إدخال {field} صحيح (مثال: email@example.com)."
   - vi: "Vui lòng nhập {field} hợp lệ (ví dụ: email@example.com)."
+  - en-US: "Please enter a valid {field} (e.g. email@example.com)."
+  - vi-VN: "Quý khách vui lòng nhập {field} hợp lệ (ví dụ: email@example.com)."
 
 ### NEG-400-validation-length — Input Too Long
 - **Description:** The submitted value exceeds the maximum allowed length.
@@ -52,6 +54,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "此字段过长，请使用{maxLength}个字符或更少。"
   - ar: "هذا الحقل طويل جداً. يرجى استخدام {maxLength} حرف أو أقل."
   - vi: "Trường này quá dài. Vui lòng sử dụng tối đa {maxLength} ký tự."
+  - en-US: "This field is too long. Please use {maxLength} characters or fewer."
+  - vi-VN: "Trường này quá dài. Quý khách vui lòng sử dụng tối đa {maxLength} ký tự."
 
 ### NEG-400-validation-required — Required Field Missing
 - **Description:** One or more required fields were not provided.
@@ -65,6 +69,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "请填写必填字段。"
   - ar: "يرجى ملء الحقل المطلوب."
   - vi: "Vui lòng điền vào trường bắt buộc."
+  - en-US: "Please fill in the required field{count, plural, one {} other {s}}."
+  - vi-VN: "Quý khách vui lòng điền vào trường bắt buộc."
 
 ### NEG-422-validation-conflict — Conflicting Input
 - **Description:** The submitted value conflicts with an existing entry.
@@ -77,6 +83,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "此值与现有条目冲突，请使用不同的值。"
   - ar: "هذه القيمة تتعارض مع إدخال موجود. يرجى استخدام قيمة مختلفة."
   - vi: "Giá trị này xung đột với một mục đã tồn tại. Vui lòng sử dụng giá trị khác."
+  - en-US: "This value conflicts with an existing entry. Please use a different one."
+  - vi-VN: "Giá trị này xung đột với một mục đã tồn tại. Vui lòng sử dụng giá trị khác."
 
 ### NEG-401-auth-session-expired — Session Expired
 - **Description:** The user's session token has expired and they need to re-authenticate.
@@ -89,6 +97,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "您的会话已过期，请重新登录。"
   - ar: "انتهت صلاحية جلستك. يرجى تسجيل الدخول مجدداً."
   - vi: "Phiên đăng nhập của bạn đã hết hạn. Vui lòng đăng nhập lại."
+  - en-US: "Your session has expired for your security. Please sign in again. Under the CCPA, you may request access to your account data at any time."
+  - vi-VN: "Phiên làm việc của Quý khách đã hết hạn vì lý do bảo mật. Vui lòng đăng nhập lại. Quý khách có thể yêu cầu truy cập dữ liệu tài khoản bất kỳ lúc nào."
 
 ### NEG-401-auth-unauthorized — Sign in Required
 - **Description:** You need to be signed in to access this resource.
@@ -102,6 +112,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "请登录后继续。"
   - ar: "يرجى تسجيل الدخول للمتابعة."
   - vi: "Vui lòng đăng nhập để tiếp tục."
+  - en-US: "Please sign in to continue. Under the California Consumer Privacy Act (CCPA), you have the right to know what personal data we collect and how it is used."
+  - vi-VN: "Quý khách vui lòng đăng nhập để tiếp tục. Theo Nghị định bảo vệ dữ liệu cá nhân, Quý khách có quyền yêu cầu thông tin về dữ liệu cá nhân được thu thập."
 
 ### NEG-403-permission-forbidden — Access Denied
 - **Description:** You do not have permission to perform this action.
@@ -115,6 +127,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "抱歉，您无权访问此功能。"
   - ar: "عذراً، ليس لديك صلاحية الوصول إلى هذه الميزة."
   - vi: "Xin lỗi, bạn không có quyền truy cập tính năng này."
+  - en-US: "You don't have access to this feature. If you believe this is an error, contact your administrator."
+  - vi-VN: "Xin lỗi, Quý khách không có quyền truy cập tính năng này."
 
 ### NEG-403-permission-read-only — Read-Only Access
 - **Description:** The user can view but not modify this resource.
@@ -127,6 +141,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "您只有只读权限，无法进行更改。"
   - ar: "لديك صلاحية القراءة فقط ولا يمكنك إجراء تغييرات."
   - vi: "Bạn chỉ có quyền xem và không thể thực hiện thay đổi."
+  - en-US: "You have read-only access and cannot make changes here."
+  - vi-VN: "Quý khách chỉ có quyền xem và không thể thực hiện thay đổi."
 
 ### NEG-404-resource-not-found — Not Found
 - **Description:** The requested resource could not be located.
@@ -140,6 +156,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "我们找不到您要找的内容。"
   - ar: "لم نتمكن من العثور على ما تبحث عنه."
   - vi: "Chúng tôi không tìm thấy nội dung bạn yêu cầu."
+  - en-US: "We couldn't find what you were looking for."
+  - vi-VN: "Chúng tôi không tìm thấy nội dung Quý khách yêu cầu."
 
 ### NEG-409-resource-conflict — Already Exists
 - **Description:** The resource being created conflicts with an existing one.
@@ -152,6 +170,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "此内容已存在，请使用不同的名称或标识符。"
   - ar: "هذا العنصر موجود بالفعل. يرجى استخدام اسم أو معرّف مختلف."
   - vi: "Nội dung này đã tồn tại. Vui lòng sử dụng tên hoặc mã định danh khác."
+  - en-US: "This already exists. Please use a different name or identifier."
+  - vi-VN: "Nội dung này đã tồn tại. Vui lòng sử dụng tên hoặc mã định danh khác."
 
 ### NEG-410-resource-deleted — No Longer Available
 - **Description:** The resource existed but has been permanently deleted.
@@ -164,6 +184,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "此项目已不再可用。"
   - ar: "هذا العنصر لم يعد متاحاً."
   - vi: "Mục này không còn khả dụng."
+  - en-US: "This item is no longer available."
+  - vi-VN: "Mục này không còn khả dụng."
 
 ### NEG-408-timeout — Request Timed Out
 - **Description:** The server took too long to respond.
@@ -177,6 +199,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "请求时间过长，请重试。"
   - ar: "استغرق الطلب وقتاً طويلاً. يرجى المحاولة مرة أخرى."
   - vi: "Yêu cầu mất quá nhiều thời gian. Vui lòng thử lại."
+  - en-US: "The request took too long. Please try again."
+  - vi-VN: "Yêu cầu mất quá nhiều thời gian. Vui lòng thử lại."
 
 ### NEG-504-timeout-gateway — Gateway Timeout
 - **Description:** An upstream service did not respond in time.
@@ -189,6 +213,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "上游服务响应超时，请稍后重试。"
   - ar: "يستغرق أحد الخدمات وقتاً طويلاً للاستجابة. يرجى المحاولة مجدداً قريباً."
   - vi: "Một dịch vụ upstream đang phản hồi quá chậm. Vui lòng thử lại sau."
+  - en-US: "A upstream service is taking too long to respond. Please try again shortly."
+  - vi-VN: "Một dịch vụ upstream đang phản hồi quá chậm. Vui lòng thử lại sau."
 
 ### NEG-429-rate-limit — Too Many Requests
 - **Description:** You have exceeded the allowed number of requests.
@@ -202,6 +228,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "请稍等片刻后再试。"
   - ar: "يرجى الانتظار قليلاً قبل المحاولة مرة أخرى."
   - vi: "Vui lòng chờ một lúc trước khi thử lại."
+  - en-US: "Please wait a few moments before trying again."
+  - vi-VN: "Quý khách vui lòng chờ một lúc trước khi thử lại."
 
 ### NEG-429-rate-limit-daily — Daily Limit Reached
 - **Description:** The user has exhausted their daily quota.
@@ -214,6 +242,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "您已达到今日限额，请明天再来。"
   - ar: "لقد وصلت إلى حدك اليومي. عد غداً."
   - vi: "Bạn đã đạt giới hạn hôm nay. Hãy quay lại vào ngày mai."
+  - en-US: "You've reached today's limit. Come back tomorrow."
+  - vi-VN: "Quý khách đã đạt giới hạn hôm nay. Hãy quay lại vào ngày mai."
 
 ### NEG-500-server-internal — Something Went Wrong
 - **Description:** An unexpected server error occurred.
@@ -227,6 +257,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "很抱歉，我们这边出了问题。"
   - ar: "عذراً، حدث خطأ من جانبنا."
   - vi: "Xin lỗi, đã xảy ra lỗi từ phía chúng tôi."
+  - en-US: "We're sorry, something went wrong on our end."
+  - vi-VN: "Xin lỗi, đã xảy ra lỗi từ phía chúng tôi."
 
 ### NEG-502-server-bad-gateway — Service Unavailable
 - **Description:** The server received an invalid response from an upstream service.
@@ -239,6 +271,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "我们的某个服务目前不可用，我们正在处理中。"
   - ar: "أحد خدماتنا غير متاح حالياً. نحن نعمل على حل المشكلة."
   - vi: "Một trong các dịch vụ của chúng tôi hiện không khả dụng. Chúng tôi đang xử lý."
+  - en-US: "One of our services is currently unavailable. We're looking into it."
+  - vi-VN: "Một trong các dịch vụ của chúng tôi hiện không khả dụng. Chúng tôi đang xử lý."
 
 ### NEG-503-server-unavailable — Down for Maintenance
 - **Description:** The service is temporarily unavailable due to planned maintenance.
@@ -251,6 +285,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "我们正在进行计划维护，即将恢复。"
   - ar: "نحن في وضع الصيانة المجدولة. سنعود قريباً."
   - vi: "Hệ thống đang bảo trì theo lịch. Chúng tôi sẽ sớm trở lại."
+  - en-US: "We're down for scheduled maintenance. We'll be back shortly."
+  - vi-VN: "Hệ thống đang bảo trì theo lịch. Chúng tôi sẽ sớm trở lại."
 
 ### NEG-000-network-offline — No Internet Connection
 - **Description:** Your device appears to be offline.
@@ -264,6 +300,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "您似乎已离线，请检查您的网络连接。"
   - ar: "يبدو أنك غير متصل بالإنترنت. تحقق من اتصالك."
   - vi: "Có vẻ bạn đang ngoại tuyến. Hãy kiểm tra kết nối mạng."
+  - en-US: "It looks like you're offline. Check your connection."
+  - vi-VN: "Có vẻ bạn đang ngoại tuyến. Hãy kiểm tra kết nối mạng."
 
 ### NEG-000-network-slow — Slow Connection
 - **Description:** The user's network is connected but too slow to complete the request.
@@ -276,6 +314,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "您的网络连接较慢，可能需要更长时间。"
   - ar: "اتصالك بطيء. قد يستغرق هذا وقتاً أطول من المعتاد."
   - vi: "Kết nối của bạn đang chậm. Quá trình này có thể mất nhiều thời gian hơn bình thường."
+  - en-US: "Your connection is slow. This may take longer than usual."
+  - vi-VN: "Kết nối của bạn đang chậm. Quá trình này có thể mất nhiều thời gian hơn bình thường."
 
 ### NEG-402-payment-declined — Payment Declined
 - **Description:** Your payment method was declined by the provider.
@@ -289,6 +329,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "您的付款被拒绝，请尝试其他付款方式。"
   - ar: "تم رفض دفعتك. يرجى تجربة طريقة دفع أخرى."
   - vi: "Thanh toán của bạn bị từ chối. Vui lòng thử phương thức khác."
+  - en-US: "Your payment was declined. Please try another payment method. US cardholders have the right to dispute charges under the Fair Credit Billing Act."
+  - vi-VN: "Thanh toán của Quý khách bị từ chối. Vui lòng thử phương thức thanh toán khác hoặc liên hệ ngân hàng phát hành thẻ."
 
 ### NEG-402-payment-expired — Card Expired
 - **Description:** The payment card used has passed its expiration date.
@@ -301,6 +343,8 @@ _Generated: 2026-04-12T03:43:00.471Z · 22 codes · 6 languages · Source: https
   - zh: "您的银行卡已过期，请更新您的付款信息。"
   - ar: "انتهت صلاحية بطاقتك. يرجى تحديث بيانات الدفع الخاصة بك."
   - vi: "Thẻ của bạn đã hết hạn. Vui lòng cập nhật thông tin thanh toán."
+  - en-US: "Your card has expired. Please update your billing information. You can add a US bank account as an alternative payment method."
+  - vi-VN: "Thẻ của Quý khách đã hết hạn. Vui lòng cập nhật thông tin thanh toán để tiếp tục sử dụng dịch vụ."
 
 ## Customer Journeys (4)
 
