@@ -1,5 +1,5 @@
 # Negativ Error Code Registry — LLM Context Pack
-_Generated: 2026-04-16T18:34:27.171Z · 22 codes · 6 languages · 2 locale variants (en-US, vi-VN) · Source: https://github.com/bbinarygo/negativ_
+_Generated: 2026-04-16T18:46:40.218Z · 22 codes · 6 languages · 2 locale variants (en-US, vi-VN) · Source: https://github.com/bbinarygo/negativ_
 
 ## Error Codes (22)
 

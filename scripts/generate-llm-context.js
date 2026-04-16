@@ -56,14 +56,19 @@ const errorCodes = registryIndex.codes.map(entry => {
   // Resolve locale messages: per-code override → shared locale token → base language fallback
   for (const locale of localeKeys) {
     const baseLocale = supportedLocales[locale].inherits;
+    if (!baseLocale) {
+      console.warn(`  WARN: locale '${locale}' has no 'inherits' field — skipping`);
+      continue;
+    }
     const locPath = path.join(atomPath, 'localization', `${locale}.json`);
     const perCodeOverride = fs.existsSync(locPath)
       ? JSON.parse(fs.readFileSync(locPath, 'utf8'))
       : {};
     const sharedOverride = sharedLocaleTokens[locale] || {};
-    const resolved = perCodeOverride[atom.messageKey]
-      || sharedOverride[atom.messageKey]
-      || messages[baseLocale];
+    const resolved =
+      perCodeOverride[atom.messageKey] != null ? perCodeOverride[atom.messageKey] :
+      sharedOverride[atom.messageKey]  != null ? sharedOverride[atom.messageKey]  :
+      messages[baseLocale];
     if (resolved) {
       messages[locale] = resolved;
     }
