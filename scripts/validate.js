@@ -224,6 +224,7 @@ if (fs.existsSync(VERTICALS_DIR)) {
       vertical,
       count: verticalIndex.length,
       codes: verticalIndex,
+      ...(localeKeys.length > 0 ? { availableLocales: localeKeys } : {}),
     }, null, 2) + '\n');
     console.log(`\n📦 Generated verticals/${vertical}/index.json (${verticalIndex.length} codes)`);
     totalVerticalCodes += verticalIndex.length;
