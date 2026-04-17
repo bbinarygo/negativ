@@ -1,0 +1,15 @@
+{
+  "code": "NEG-415-unsupported-media-type",
+  "category": "validation",
+  "httpStatus": 415,
+  "severity": "error",
+  "title": "Unsupported File Type",
+  "description": "The submitted file or content type is not accepted by this endpoint.",
+  "messageKey": "validation.unsupported-media-type",
+  "recoveryAction": "Check the list of accepted file types and convert or re-export before uploading.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "alert",
+    "ariaLive": "polite"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "extends": "client-error",
+  "layout": "inline form error",
+  "copyTitle": "Unsupported File Type",
+  "copyMessageKey": "validation.unsupported-media-type",
+  "illustration": "file icon with X",
+  "cta": "Upload a supported format",
+  "patterns": {
+    "inline": {
+      "description": "Inline error below file input listing accepted formats",
+      "usage": "File upload forms with type restrictions"
+    }
+  },
+  "figmaNote": "List accepted file types in the error description if space allows.",
+  "designSystemIntegrations": {
+    "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+    "shadcn": "<p className=\"text-sm text-destructive\">{t('validation.unsupported-media-type')}</p>",
+    "material": "<FormHelperText error>{t('validation.unsupported-media-type')}</FormHelperText>",
+    "ant": "<Form.Item validateStatus=\"error\" help={t('validation.unsupported-media-type')} />"
+  }
+}
