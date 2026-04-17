@@ -1,0 +1,15 @@
+{
+  "code": "NEG-0-search-no-results",
+  "category": "resource",
+  "httpStatus": null,
+  "severity": "warning",
+  "title": "No Results Found",
+  "description": "The search request succeeded but returned an empty result set. This is a UX state, not an HTTP error.",
+  "messageKey": "resource.search-no-results",
+  "recoveryAction": "Broaden search terms, remove filters, or try a different keyword.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "status",
+    "ariaLive": "polite"
+  }
+}
