@@ -1,0 +1,8 @@
+{
+  "extends": "client-error",
+  "layout": "inline form error",
+  "copyTitle": "File Too Large",
+  "copyMessageKey": "validation.payload-too-large",
+  "illustration": "upload icon with warning badge",
+  "cta": "Choose a smaller file"
+}

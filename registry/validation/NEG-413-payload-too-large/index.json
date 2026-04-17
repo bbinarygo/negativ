@@ -1,0 +1,15 @@
+{
+  "code": "NEG-413-payload-too-large",
+  "category": "validation",
+  "httpStatus": 413,
+  "severity": "error",
+  "title": "File Too Large",
+  "description": "The uploaded file or request body exceeds the maximum allowed size.",
+  "messageKey": "validation.payload-too-large",
+  "recoveryAction": "Compress the file, reduce image quality, or split large uploads into smaller parts.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "alert",
+    "ariaLive": "polite"
+  }
+}

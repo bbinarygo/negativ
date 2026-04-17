@@ -1,0 +1,25 @@
+{
+  "extends": "client-error",
+  "layout": "inline form error",
+  "copyTitle": "File Too Large",
+  "copyMessageKey": "validation.payload-too-large",
+  "illustration": "upload icon with warning badge",
+  "cta": "Choose a smaller file",
+  "patterns": {
+    "inline": {
+      "description": "Inline error below file input",
+      "usage": "File upload forms"
+    },
+    "toast": {
+      "description": "Toast notification after a failed drag-and-drop upload",
+      "usage": "Drop zones"
+    }
+  },
+  "figmaNote": "Show the file size limit in the error message if known. Offer compress/resize guidance.",
+  "designSystemIntegrations": {
+    "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+    "shadcn": "<p className=\"text-sm text-destructive\">{t('validation.payload-too-large')}</p>",
+    "material": "<FormHelperText error>{t('validation.payload-too-large')}</FormHelperText>",
+    "ant": "<Form.Item validateStatus=\"error\" help={t('validation.payload-too-large')} />"
+  }
+}
