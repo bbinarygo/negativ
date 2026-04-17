@@ -1,6 +1,6 @@
 {
-  "generated": "2026-04-12T02:47:52.798Z",
-  "count": 22,
+  "generated": "2026-04-17T16:13:30.952Z",
+  "count": 29,
   "codes": [
     {
       "code": "NEG-400-validation-format",
@@ -30,6 +30,42 @@
       "_path": "registry/validation/NEG-400-validation-required"
     },
     {
+      "code": "NEG-413-payload-too-large",
+      "category": "validation",
+      "httpStatus": 413,
+      "severity": "error",
+      "title": "File Too Large",
+      "messageKey": "validation.payload-too-large",
+      "_path": "registry/validation/NEG-413-payload-too-large",
+      "supportedLocales": [
+        "vi-VN"
+      ]
+    },
+    {
+      "code": "NEG-415-unsupported-media-type",
+      "category": "validation",
+      "httpStatus": 415,
+      "severity": "error",
+      "title": "Unsupported File Type",
+      "messageKey": "validation.unsupported-media-type",
+      "_path": "registry/validation/NEG-415-unsupported-media-type",
+      "supportedLocales": [
+        "vi-VN"
+      ]
+    },
+    {
+      "code": "NEG-422-unprocessable-entity",
+      "category": "validation",
+      "httpStatus": 422,
+      "severity": "error",
+      "title": "Request Not Processable",
+      "messageKey": "validation.unprocessable",
+      "_path": "registry/validation/NEG-422-unprocessable-entity",
+      "supportedLocales": [
+        "vi-VN"
+      ]
+    },
+    {
       "code": "NEG-422-validation-conflict",
       "category": "validation",
       "httpStatus": 422,
@@ -45,7 +81,11 @@
       "severity": "warning",
       "title": "Session Expired",
       "messageKey": "auth.session-expired",
-      "_path": "registry/auth/NEG-401-auth-session-expired"
+      "_path": "registry/auth/NEG-401-auth-session-expired",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-401-auth-unauthorized",
@@ -54,7 +94,11 @@
       "severity": "error",
       "title": "Sign in Required",
       "messageKey": "auth.unauthorized",
-      "_path": "registry/auth/NEG-401-auth-unauthorized"
+      "_path": "registry/auth/NEG-401-auth-unauthorized",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-403-permission-forbidden",
@@ -73,6 +117,18 @@
       "title": "Read-Only Access",
       "messageKey": "permission.read-only",
       "_path": "registry/permission/NEG-403-permission-read-only"
+    },
+    {
+      "code": "NEG-0-search-no-results",
+      "category": "resource",
+      "httpStatus": null,
+      "severity": "warning",
+      "title": "No Results Found",
+      "messageKey": "resource.search-no-results",
+      "_path": "registry/resource/NEG-0-search-no-results",
+      "supportedLocales": [
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-404-resource-not-found",
@@ -100,6 +156,18 @@
       "title": "No Longer Available",
       "messageKey": "resource.deleted",
       "_path": "registry/resource/NEG-410-resource-deleted"
+    },
+    {
+      "code": "NEG-507-storage-quota-exceeded",
+      "category": "resource",
+      "httpStatus": 507,
+      "severity": "error",
+      "title": "Storage Quota Exceeded",
+      "messageKey": "resource.storage-quota-exceeded",
+      "_path": "registry/resource/NEG-507-storage-quota-exceeded",
+      "supportedLocales": [
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-408-timeout",
@@ -138,6 +206,18 @@
       "_path": "registry/rate-limit/NEG-429-rate-limit-daily"
     },
     {
+      "code": "NEG-424-failed-dependency",
+      "category": "server",
+      "httpStatus": 424,
+      "severity": "error",
+      "title": "Service Dependency Failed",
+      "messageKey": "server.failed-dependency",
+      "_path": "registry/server/NEG-424-failed-dependency",
+      "supportedLocales": [
+        "vi-VN"
+      ]
+    },
+    {
       "code": "NEG-500-server-internal",
       "category": "server",
       "httpStatus": 500,
@@ -154,6 +234,18 @@
       "title": "Service Unavailable",
       "messageKey": "server.bad-gateway",
       "_path": "registry/server/NEG-502-server-bad-gateway"
+    },
+    {
+      "code": "NEG-503-maintenance",
+      "category": "server",
+      "httpStatus": 503,
+      "severity": "warning",
+      "title": "Scheduled Maintenance",
+      "messageKey": "server.maintenance",
+      "_path": "registry/server/NEG-503-maintenance",
+      "supportedLocales": [
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-503-server-unavailable",
@@ -189,7 +281,11 @@
       "severity": "error",
       "title": "Payment Declined",
       "messageKey": "payment.declined",
-      "_path": "registry/payment/NEG-402-payment-declined"
+      "_path": "registry/payment/NEG-402-payment-declined",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     },
     {
       "code": "NEG-402-payment-expired",
@@ -198,7 +294,15 @@
       "severity": "error",
       "title": "Card Expired",
       "messageKey": "payment.expired",
-      "_path": "registry/payment/NEG-402-payment-expired"
+      "_path": "registry/payment/NEG-402-payment-expired",
+      "supportedLocales": [
+        "en-US",
+        "vi-VN"
+      ]
     }
+  ],
+  "availableLocales": [
+    "en-US",
+    "vi-VN"
   ]
 }

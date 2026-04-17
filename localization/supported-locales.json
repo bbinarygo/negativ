@@ -1,0 +1,4 @@
+{
+  "en-US": { "inherits": "en", "rtl": false, "regulatory": ["CCPA", "FTC"] },
+  "vi-VN": { "inherits": "vi", "rtl": false, "regulatory": ["PDPA"] }
+}

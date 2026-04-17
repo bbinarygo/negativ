@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-12T08:55:22.943Z",
+  "generated": "2026-04-16T18:33:24.080Z",
   "vertical": "fintech",
   "count": 4,
   "codes": [
@@ -39,5 +39,9 @@
       "messageKey": "fintech.transaction-limit",
       "_path": "verticals/fintech/NEG-FIN-429-transaction-limit"
     }
+  ],
+  "availableLocales": [
+    "en-US",
+    "vi-VN"
   ]
 }

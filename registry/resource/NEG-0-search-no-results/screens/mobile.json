@@ -1,0 +1,8 @@
+{
+  "extends": "client-error",
+  "layout": "centered empty state",
+  "copyTitle": "No Results Found",
+  "copyMessageKey": "resource.search-no-results",
+  "illustration": "magnifying glass with empty box",
+  "cta": "Clear filters"
+}

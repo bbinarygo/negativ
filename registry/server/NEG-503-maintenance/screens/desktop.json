@@ -1,0 +1,25 @@
+{
+  "extends": "server-error",
+  "layout": "centered full-page",
+  "copyTitle": "Scheduled Maintenance",
+  "copyMessageKey": "server.maintenance",
+  "illustration": "wrench and gear icon",
+  "cta": "Check status page",
+  "patterns": {
+    "fullPage": {
+      "description": "Full-page maintenance splash replacing all routes",
+      "usage": "Site-wide maintenance windows"
+    },
+    "banner": {
+      "description": "Top-of-page notice with countdown timer",
+      "usage": "Upcoming maintenance warnings"
+    }
+  },
+  "figmaNote": "Use warning (amber) not error (red) palette — this is planned, not a failure. Include estimated return time if available.",
+  "designSystemIntegrations": {
+    "tailwind": "class=\"bg-amber-50 border border-amber-200 text-amber-800 p-8 rounded-2xl text-center\"",
+    "shadcn": "<Alert><AlertTitle>Scheduled Maintenance</AlertTitle><AlertDescription>{t('server.maintenance')}</AlertDescription></Alert>",
+    "material": "<Alert severity=\"warning\" icon={<BuildIcon/>}>{t('server.maintenance')}</Alert>",
+    "ant": "<Alert message=\"Scheduled Maintenance\" description={t('server.maintenance')} type=\"warning\" showIcon />"
+  }
+}

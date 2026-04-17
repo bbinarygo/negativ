@@ -1,0 +1,5 @@
+{
+  "permission.forbidden": "You don't have access to this feature. If you believe this is an error, contact your administrator.",
+  "payment.declined": "Your payment was declined. Please try another payment method. You have the right to dispute charges with your card issuer under US federal law.",
+  "payment.expired": "Your card has expired. Please update your billing information to continue."
+}

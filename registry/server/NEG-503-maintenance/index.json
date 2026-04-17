@@ -1,0 +1,15 @@
+{
+  "code": "NEG-503-maintenance",
+  "category": "server",
+  "httpStatus": 503,
+  "severity": "warning",
+  "title": "Scheduled Maintenance",
+  "description": "The service is temporarily unavailable due to planned maintenance. This is expected and time-bounded.",
+  "messageKey": "server.maintenance",
+  "recoveryAction": "Check the status page for expected completion time and try again after the maintenance window.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "status",
+    "ariaLive": "polite"
+  }
+}

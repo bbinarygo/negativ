@@ -20,5 +20,12 @@
   "network.offline": "Có vẻ bạn đang ngoại tuyến. Hãy kiểm tra kết nối mạng.",
   "network.slow": "Kết nối của bạn đang chậm. Quá trình này có thể mất nhiều thời gian hơn bình thường.",
   "payment.declined": "Thanh toán của bạn bị từ chối. Vui lòng thử phương thức khác.",
-  "payment.expired": "Thẻ của bạn đã hết hạn. Vui lòng cập nhật thông tin thanh toán."
+  "payment.expired": "Thẻ của bạn đã hết hạn. Vui lòng cập nhật thông tin thanh toán.",
+  "validation.payload-too-large": "Tệp bạn đang cố tải lên quá lớn. Vui lòng giảm kích thước và thử lại.",
+  "validation.unsupported-media-type": "Loại tệp này không được hỗ trợ. Vui lòng tải lên tệp theo định dạng được hỗ trợ.",
+  "validation.unprocessable": "Yêu cầu của bạn đã được nhận nhưng không thể xử lý. Vui lòng kiểm tra dữ liệu và thử lại.",
+  "server.failed-dependency": "Không thể hoàn thành thao tác này vì một dịch vụ phụ trợ không khả dụng. Vui lòng thử lại sau.",
+  "server.maintenance": "Chúng tôi đang thực hiện bảo trì theo lịch. Chúng tôi sẽ sớm trở lại — cảm ơn sự kiên nhẫn của bạn.",
+  "resource.storage-quota-exceeded": "Bạn đã sử dụng hết dung lượng lưu trữ. Vui lòng giải phóng không gian hoặc nâng cấp gói.",
+  "resource.search-no-results": "Chúng tôi không tìm thấy kết quả phù hợp với tìm kiếm của bạn. Hãy thử điều chỉnh bộ lọc hoặc từ khóa."
 }

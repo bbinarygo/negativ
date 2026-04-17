@@ -1,0 +1,8 @@
+{
+  "extends": "server-error",
+  "layout": "centered full-page",
+  "copyTitle": "Service Dependency Failed",
+  "copyMessageKey": "server.failed-dependency",
+  "illustration": "broken chain link icon",
+  "cta": "Try again"
+}

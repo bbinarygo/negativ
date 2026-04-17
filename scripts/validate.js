@@ -12,6 +12,7 @@ const ROOT = path.join(__dirname, '..');
 const REGISTRY_DIR = path.join(ROOT, 'registry');
 const SCHEMAS_DIR = path.join(ROOT, 'schemas');
 const LOCALIZATION_TOKENS_EN = path.join(ROOT, 'localization/tokens/en.json');
+const LOCALIZATION_SUPPORTED_LOCALES = path.join(ROOT, 'localization/supported-locales.json');
 const VERTICALS_DIR = path.join(ROOT, 'verticals');
 const VALID_VERTICALS = ['fintech', 'healthtech', 'ecommerce'];
 
@@ -21,6 +22,11 @@ const errorCodeSchema = JSON.parse(fs.readFileSync(path.join(SCHEMAS_DIR, 'error
 const screenSchema = JSON.parse(fs.readFileSync(path.join(SCHEMAS_DIR, 'screen.schema.json'), 'utf8'));
 const localizationSchema = JSON.parse(fs.readFileSync(path.join(SCHEMAS_DIR, 'localization.schema.json'), 'utf8'));
 const tokensEn = JSON.parse(fs.readFileSync(LOCALIZATION_TOKENS_EN, 'utf8'));
+
+const supportedLocales = fs.existsSync(LOCALIZATION_SUPPORTED_LOCALES)
+  ? JSON.parse(fs.readFileSync(LOCALIZATION_SUPPORTED_LOCALES, 'utf8'))
+  : {};
+const localeKeys = Object.keys(supportedLocales);
 
 const validateErrorCode = ajv.compile(errorCodeSchema);
 const validateScreen = ajv.compile(screenSchema);
@@ -110,6 +116,19 @@ for (const category of VALID_CATEGORIES) {
     // 7. journey-refs.json must exist
     checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
 
+    // 8. Optional locale override files
+    const foundLocales = [];
+    for (const locale of localeKeys) {
+      const locPath = path.join(atomDir, 'localization', `${locale}.json`);
+      if (fs.existsSync(locPath)) {
+        const locData = JSON.parse(fs.readFileSync(locPath, 'utf8'));
+        if (!validateLocalization(locData)) {
+          err(`localization/${locale}.json schema invalid: ${JSON.stringify(validateLocalization.errors)}`);
+        }
+        foundLocales.push(locale);
+      }
+    }
+
     index.push({
       code: code.code,
       category: code.category,
@@ -118,6 +137,7 @@ for (const category of VALID_CATEGORIES) {
       title: code.title,
       messageKey: code.messageKey,
       _path: `registry/${category}/${codeDir}`,
+      ...(foundLocales.length > 0 ? { supportedLocales: foundLocales } : {}),
     });
   }
 }
@@ -174,6 +194,18 @@ if (fs.existsSync(VERTICALS_DIR)) {
       }
       checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
 
+      const foundLocales = [];
+      for (const locale of localeKeys) {
+        const locPath = path.join(atomDir, 'localization', `${locale}.json`);
+        if (fs.existsSync(locPath)) {
+          const locData = JSON.parse(fs.readFileSync(locPath, 'utf8'));
+          if (!validateLocalization(locData)) {
+            err(`localization/${locale}.json schema invalid: ${JSON.stringify(validateLocalization.errors)}`);
+          }
+          foundLocales.push(locale);
+        }
+      }
+
       verticalIndex.push({
         code: code.code,
         category: code.category,
@@ -182,6 +214,7 @@ if (fs.existsSync(VERTICALS_DIR)) {
         title: code.title,
         messageKey: code.messageKey,
         _path: `verticals/${vertical}/${codeDir}`,
+        ...(foundLocales.length > 0 ? { supportedLocales: foundLocales } : {}),
       });
     }
 
@@ -191,6 +224,7 @@ if (fs.existsSync(VERTICALS_DIR)) {
       vertical,
       count: verticalIndex.length,
       codes: verticalIndex,
+      ...(localeKeys.length > 0 ? { availableLocales: localeKeys } : {}),
     }, null, 2) + '\n');
     console.log(`\n📦 Generated verticals/${vertical}/index.json (${verticalIndex.length} codes)`);
     totalVerticalCodes += verticalIndex.length;
@@ -199,7 +233,12 @@ if (fs.existsSync(VERTICALS_DIR)) {
 
 // Generate registry/index.json
 const indexPath = path.join(REGISTRY_DIR, 'index.json');
-fs.writeFileSync(indexPath, JSON.stringify({ generated: new Date().toISOString(), count: index.length, codes: index }, null, 2) + '\n');
+fs.writeFileSync(indexPath, JSON.stringify({
+  generated: new Date().toISOString(),
+  count: index.length,
+  codes: index,
+  ...(localeKeys.length > 0 ? { availableLocales: localeKeys } : {}),
+}, null, 2) + '\n');
 console.log(`\n📦 Generated registry/index.json (${index.length} codes)`);
 
 // ── Playbooks index ──────────────────────────────────────────────────────

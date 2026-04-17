@@ -1,0 +1,25 @@
+{
+  "extends": "client-error",
+  "layout": "centered empty state",
+  "copyTitle": "No Results Found",
+  "copyMessageKey": "resource.search-no-results",
+  "illustration": "magnifying glass with empty box",
+  "cta": "Clear filters",
+  "patterns": {
+    "emptyState": {
+      "description": "Centered empty state within the search results area",
+      "usage": "Search results pages, filtered lists"
+    },
+    "inline": {
+      "description": "Inline message below the search bar",
+      "usage": "Autocomplete dropdowns with no matches"
+    }
+  },
+  "figmaNote": "Use neutral (not red) palette — this is informational, not an error. Invite the user to refine rather than implying something broke.",
+  "designSystemIntegrations": {
+    "tailwind": "class=\"text-gray-500 text-sm text-center py-8\"",
+    "shadcn": "<p className=\"text-sm text-muted-foreground text-center py-8\">{t('resource.search-no-results')}</p>",
+    "material": "<Typography variant=\"body2\" color=\"textSecondary\" align=\"center\">{t('resource.search-no-results')}</Typography>",
+    "ant": "<Empty description={t('resource.search-no-results')} />"
+  }
+}

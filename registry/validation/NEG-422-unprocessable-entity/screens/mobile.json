@@ -1,0 +1,8 @@
+{
+  "extends": "client-error",
+  "layout": "inline form error",
+  "copyTitle": "Request Not Processable",
+  "copyMessageKey": "validation.unprocessable",
+  "illustration": "form with warning fields",
+  "cta": "Review and resubmit"
+}

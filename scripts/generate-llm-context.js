@@ -17,6 +17,21 @@ const registryIndex = JSON.parse(fs.readFileSync(path.join(ROOT, 'registry/index
 const supportedLangs = JSON.parse(fs.readFileSync(path.join(ROOT, 'localization/supported-language.json'), 'utf8'));
 const v1Languages = supportedLangs.v1Languages;
 
+// Load locale config and shared locale token files
+const localeSupportPath = path.join(ROOT, 'localization/supported-locales.json');
+const supportedLocales = fs.existsSync(localeSupportPath)
+  ? JSON.parse(fs.readFileSync(localeSupportPath, 'utf8'))
+  : {};
+const localeKeys = Object.keys(supportedLocales);
+
+const sharedLocaleTokens = {};
+for (const locale of localeKeys) {
+  const tokPath = path.join(ROOT, 'localization/tokens', `${locale}.json`);
+  if (fs.existsSync(tokPath)) {
+    sharedLocaleTokens[locale] = JSON.parse(fs.readFileSync(tokPath, 'utf8'));
+  }
+}
+
 // Build error codes: full atom details + per-language translations
 const errorCodes = registryIndex.codes.map(entry => {
   const atomPath = path.join(ROOT, entry._path);
@@ -35,6 +50,27 @@ const errorCodes = registryIndex.codes.map(entry => {
       }
     } else {
       console.warn(`  WARN: ${atom.code} — missing ${lang}.json`);
+    }
+  }
+
+  // Resolve locale messages: per-code override → shared locale token → base language fallback
+  for (const locale of localeKeys) {
+    const baseLocale = supportedLocales[locale].inherits;
+    if (!baseLocale) {
+      console.warn(`  WARN: locale '${locale}' has no 'inherits' field — skipping`);
+      continue;
+    }
+    const locPath = path.join(atomPath, 'localization', `${locale}.json`);
+    const perCodeOverride = fs.existsSync(locPath)
+      ? JSON.parse(fs.readFileSync(locPath, 'utf8'))
+      : {};
+    const sharedOverride = sharedLocaleTokens[locale] || {};
+    const resolved =
+      perCodeOverride[atom.messageKey] != null ? perCodeOverride[atom.messageKey] :
+      sharedOverride[atom.messageKey]  != null ? sharedOverride[atom.messageKey]  :
+      messages[baseLocale];
+    if (resolved) {
+      messages[locale] = resolved;
     }
   }
 
@@ -100,7 +136,8 @@ function buildMarkdown() {
   const lines = [];
 
   lines.push('# Negativ Error Code Registry — LLM Context Pack');
-  lines.push(`_Generated: ${jsonOutput.meta.generated} · ${errorCodes.length} codes · ${v1Languages.length} languages · Source: ${jsonOutput.meta.source}_`);
+  const localeNote = localeKeys.length > 0 ? ` · ${localeKeys.length} locale variants (${localeKeys.join(', ')})` : '';
+  lines.push(`_Generated: ${jsonOutput.meta.generated} · ${errorCodes.length} codes · ${v1Languages.length} languages${localeNote} · Source: ${jsonOutput.meta.source}_`);
   lines.push('');
 
   // Quick-lookup table

@@ -1,0 +1,8 @@
+{
+  "extends": "server-error",
+  "layout": "centered full-page",
+  "copyTitle": "Scheduled Maintenance",
+  "copyMessageKey": "server.maintenance",
+  "illustration": "wrench and gear icon",
+  "cta": "Check status page"
+}

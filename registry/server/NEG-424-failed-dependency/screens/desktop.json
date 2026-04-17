@@ -1,0 +1,25 @@
+{
+  "extends": "server-error",
+  "layout": "centered full-page",
+  "copyTitle": "Service Dependency Failed",
+  "copyMessageKey": "server.failed-dependency",
+  "illustration": "broken chain link icon",
+  "cta": "Try again",
+  "patterns": {
+    "inline": {
+      "description": "Inline error within the specific feature that failed",
+      "usage": "When only one feature is affected by the dependency failure"
+    },
+    "banner": {
+      "description": "Top-of-page degraded service banner",
+      "usage": "When multiple features are affected"
+    }
+  },
+  "figmaNote": "Distinguish from 503 — 424 means a specific dependency failed, not a full outage. Be specific about which service if known.",
+  "designSystemIntegrations": {
+    "tailwind": "class=\"bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-lg\"",
+    "shadcn": "<Alert variant=\"destructive\"><AlertTitle>Service Dependency Failed</AlertTitle><AlertDescription>{t('server.failed-dependency')}</AlertDescription></Alert>",
+    "material": "<Alert severity=\"error\">{t('server.failed-dependency')}</Alert>",
+    "ant": "<Alert message=\"Service Dependency Failed\" description={t('server.failed-dependency')} type=\"error\" showIcon />"
+  }
+}

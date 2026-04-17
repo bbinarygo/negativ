@@ -1,0 +1,15 @@
+{
+  "code": "NEG-507-storage-quota-exceeded",
+  "category": "resource",
+  "httpStatus": 507,
+  "severity": "error",
+  "title": "Storage Quota Exceeded",
+  "description": "The user or organization has used all available storage and cannot save new data.",
+  "messageKey": "resource.storage-quota-exceeded",
+  "recoveryAction": "Delete unused files or archives, or upgrade to a higher storage tier.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "alert",
+    "ariaLive": "assertive"
+  }
+}

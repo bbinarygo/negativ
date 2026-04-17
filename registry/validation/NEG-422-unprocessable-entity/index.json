@@ -1,0 +1,15 @@
+{
+  "code": "NEG-422-unprocessable-entity",
+  "category": "validation",
+  "httpStatus": 422,
+  "severity": "error",
+  "title": "Request Not Processable",
+  "description": "The request was well-formed but the values conflict with business rules (e.g. date range inverted, balance constraint).",
+  "messageKey": "validation.unprocessable",
+  "recoveryAction": "Review the field-level errors and correct the values before resubmitting.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "alert",
+    "ariaLive": "polite"
+  }
+}
