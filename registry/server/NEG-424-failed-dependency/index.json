@@ -1,0 +1,15 @@
+{
+  "code": "NEG-424-failed-dependency",
+  "category": "server",
+  "httpStatus": 424,
+  "severity": "error",
+  "title": "Service Dependency Failed",
+  "description": "The action could not be completed because an upstream service this endpoint depends on is unavailable.",
+  "messageKey": "server.failed-dependency",
+  "recoveryAction": "Wait a few minutes and retry. If the problem persists, contact support.",
+  "platforms": ["web", "mobile", "tablet"],
+  "accessibility": {
+    "ariaRole": "alert",
+    "ariaLive": "polite"
+  }
+}
