@@ -1,0 +1,25 @@
+{
+  "extends": "client-error",
+  "layout": "inline form error",
+  "copyTitle": "Request Not Processable",
+  "copyMessageKey": "validation.unprocessable",
+  "illustration": "form with warning fields",
+  "cta": "Review and resubmit",
+  "patterns": {
+    "inline": {
+      "description": "Field-level errors highlighting the conflicting values",
+      "usage": "Multi-step forms with business rule validation"
+    },
+    "summary": {
+      "description": "Error summary at the top of the form listing all conflicts",
+      "usage": "Long forms where inline errors may be off-screen"
+    }
+  },
+  "figmaNote": "Distinguish from 400 validation errors in copy tone: 422 means the server understood the request but rejected it for business reasons — avoid 'invalid format' language.",
+  "designSystemIntegrations": {
+    "tailwind": "class=\"text-red-600 text-sm mt-1\"",
+    "shadcn": "<p className=\"text-sm text-destructive\">{t('validation.unprocessable')}</p>",
+    "material": "<FormHelperText error>{t('validation.unprocessable')}</FormHelperText>",
+    "ant": "<Form.Item validateStatus=\"error\" help={t('validation.unprocessable')} />"
+  }
+}
