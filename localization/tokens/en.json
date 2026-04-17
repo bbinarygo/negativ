@@ -24,5 +24,12 @@
   "fintech.insufficient-funds": "Your account doesn't have enough funds to complete this transaction.",
   "fintech.account-frozen": "Your account has been temporarily frozen. Please contact support.",
   "fintech.kyc-failed": "We couldn't verify your identity. Please check your details and try again.",
-  "fintech.transaction-limit": "You've reached your transaction limit. Try again after the limit resets."
+  "fintech.transaction-limit": "You've reached your transaction limit. Try again after the limit resets.",
+  "validation.payload-too-large": "The file you're trying to upload is too large. Please reduce the size and try again.",
+  "validation.unsupported-media-type": "This file type isn't supported. Please upload a file in a supported format.",
+  "validation.unprocessable": "Your request was received but couldn't be processed. Please check your input and try again.",
+  "server.failed-dependency": "This action couldn't be completed because a required service is unavailable. Please try again shortly.",
+  "server.maintenance": "We're performing scheduled maintenance. We'll be back shortly — thank you for your patience.",
+  "resource.storage-quota-exceeded": "You've used all your available storage. Please free up space or upgrade your plan.",
+  "resource.search-no-results": "We couldn't find anything matching your search. Try adjusting your filters or search terms."
 }
