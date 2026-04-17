@@ -1,12 +1,34 @@
 # Negativ
 
-**The open knowledge hub for everything that can (and will) go wrong.**
+**The missing half of every customer journey or design system.**
 
 [![GitHub stars](https://img.shields.io/github/stars/negativ/negativ)](https://github.com/negativ/negativ)
 [![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-green)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
-[![Docs site](https://img.shields.io/badge/docs-negativ.dev-7c3aed)](https://bbinarygo.github.io/negativ)
-[![Good first issues](https://img.shields.io/github/issues/bbinarygo/negativ/good%20first%20issue?color=7057ff)](https://github.com/bbinarygo/negativ/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+[![Live Registry](https://img.shields.io/badge/📋-Live_Registry-7c3aed)](https://bbinarygo.github.io/negativ/registry/)
+[![Docs](https://img.shields.io/badge/📖-negativ.dev-7c3aed)](https://bbinarygo.github.io/negativ)
+
+> % of user sessions hit errors.  
+> Most design systems completely ignore them.  
+> **Negativ fixes that.**
+
+![Negativ hero visual — multi-device negative UX patterns](assets/images/hero-multi-device.png)
+*Standardized error screens, recovery flows, and negative journeys that actually ship.*
+
+### One-click access
+- **[Browse the full registry →](https://bbinarygo.github.io/negativ/registry/)** (filter by platform, severity, industry)
+- **[Contribute in 60 seconds →](https://bbinarygo.github.io/negativ/contribute/)** (wizard + auto PR)
+- **[Copy LLM-ready context](https://raw.githubusercontent.com/bbinarygo/negativ/main/llm-context.json)** (for Cursor, Claude, etc.)
+- **Figma Community file** (coming soon — reply if you want it first)
+
+### Why teams are already bookmarking Negativ
+- **Error Code Registry** — Standardized codes with recovery actions, tone guidelines, accessibility specs
+- **Screen Library** — Responsive templates (desktop, mobile, tablet, watch) in light/dark/RTL/high-contrast
+- **Negative Journey Maps** — Real branching flows that show how failures escalate
+- **LLM-ready JSON** — Perfect for codegen, design tokens, and AI agents
+- **Design-system ready** — Tailwind, Shadcn, Material, Ant Design mappings included
+
+---
 
 ### Problem Space
 Today’s products are built for happy paths only. Teams pour energy into polished onboarding and success states—yet 20-40% of real user sessions hit exceptions: validation failures, network issues, permission errors, edge cases, outages.

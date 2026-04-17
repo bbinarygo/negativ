@@ -1,6 +1,10 @@
 {
   "patternId": "auth-error",
   "description": "Base pattern for authentication and permission errors.",
+  "referenceUI": {
+    "figmaDesignUrl": "https://www.figma.com/design/ARWeYy0X3YxlUVlPKVf4Xi/Negativ?node-id=2-2&t=YeoAq7LBI6Q1ND2l-4",
+    "previewImage": "visuals/auth-error.png"
+  },
   "defaults": {
     "layout": "centered illustration",
     "accessibility": {
