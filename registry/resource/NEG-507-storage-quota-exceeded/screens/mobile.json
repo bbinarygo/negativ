@@ -1,0 +1,8 @@
+{
+  "extends": "client-error",
+  "layout": "inline banner",
+  "copyTitle": "Storage Quota Exceeded",
+  "copyMessageKey": "resource.storage-quota-exceeded",
+  "illustration": "full storage meter icon",
+  "cta": "Manage storage"
+}

@@ -1,0 +1,25 @@
+{
+  "extends": "client-error",
+  "layout": "inline banner",
+  "copyTitle": "Storage Quota Exceeded",
+  "copyMessageKey": "resource.storage-quota-exceeded",
+  "illustration": "full storage meter icon",
+  "cta": "Manage storage",
+  "patterns": {
+    "banner": {
+      "description": "Persistent top-of-page banner showing storage usage",
+      "usage": "Accounts approaching or at quota limit"
+    },
+    "modal": {
+      "description": "Blocking modal on upload attempt when over quota",
+      "usage": "File upload flows"
+    }
+  },
+  "figmaNote": "Show current usage vs limit if available. Make the upgrade CTA prominent.",
+  "designSystemIntegrations": {
+    "tailwind": "class=\"bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg\"",
+    "shadcn": "<Alert variant=\"destructive\"><AlertTitle>Storage Full</AlertTitle><AlertDescription>{t('resource.storage-quota-exceeded')}</AlertDescription><Button variant=\"outline\" size=\"sm\">Manage storage</Button></Alert>",
+    "material": "<Alert severity=\"error\" action={<Button>Upgrade</Button>}>{t('resource.storage-quota-exceeded')}</Alert>",
+    "ant": "<Alert message=\"Storage Full\" description={t('resource.storage-quota-exceeded')} type=\"error\" showIcon />"
+  }
+}
