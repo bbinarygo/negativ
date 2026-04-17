@@ -1,27 +1,34 @@
 # Negativ Error Code Registry — LLM Context Pack
-_Generated: 2026-04-16T18:46:40.218Z · 22 codes · 6 languages · 2 locale variants (en-US, vi-VN) · Source: https://github.com/bbinarygo/negativ_
+_Generated: 2026-04-17T16:13:38.545Z · 29 codes · 6 languages · 2 locale variants (en-US, vi-VN) · Source: https://github.com/bbinarygo/negativ_
 
-## Error Codes (22)
+## Error Codes (29)
 
 | Code | Category | HTTP | Severity | Title |
 |------|----------|------|----------|-------|
 | NEG-400-validation-format | validation | 400 | error | Invalid Format |
 | NEG-400-validation-length | validation | 400 | error | Input Too Long |
 | NEG-400-validation-required | validation | 400 | error | Required Field Missing |
+| NEG-413-payload-too-large | validation | 413 | error | File Too Large |
+| NEG-415-unsupported-media-type | validation | 415 | error | Unsupported File Type |
+| NEG-422-unprocessable-entity | validation | 422 | error | Request Not Processable |
 | NEG-422-validation-conflict | validation | 422 | error | Conflicting Input |
 | NEG-401-auth-session-expired | auth | 401 | warning | Session Expired |
 | NEG-401-auth-unauthorized | auth | 401 | error | Sign in Required |
 | NEG-403-permission-forbidden | permission | 403 | error | Access Denied |
 | NEG-403-permission-read-only | permission | 403 | info | Read-Only Access |
+| NEG-0-search-no-results | resource | — | warning | No Results Found |
 | NEG-404-resource-not-found | resource | 404 | error | Not Found |
 | NEG-409-resource-conflict | resource | 409 | error | Already Exists |
 | NEG-410-resource-deleted | resource | 410 | error | No Longer Available |
+| NEG-507-storage-quota-exceeded | resource | 507 | error | Storage Quota Exceeded |
 | NEG-408-timeout | timeout | 408 | warning | Request Timed Out |
 | NEG-504-timeout-gateway | timeout | 504 | error | Gateway Timeout |
 | NEG-429-rate-limit | rate-limit | 429 | warning | Too Many Requests |
 | NEG-429-rate-limit-daily | rate-limit | 429 | warning | Daily Limit Reached |
+| NEG-424-failed-dependency | server | 424 | error | Service Dependency Failed |
 | NEG-500-server-internal | server | 500 | error | Something Went Wrong |
 | NEG-502-server-bad-gateway | server | 502 | error | Service Unavailable |
+| NEG-503-maintenance | server | 503 | warning | Scheduled Maintenance |
 | NEG-503-server-unavailable | server | 503 | warning | Down for Maintenance |
 | NEG-000-network-offline | network | — | warning | No Internet Connection |
 | NEG-000-network-slow | network | — | warning | Slow Connection |
@@ -71,6 +78,39 @@ _Generated: 2026-04-16T18:46:40.218Z · 22 codes · 6 languages · 2 locale vari
   - vi: "Vui lòng điền vào trường bắt buộc."
   - en-US: "Please fill in the required field{count, plural, one {} other {s}}."
   - vi-VN: "Quý khách vui lòng điền vào trường bắt buộc."
+
+### NEG-413-payload-too-large — File Too Large
+- **Description:** The uploaded file or request body exceeds the maximum allowed size.
+- **Recovery:** Compress the file, reduce image quality, or split large uploads into smaller parts.
+- **Platforms:** web, mobile, tablet
+- **Accessibility:** role=alert, aria-live=polite
+- **Messages:**
+  - en: "The file you're trying to upload is too large. Please reduce the size and try again."
+  - vi: "Tệp bạn đang cố tải lên quá lớn. Vui lòng giảm kích thước và thử lại."
+  - en-US: "The file you're trying to upload is too large. Please reduce the size and try again."
+  - vi-VN: "Quý khách đang cố tải lên tệp quá lớn. Vui lòng giảm kích thước và thử lại."
+
+### NEG-415-unsupported-media-type — Unsupported File Type
+- **Description:** The submitted file or content type is not accepted by this endpoint.
+- **Recovery:** Check the list of accepted file types and convert or re-export before uploading.
+- **Platforms:** web, mobile, tablet
+- **Accessibility:** role=alert, aria-live=polite
+- **Messages:**
+  - en: "This file type isn't supported. Please upload a file in a supported format."
+  - vi: "Loại tệp này không được hỗ trợ. Vui lòng tải lên tệp theo định dạng được hỗ trợ."
+  - en-US: "This file type isn't supported. Please upload a file in a supported format."
+  - vi-VN: "Loại tệp này không được hỗ trợ. Quý khách vui lòng tải lên tệp theo định dạng được hỗ trợ."
+
+### NEG-422-unprocessable-entity — Request Not Processable
+- **Description:** The request was well-formed but the values conflict with business rules (e.g. date range inverted, balance constraint).
+- **Recovery:** Review the field-level errors and correct the values before resubmitting.
+- **Platforms:** web, mobile, tablet
+- **Accessibility:** role=alert, aria-live=polite
+- **Messages:**
+  - en: "Your request was received but couldn't be processed. Please check your input and try again."
+  - vi: "Yêu cầu của bạn đã được nhận nhưng không thể xử lý. Vui lòng kiểm tra dữ liệu và thử lại."
+  - en-US: "Your request was received but couldn't be processed. Please check your input and try again."
+  - vi-VN: "Yêu cầu của Quý khách đã được nhận nhưng không thể xử lý. Vui lòng kiểm tra dữ liệu và thử lại."
 
 ### NEG-422-validation-conflict — Conflicting Input
 - **Description:** The submitted value conflicts with an existing entry.
@@ -144,6 +184,17 @@ _Generated: 2026-04-16T18:46:40.218Z · 22 codes · 6 languages · 2 locale vari
   - en-US: "You have read-only access and cannot make changes here."
   - vi-VN: "Quý khách chỉ có quyền xem và không thể thực hiện thay đổi."
 
+### NEG-0-search-no-results — No Results Found
+- **Description:** The search request succeeded but returned an empty result set. This is a UX state, not an HTTP error.
+- **Recovery:** Broaden search terms, remove filters, or try a different keyword.
+- **Platforms:** web, mobile, tablet
+- **Accessibility:** role=status, aria-live=polite
+- **Messages:**
+  - en: "We couldn't find anything matching your search. Try adjusting your filters or search terms."
+  - vi: "Chúng tôi không tìm thấy kết quả phù hợp với tìm kiếm của bạn. Hãy thử điều chỉnh bộ lọc hoặc từ khóa."
+  - en-US: "We couldn't find anything matching your search. Try adjusting your filters or search terms."
+  - vi-VN: "Chúng tôi không tìm thấy kết quả phù hợp với tìm kiếm của Quý khách. Quý khách vui lòng thử điều chỉnh bộ lọc hoặc từ khóa tìm kiếm."
+
 ### NEG-404-resource-not-found — Not Found
 - **Description:** The requested resource could not be located.
 - **Recovery:** Check the URL or go back to the homepage.
@@ -186,6 +237,17 @@ _Generated: 2026-04-16T18:46:40.218Z · 22 codes · 6 languages · 2 locale vari
   - vi: "Mục này không còn khả dụng."
   - en-US: "This item is no longer available."
   - vi-VN: "Mục này không còn khả dụng."
+
+### NEG-507-storage-quota-exceeded — Storage Quota Exceeded
+- **Description:** The user or organization has used all available storage and cannot save new data.
+- **Recovery:** Delete unused files or archives, or upgrade to a higher storage tier.
+- **Platforms:** web, mobile, tablet
+- **Accessibility:** role=alert, aria-live=assertive
+- **Messages:**
+  - en: "You've used all your available storage. Please free up space or upgrade your plan."
+  - vi: "Bạn đã sử dụng hết dung lượng lưu trữ. Vui lòng giải phóng không gian hoặc nâng cấp gói."
+  - en-US: "You've used all your available storage. Please free up space or upgrade your plan."
+  - vi-VN: "Quý khách đã sử dụng hết dung lượng lưu trữ. Vui lòng giải phóng không gian hoặc nâng cấp gói dịch vụ."
 
 ### NEG-408-timeout — Request Timed Out
 - **Description:** The server took too long to respond.
@@ -245,6 +307,17 @@ _Generated: 2026-04-16T18:46:40.218Z · 22 codes · 6 languages · 2 locale vari
   - en-US: "You've reached today's limit. Come back tomorrow."
   - vi-VN: "Quý khách đã đạt giới hạn hôm nay. Hãy quay lại vào ngày mai."
 
+### NEG-424-failed-dependency — Service Dependency Failed
+- **Description:** The action could not be completed because an upstream service this endpoint depends on is unavailable.
+- **Recovery:** Wait a few minutes and retry. If the problem persists, contact support.
+- **Platforms:** web, mobile, tablet
+- **Accessibility:** role=alert, aria-live=polite
+- **Messages:**
+  - en: "This action couldn't be completed because a required service is unavailable. Please try again shortly."
+  - vi: "Không thể hoàn thành thao tác này vì một dịch vụ phụ trợ không khả dụng. Vui lòng thử lại sau."
+  - en-US: "This action couldn't be completed because a required service is unavailable. Please try again shortly."
+  - vi-VN: "Không thể hoàn thành thao tác này vì một dịch vụ phụ trợ không khả dụng. Quý khách vui lòng thử lại sau."
+
 ### NEG-500-server-internal — Something Went Wrong
 - **Description:** An unexpected server error occurred.
 - **Recovery:** Try again in a few moments or contact support.
@@ -273,6 +346,17 @@ _Generated: 2026-04-16T18:46:40.218Z · 22 codes · 6 languages · 2 locale vari
   - vi: "Một trong các dịch vụ của chúng tôi hiện không khả dụng. Chúng tôi đang xử lý."
   - en-US: "One of our services is currently unavailable. We're looking into it."
   - vi-VN: "Một trong các dịch vụ của chúng tôi hiện không khả dụng. Chúng tôi đang xử lý."
+
+### NEG-503-maintenance — Scheduled Maintenance
+- **Description:** The service is temporarily unavailable due to planned maintenance. This is expected and time-bounded.
+- **Recovery:** Check the status page for expected completion time and try again after the maintenance window.
+- **Platforms:** web, mobile, tablet
+- **Accessibility:** role=status, aria-live=polite
+- **Messages:**
+  - en: "We're performing scheduled maintenance. We'll be back shortly — thank you for your patience."
+  - vi: "Chúng tôi đang thực hiện bảo trì theo lịch. Chúng tôi sẽ sớm trở lại — cảm ơn sự kiên nhẫn của bạn."
+  - en-US: "We're performing scheduled maintenance. We'll be back shortly — thank you for your patience."
+  - vi-VN: "Hệ thống đang thực hiện bảo trì theo lịch. Chúng tôi sẽ sớm trở lại — cảm ơn Quý khách đã kiên nhẫn chờ đợi."
 
 ### NEG-503-server-unavailable — Down for Maintenance
 - **Description:** The service is temporarily unavailable due to planned maintenance.

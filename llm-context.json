@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-04-16T18:46:40.218Z",
+    "generated": "2026-04-17T16:13:38.545Z",
     "source": "https://github.com/bbinarygo/negativ",
     "description": "Negativ error code registry — LLM context pack"
   },
@@ -90,6 +90,81 @@
         "vi": "Vui lòng điền vào trường bắt buộc.",
         "en-US": "Please fill in the required field{count, plural, one {} other {s}}.",
         "vi-VN": "Quý khách vui lòng điền vào trường bắt buộc."
+      }
+    },
+    {
+      "code": "NEG-413-payload-too-large",
+      "category": "validation",
+      "httpStatus": 413,
+      "severity": "error",
+      "title": "File Too Large",
+      "description": "The uploaded file or request body exceeds the maximum allowed size.",
+      "messageKey": "validation.payload-too-large",
+      "recoveryAction": "Compress the file, reduce image quality, or split large uploads into smaller parts.",
+      "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+      ],
+      "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+      },
+      "messages": {
+        "en": "The file you're trying to upload is too large. Please reduce the size and try again.",
+        "vi": "Tệp bạn đang cố tải lên quá lớn. Vui lòng giảm kích thước và thử lại.",
+        "en-US": "The file you're trying to upload is too large. Please reduce the size and try again.",
+        "vi-VN": "Quý khách đang cố tải lên tệp quá lớn. Vui lòng giảm kích thước và thử lại."
+      }
+    },
+    {
+      "code": "NEG-415-unsupported-media-type",
+      "category": "validation",
+      "httpStatus": 415,
+      "severity": "error",
+      "title": "Unsupported File Type",
+      "description": "The submitted file or content type is not accepted by this endpoint.",
+      "messageKey": "validation.unsupported-media-type",
+      "recoveryAction": "Check the list of accepted file types and convert or re-export before uploading.",
+      "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+      ],
+      "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+      },
+      "messages": {
+        "en": "This file type isn't supported. Please upload a file in a supported format.",
+        "vi": "Loại tệp này không được hỗ trợ. Vui lòng tải lên tệp theo định dạng được hỗ trợ.",
+        "en-US": "This file type isn't supported. Please upload a file in a supported format.",
+        "vi-VN": "Loại tệp này không được hỗ trợ. Quý khách vui lòng tải lên tệp theo định dạng được hỗ trợ."
+      }
+    },
+    {
+      "code": "NEG-422-unprocessable-entity",
+      "category": "validation",
+      "httpStatus": 422,
+      "severity": "error",
+      "title": "Request Not Processable",
+      "description": "The request was well-formed but the values conflict with business rules (e.g. date range inverted, balance constraint).",
+      "messageKey": "validation.unprocessable",
+      "recoveryAction": "Review the field-level errors and correct the values before resubmitting.",
+      "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+      ],
+      "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+      },
+      "messages": {
+        "en": "Your request was received but couldn't be processed. Please check your input and try again.",
+        "vi": "Yêu cầu của bạn đã được nhận nhưng không thể xử lý. Vui lòng kiểm tra dữ liệu và thử lại.",
+        "en-US": "Your request was received but couldn't be processed. Please check your input and try again.",
+        "vi-VN": "Yêu cầu của Quý khách đã được nhận nhưng không thể xử lý. Vui lòng kiểm tra dữ liệu và thử lại."
       }
     },
     {
@@ -235,6 +310,31 @@
       }
     },
     {
+      "code": "NEG-0-search-no-results",
+      "category": "resource",
+      "httpStatus": null,
+      "severity": "warning",
+      "title": "No Results Found",
+      "description": "The search request succeeded but returned an empty result set. This is a UX state, not an HTTP error.",
+      "messageKey": "resource.search-no-results",
+      "recoveryAction": "Broaden search terms, remove filters, or try a different keyword.",
+      "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+      ],
+      "accessibility": {
+        "ariaRole": "status",
+        "ariaLive": "polite"
+      },
+      "messages": {
+        "en": "We couldn't find anything matching your search. Try adjusting your filters or search terms.",
+        "vi": "Chúng tôi không tìm thấy kết quả phù hợp với tìm kiếm của bạn. Hãy thử điều chỉnh bộ lọc hoặc từ khóa.",
+        "en-US": "We couldn't find anything matching your search. Try adjusting your filters or search terms.",
+        "vi-VN": "Chúng tôi không tìm thấy kết quả phù hợp với tìm kiếm của Quý khách. Quý khách vui lòng thử điều chỉnh bộ lọc hoặc từ khóa tìm kiếm."
+      }
+    },
+    {
       "code": "NEG-404-resource-not-found",
       "category": "resource",
       "httpStatus": 404,
@@ -317,6 +417,31 @@
         "vi": "Mục này không còn khả dụng.",
         "en-US": "This item is no longer available.",
         "vi-VN": "Mục này không còn khả dụng."
+      }
+    },
+    {
+      "code": "NEG-507-storage-quota-exceeded",
+      "category": "resource",
+      "httpStatus": 507,
+      "severity": "error",
+      "title": "Storage Quota Exceeded",
+      "description": "The user or organization has used all available storage and cannot save new data.",
+      "messageKey": "resource.storage-quota-exceeded",
+      "recoveryAction": "Delete unused files or archives, or upgrade to a higher storage tier.",
+      "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+      ],
+      "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "assertive"
+      },
+      "messages": {
+        "en": "You've used all your available storage. Please free up space or upgrade your plan.",
+        "vi": "Bạn đã sử dụng hết dung lượng lưu trữ. Vui lòng giải phóng không gian hoặc nâng cấp gói.",
+        "en-US": "You've used all your available storage. Please free up space or upgrade your plan.",
+        "vi-VN": "Quý khách đã sử dụng hết dung lượng lưu trữ. Vui lòng giải phóng không gian hoặc nâng cấp gói dịch vụ."
       }
     },
     {
@@ -434,6 +559,31 @@
       }
     },
     {
+      "code": "NEG-424-failed-dependency",
+      "category": "server",
+      "httpStatus": 424,
+      "severity": "error",
+      "title": "Service Dependency Failed",
+      "description": "The action could not be completed because an upstream service this endpoint depends on is unavailable.",
+      "messageKey": "server.failed-dependency",
+      "recoveryAction": "Wait a few minutes and retry. If the problem persists, contact support.",
+      "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+      ],
+      "accessibility": {
+        "ariaRole": "alert",
+        "ariaLive": "polite"
+      },
+      "messages": {
+        "en": "This action couldn't be completed because a required service is unavailable. Please try again shortly.",
+        "vi": "Không thể hoàn thành thao tác này vì một dịch vụ phụ trợ không khả dụng. Vui lòng thử lại sau.",
+        "en-US": "This action couldn't be completed because a required service is unavailable. Please try again shortly.",
+        "vi-VN": "Không thể hoàn thành thao tác này vì một dịch vụ phụ trợ không khả dụng. Quý khách vui lòng thử lại sau."
+      }
+    },
+    {
       "code": "NEG-500-server-internal",
       "category": "server",
       "httpStatus": 500,
@@ -488,6 +638,31 @@
         "vi": "Một trong các dịch vụ của chúng tôi hiện không khả dụng. Chúng tôi đang xử lý.",
         "en-US": "One of our services is currently unavailable. We're looking into it.",
         "vi-VN": "Một trong các dịch vụ của chúng tôi hiện không khả dụng. Chúng tôi đang xử lý."
+      }
+    },
+    {
+      "code": "NEG-503-maintenance",
+      "category": "server",
+      "httpStatus": 503,
+      "severity": "warning",
+      "title": "Scheduled Maintenance",
+      "description": "The service is temporarily unavailable due to planned maintenance. This is expected and time-bounded.",
+      "messageKey": "server.maintenance",
+      "recoveryAction": "Check the status page for expected completion time and try again after the maintenance window.",
+      "platforms": [
+        "web",
+        "mobile",
+        "tablet"
+      ],
+      "accessibility": {
+        "ariaRole": "status",
+        "ariaLive": "polite"
+      },
+      "messages": {
+        "en": "We're performing scheduled maintenance. We'll be back shortly — thank you for your patience.",
+        "vi": "Chúng tôi đang thực hiện bảo trì theo lịch. Chúng tôi sẽ sớm trở lại — cảm ơn sự kiên nhẫn của bạn.",
+        "en-US": "We're performing scheduled maintenance. We'll be back shortly — thank you for your patience.",
+        "vi-VN": "Hệ thống đang thực hiện bảo trì theo lịch. Chúng tôi sẽ sớm trở lại — cảm ơn Quý khách đã kiên nhẫn chờ đợi."
       }
     },
     {
