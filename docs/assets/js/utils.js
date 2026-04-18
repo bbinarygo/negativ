@@ -45,11 +45,13 @@ function renderCard(cardData, tokens) {
     <span class="sev-chip sev-${esc(c.severity)}">${esc(c.severity)}</span>
     <span class="cat-label">${esc(c.category)}</span>
   </div>
-  <div class="screen-preview">
-    <div class="preview-title">${esc(c.title)}</div>
-    <div class="preview-msg">${esc(msgSnippet)}</div>
-    <span class="preview-cta">${esc(c.recoveryAction || 'Dismiss')}</span>
-  </div>
+  <a class="card-detail-link" href="${esc(c.code)}/">
+    <div class="screen-preview">
+      <div class="preview-title">${esc(c.title)}</div>
+      <div class="preview-msg">${esc(msgSnippet)}</div>
+      <span class="preview-cta">${esc(c.recoveryAction || 'Dismiss')}</span>
+    </div>
+  </a>
   <div class="card-actions">
     <button class="card-btn" onclick="copyJSON('${esc(c._path).replace(/"/g, '&quot;')}', '${esc(c.code).replace(/"/g, '&quot;')}')">Copy JSON</button>
     <a class="card-btn" href="${esc(editURL).replace(/"/g, '&quot;')}" target="_blank" rel="noopener">Edit</a>
@@ -68,7 +70,5 @@ if (typeof module !== 'undefined' && module.exports) {
 
 // ── Global exports (browser use) ─────────────────────────────────────────
 if (typeof window !== 'undefined') {
-  window.esc = esc;
-  window.fetchJSON = fetchJSON;
-  window.renderCard = renderCard;
+  window.Utils = { esc, fetchJSON, renderCard };
 }

@@ -72,28 +72,30 @@ console.log('\n📋 Testing fetchJSON() with cache');
   console.log('\n📋 Testing renderCard() function');
 
   const cardData = {
-    code: 'NEG-401-auth-session-expired',
-    category: 'auth',
+    code: 'NEG-400-validation-format',
+    category: 'validation',
     severity: 'error',
-    title: 'Session expired',
-    messageKey: 'auth.session-expired',
-    recoveryAction: 'Log in again',
-    description: 'Your session has timed out.',
-    _path: 'registry/auth/401'
+    title: 'Invalid Format',
+    messageKey: 'validation.format',
+    recoveryAction: 'Fix it',
+    description: 'Please enter a valid email.',
+    _path: 'registry/validation/400'
   };
 
   const tokens = {
-    'auth.session-expired': 'Your session has ended. Please log in again to continue.'
+    'validation.format': 'Please enter a valid email.'
   };
 
   const html = utils.renderCard(cardData, tokens);
-  assert(html.includes('NEG-401'), 'Card includes code prefix');
+  assert(html.includes('NEG-400'), 'Card includes code prefix');
   assert(html.includes('error'), 'Card includes severity');
-  assert(html.includes('auth'), 'Card includes category');
-  assert(html.includes('Session expired'), 'Card includes title');
-  assert(html.includes('Your session has ended'), 'Card includes message token');
-  assert(html.includes('Log in again'), 'Card includes recovery action');
+  assert(html.includes('validation'), 'Card includes category');
+  assert(html.includes('Invalid Format'), 'Card includes title');
+  assert(html.includes('Please enter a valid email'), 'Card includes message token');
+  assert(html.includes('Fix it'), 'Card includes recovery action');
   assert(html.includes('class="reg-card"'), 'Card has correct CSS class');
+  assert(html.includes('card-detail-link'), 'Card includes card-detail-link class');
+  assert(html.includes('href="NEG-400-validation-format/"'), 'Card includes correct detail URL');
 
   // Test message truncation
   const longCardData = {
