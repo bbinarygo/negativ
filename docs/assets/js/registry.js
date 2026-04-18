@@ -12,16 +12,14 @@ async function init() {
   const grid = document.getElementById('card-grid');
   const countEl = document.getElementById('filter-count');
 
-  // Show skeletons
   grid.innerHTML = Array(6).fill('<div class="skeleton-card skeleton"></div>').join('');
 
   try {
-    const [indexRes, tokensRes] = await Promise.all([
-      fetch(RAW + 'registry/index.json'),
-      fetch(RAW + 'localization/tokens/en.json')
+    const [index, toks] = await Promise.all([
+      Utils.fetchJSON(RAW + 'registry/index.json'),
+      Utils.fetchJSON(RAW + 'localization/tokens/en.json')
     ]);
-    const index = await indexRes.json();
-    tokens = await tokensRes.json();
+    tokens = toks;
     allCodes = index.codes;
   } catch (e) {
     grid.innerHTML = '<div class="empty-state"><strong>Could not load registry.</strong><p>Check your connection or view the <a href="https://github.com/bbinarygo/negativ/tree/main/registry">raw files on GitHub</a>.</p></div>';
@@ -85,29 +83,7 @@ function render() {
     grid.innerHTML = '<div class="empty-state"><strong>No codes match your filter.</strong><p>Try clearing the filters above.</p></div>';
     return;
   }
-  grid.innerHTML = codes.map(cardHTML).join('');
-}
-
-function cardHTML(c) {
-  const msg = tokens[c.messageKey] || c.description || '';
-  const msgSnippet = msg.length > 80 ? msg.slice(0, 80) + '\u2026' : msg;
-  const editURL = `https://github.com/bbinarygo/negativ/edit/main/${c._path}/index.json`;
-  return `<div class="reg-card">
-  <div class="card-meta">
-    <span class="code-badge">${c.code.split('-').slice(0,2).join('-')}</span>
-    <span class="sev-chip sev-${c.severity}">${c.severity}</span>
-    <span class="cat-label">${c.category}</span>
-  </div>
-  <div class="screen-preview">
-    <div class="preview-title">${escHtml(c.title)}</div>
-    <div class="preview-msg">${escHtml(msgSnippet)}</div>
-    <span class="preview-cta">${escHtml(c.recoveryAction || 'Dismiss')}</span>
-  </div>
-  <div class="card-actions">
-    <button class="card-btn" onclick="copyJSON('${escAttr(c._path)}', '${escAttr(c.code)}')">Copy JSON</button>
-    <a class="card-btn" href="${escAttr(editURL)}" target="_blank" rel="noopener">Edit</a>
-  </div>
-</div>`;
+  grid.innerHTML = codes.map(c => Utils.renderCard(c, tokens)).join('');
 }
 
 async function copyJSON(path, code) {
@@ -134,14 +110,4 @@ function bindFilters() {
   });
 }
 
-function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function escAttr(s) { return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-
 document.addEventListener('DOMContentLoaded', init);
-
-// Exported for landing page preview use
-window.registryInit = init;
-window.registryCardHTML = cardHTML;
-window.registryFiltered = filtered;
-window.registryAllCodes = () => allCodes;
-window.registryTokens = () => tokens;
