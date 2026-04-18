@@ -8,5 +8,14 @@
     "messageKey": "validation.conflict",
     "recoveryAction": "Use a different value that doesn't conflict with existing entries.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" },
+    "triggers": [
+        "Two or more submitted field values are individually valid but mutually exclusive",
+        "A field combination violates a business rule (e.g. start date after end date)"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-2-say-why",
+        "rule-3-recovery-action"
+    ]
 }

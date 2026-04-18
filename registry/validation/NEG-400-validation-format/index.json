@@ -15,5 +15,13 @@
     "accessibility": {
         "ariaRole": "alert",
         "ariaLive": "assertive"
-    }
+    },
+    "triggers": [
+        "A field value does not match the expected pattern (e.g. email, phone number, date, URL)",
+        "User submits a form field that passes presence checks but fails regex or type validation"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }

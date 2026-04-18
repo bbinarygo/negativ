@@ -11,5 +11,13 @@
   "accessibility": {
     "ariaRole": "alert",
     "ariaLive": "polite"
-  }
+  },
+  "triggers": [
+    "Request body is syntactically valid JSON but fails business logic validation",
+    "A submitted value is in range but creates an impossible or contradictory state"
+  ],
+  "playbookRules": [
+    "rule-1-say-what-happened",
+    "rule-3-recovery-action"
+  ]
 }

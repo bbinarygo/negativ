@@ -8,5 +8,14 @@
     "messageKey": "validation.length",
     "recoveryAction": "Shorten your input to meet the character limit.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" },
+    "triggers": [
+        "A field value exceeds the maximum allowed character count",
+        "A field value is shorter than the required minimum character count",
+        "A password or username fails length constraints defined by the system"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }
