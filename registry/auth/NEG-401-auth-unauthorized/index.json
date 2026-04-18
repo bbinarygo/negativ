@@ -15,5 +15,14 @@
     "accessibility": {
         "ariaRole": "alert",
         "ariaLive": "polite"
-    }
+    },
+    "triggers": [
+        "Request is made to a protected endpoint without an Authorization header",
+        "The provided token is malformed or does not match any active session",
+        "User has never authenticated and attempts to access a resource requiring sign-in"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }

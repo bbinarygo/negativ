@@ -11,5 +11,15 @@
     "accessibility": {
         "ariaRole": "alert",
         "ariaLive": "polite"
-    }
+    },
+    "triggers": [
+        "An authentication token has exceeded its configured TTL and is no longer valid",
+        "The server revokes a session due to inactivity timeout",
+        "A refresh token rotation fails, invalidating the active session"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-2-say-why",
+        "rule-3-recovery-action"
+    ]
 }
