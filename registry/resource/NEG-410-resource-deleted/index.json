@@ -8,5 +8,13 @@
     "messageKey": "resource.deleted",
     "recoveryAction": "Go back or search for an alternative.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" },
+    "triggers": [
+        "A resource previously existed but has been permanently deleted from the system",
+        "A deep link or bookmark points to an entity that has been soft-deleted and is now purged"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }

@@ -8,5 +8,13 @@
     "messageKey": "permission.read-only",
     "recoveryAction": "Contact your administrator to request edit access.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "status", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "status", "ariaLive": "polite" },
+    "triggers": [
+        "A user with read-only permissions attempts a write, update, or delete operation",
+        "An API key scoped to read-only access is used to call a mutating endpoint"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-2-say-why"
+    ]
 }

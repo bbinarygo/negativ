@@ -11,5 +11,13 @@
   "accessibility": {
     "ariaRole": "alert",
     "ariaLive": "assertive"
-  }
+  },
+  "triggers": [
+    "A file upload would push the user's or account's total storage above the configured limit",
+    "A write operation is rejected because the allocated disk or object-storage quota is full"
+  ],
+  "playbookRules": [
+    "rule-2-say-why",
+    "rule-3-recovery-action"
+  ]
 }

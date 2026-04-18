@@ -8,5 +8,14 @@
     "messageKey": "resource.conflict",
     "recoveryAction": "Use a different name or identifier.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" },
+    "triggers": [
+        "A create request attempts to insert a record that violates a unique constraint (e.g. duplicate email)",
+        "Two concurrent updates conflict because both read the same version before either wrote"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-2-say-why",
+        "rule-3-recovery-action"
+    ]
 }
