@@ -4,21 +4,21 @@ The four rules every error message must follow in Negativ.
 
 ---
 
-## Rule 1: Say what happened
+## Rule 1: Say what happened {#rule-1-say-what-happened}
 
 Bad: "Something went wrong."
 Good: "We couldn't save your changes."
 
 Users need to know what failed. Be specific about the operation, not the system.
 
-## Rule 2: Say why (if it helps)
+## Rule 2: Say why (if it helps) {#rule-2-say-why}
 
 Bad: "Payment failed."
 Good: "Your payment was declined. This can happen when card details are incorrect or funds are unavailable."
 
 Only include the reason if it helps the user fix the problem. Don't expose internal errors.
 
-## Rule 3: Say what to do next
+## Rule 3: Say what to do next {#rule-3-recovery-action}
 
 Every error must include a recovery action — even if the only action is "try again."
 
@@ -30,7 +30,7 @@ Recovery actions:
 - Should use imperative verbs: "Check", "Update", "Contact"
 - Should never blame the user: "Your connection" not "You disconnected"
 
-## Rule 4: Match the severity
+## Rule 4: Match the severity {#rule-4-match-severity}
 
 | Severity | When to use | Tone |
 |---|---|---|
