@@ -36,6 +36,7 @@ assertEqual(utils.esc('hello'), 'hello', 'Plain text unchanged');
 assertEqual(utils.esc('hello & world'), 'hello &amp; world', 'Ampersand escaped');
 assertEqual(utils.esc('<script>'), '&lt;script&gt;', 'HTML tags escaped');
 assertEqual(utils.esc('test"value'), 'test&quot;value', 'Double quotes escaped');
+assertEqual(utils.esc("it's"), "it&#39;s", 'Single quote escaped');
 assertEqual(utils.esc('a&b<c>d"e'), 'a&amp;b&lt;c&gt;d&quot;e', 'Multiple special chars');
 
 // ── fetchJSON() tests with mock ──────────────────────────────────────────
