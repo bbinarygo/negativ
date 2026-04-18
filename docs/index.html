@@ -3,13 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>negativ &mdash; The missing half of every design system</title>
-  <meta name="description" content="Standardized error codes, multi-platform screens, and negative UX patterns for every product team." />
+  <title>negativ &mdash; Stop designing error states from scratch</title>
+  <meta name="description" content="Standardized error codes with ready-to-use copy in 6 languages, screen specs, and recovery guidance for your design system." />
   <link rel="stylesheet" href="assets/css/custom.css" />
-  <style>
-    .preview-section { padding: 0 2rem 3rem; }
-    .preview-section .card-grid { padding: 0; margin-top: 1.25rem; }
-  </style>
 </head>
 <body>
 
@@ -17,6 +13,7 @@
   <a class="nav-logo" href="./">negativ</a>
   <div class="nav-links">
     <a href="registry/">Registry</a>
+    <a href="playbooks/">Playbooks</a>
     <a href="contribute/">Contribute</a>
     <a class="nav-gh" href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">&#9733; GitHub</a>
   </div>
@@ -24,40 +21,54 @@
 
 <!-- Hero -->
 <section class="hero">
-  <h1>The missing half of every design system</h1>
-  <p>Standardized error codes, multi-platform screens, and negative UX patterns &mdash; open-source, community-driven, LLM-ready.</p>
-  <div class="hero-stats" id="hero-stats">
-    <span class="stat-pill">Loading&hellip;</span>
+  <p class="hero-eyebrow" id="hero-eyebrow">Open-source &middot; 29 codes &middot; 6 languages</p>
+  <h1>Stop designing error states from scratch</h1>
+  <div class="hero-explainer">
+    Negativ is a registry of standardized error codes &mdash; each with ready-to-use copy in 6 languages,
+    screen specs for web &amp; mobile, and recovery guidance for your design system or product.
   </div>
   <div class="hero-ctas">
-    <a class="btn-primary" href="registry/">Browse Registry &rarr;</a>
-    <a class="btn-secondary" href="contribute/">Add a Code +</a>
+    <a class="btn-primary" href="registry/">Browse the Registry &rarr;</a>
+    <a class="btn-secondary" href="contribute/">Contribute +</a>
   </div>
 </section>
 
-<!-- 3-click path -->
-<div class="path-strip">
-  <div class="path-step"><span class="step-num">&#9312;</span> Browse the registry</div>
-  <span class="path-arrow">&rarr;</span>
-  <div class="path-step"><span class="step-num">&#9313;</span> Fill the wizard</div>
-  <span class="path-arrow">&rarr;</span>
-  <div class="path-step"><span class="step-num">&#9314;</span> Submit a GitHub Issue</div>
-</div>
+<!-- How it works -->
+<section class="how-it-works">
+  <h2>How it works</h2>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-icon">&#128269;</div>
+      <div class="how-step-title">Find your error</div>
+      <div class="how-step-desc">Search by HTTP code, category, or keyword</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-icon">&#128203;</div>
+      <div class="how-step-title">Copy the message</div>
+      <div class="how-step-desc">UX copy in your language, ready to paste</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-icon">&#128640;</div>
+      <div class="how-step-title">Ship it</div>
+      <div class="how-step-desc">Screen specs + design tokens included</div>
+    </div>
+  </div>
+</section>
 
-<!-- Registry preview -->
-<section class="preview-section">
+<!-- Registry preview list -->
+<section class="preview-list-section">
   <div class="section-header">
     <h2>Registry preview</h2>
     <a id="see-all-link" href="registry/">See all codes &rarr;</a>
   </div>
-  <div id="preview-grid" class="card-grid">
-    <!-- 6 skeleton cards while loading -->
-    <div class="skeleton-card skeleton"></div>
-    <div class="skeleton-card skeleton"></div>
-    <div class="skeleton-card skeleton"></div>
-    <div class="skeleton-card skeleton"></div>
-    <div class="skeleton-card skeleton"></div>
-    <div class="skeleton-card skeleton"></div>
+  <div id="preview-list" class="preview-list">
+    <!-- filled by JS -->
+    <div class="skeleton-list-row skeleton"></div>
+    <div class="skeleton-list-row skeleton"></div>
+    <div class="skeleton-list-row skeleton"></div>
+    <div class="skeleton-list-row skeleton"></div>
+    <div class="skeleton-list-row skeleton"></div>
+    <div class="skeleton-list-row skeleton"></div>
   </div>
 </section>
 
@@ -70,55 +81,42 @@
   <span class="footer-mono">npm install @negativ/core</span>
 </footer>
 
-<script src="assets/js/registry.js"></script>
+<script src="assets/js/utils.js"></script>
 <script>
   const RAW_INDEX  = 'https://raw.githubusercontent.com/bbinarygo/negativ/main/registry/index.json';
   const RAW_TOKENS = 'https://raw.githubusercontent.com/bbinarygo/negativ/main/localization/tokens/en.json';
 
   async function initLanding() {
     try {
-      const [idxRes, tokRes] = await Promise.all([fetch(RAW_INDEX), fetch(RAW_TOKENS)]);
-      const index = await idxRes.json();
-      const toks  = await tokRes.json();
+      const [index, toks] = await Promise.all([
+        Utils.fetchJSON(RAW_INDEX),
+        Utils.fetchJSON(RAW_TOKENS)
+      ]);
 
-      // Stats
       const cats = new Set(index.codes.map(c => c.category));
-      document.getElementById('hero-stats').innerHTML =
-        '<span class="stat-pill"><strong>' + index.count + '</strong> error codes</span>' +
-        '<span class="stat-pill"><strong>' + cats.size + '</strong> categories</span>' +
-        '<span class="stat-pill"><strong>6</strong> v1 languages</span>';
+      document.getElementById('hero-eyebrow').textContent =
+        'Open-source \u00b7 ' + index.count + ' codes \u00b7 6 languages';
       document.getElementById('see-all-link').textContent = 'See all ' + index.count + ' codes \u2192';
 
-      // Preview: first 6 codes
       const preview = index.codes.slice(0, 6);
-      document.getElementById('preview-grid').innerHTML = preview.map(function(c) {
+      document.getElementById('preview-list').innerHTML = preview.map(function(c) {
         var msg = toks[c.messageKey] || c.description || '';
-        var snippet = msg.length > 80 ? msg.slice(0, 80) + '\u2026' : msg;
-        var editURL = 'https://github.com/bbinarygo/negativ/edit/main/' + c._path + '/index.json';
-        return '<div class="reg-card">' +
-          '<div class="card-meta">' +
-            '<span class="code-badge">' + c.code.split('-').slice(0,2).join('-') + '</span>' +
-            '<span class="sev-chip sev-' + c.severity + '">' + c.severity + '</span>' +
-            '<span class="cat-label">' + c.category + '</span>' +
-          '</div>' +
-          '<div class="screen-preview">' +
-            '<div class="preview-title">' + esc(c.title) + '</div>' +
-            '<div class="preview-msg">' + esc(snippet) + '</div>' +
-            '<span class="preview-cta">' + esc(c.recoveryAction || 'Dismiss') + '</span>' +
-          '</div>' +
-          '<div class="card-actions">' +
-            '<a class="card-btn" href="registry/?q=' + encodeURIComponent(c.code) + '">View \u2192</a>' +
-            '<a class="card-btn" href="' + esc(editURL) + '" target="_blank" rel="noopener">Edit</a>' +
-          '</div>' +
-        '</div>';
+        var snippet = msg.length > 60 ? msg.slice(0, 60) + '\u2026' : msg;
+        return '<a class="preview-list-row" href="registry/' + Utils.esc(c.code) + '/">' +
+          '<span class="preview-list-code">' + Utils.esc(c.code.split('-').slice(0, 2).join('-')) + '</span>' +
+          '<span class="sev-chip sev-' + Utils.esc(c.severity) + '">' + Utils.esc(c.severity) + '</span>' +
+          '<span class="preview-list-title">' + Utils.esc(c.title) + '</span>' +
+          '<span class="preview-list-msg">' + Utils.esc(snippet) + '</span>' +
+          '<span class="cat-label">' + Utils.esc(c.category) + '</span>' +
+          '<span class="preview-list-arrow">\u2192</span>' +
+          '</a>';
       }).join('');
     } catch(e) {
-      document.getElementById('preview-grid').innerHTML =
+      document.getElementById('preview-list').innerHTML =
         '<div class="empty-state"><p>Could not load preview. <a href="registry/">Browse the full registry &rarr;</a></p></div>';
     }
   }
 
-  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
   document.addEventListener('DOMContentLoaded', initLanding);
 </script>
 </body>
