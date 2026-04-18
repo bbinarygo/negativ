@@ -1,7 +1,39 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(npx tsc:*)",
+      "Bash(tsc:*)",
+      "Bash(/Users/baonguyen/Documents/negativ/node_modules/.bin/tsc:*)",
+      "Bash(git config:*)",
+      "Bash(npm run:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(node -e ':*)",
+      "Bash(python3 -c ':*)",
+      "Bash(git -C .worktrees/phase-3b log --oneline -10)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git merge:*)",
+      "Bash(git branch:*)",
+      "Bash(git worktree:*)",
+      "Read(//Users/baonguyen/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/**)",
+      "Read(//Users/baonguyen/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/scripts/**)",
+      "Read(//Users/baonguyen/.claude/plugins/**)",
+      "Bash(bash /Users/baonguyen/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh --project-dir /Users/baonguyen/Documents/negativ)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d['codes'][0], indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); keys=list\\(d.keys\\(\\)\\)[:8]; print\\(json.dumps\\({k:d[k] for k in keys}, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('required',[]\\), indent=2\\)\\); print\\(json.dumps\\(list\\(d.get\\('properties',{}\\).keys\\(\\)\\), indent=2\\)\\)\")",
+      "Bash(git check-ignore:*)",
+      "Bash(npm install:*)",
+      "Bash(npx js-yaml:*)",
+      "Bash(git -C /Users/baonguyen/Documents/negativ/.worktrees/feat-discoverability status)",
+      "Bash(gh auth:*)",
+      "Bash(npm test:*)",
+      "Bash(git -C /Users/baonguyen/Documents/negativ/.worktrees/feat-discoverability status --short)",
+      "Bash(node *)",
+      "Bash(jq)"
     ]
-  }
+  },
+  "outputStyle": "Explanatory"
 }
