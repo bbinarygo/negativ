@@ -11,3 +11,6 @@ docs/superpowers/
 
 # Git worktrees
 .worktrees/
+
+# Generated detail pages (produced by scripts/build-site.js at CI time)
+docs/registry/NEG-*/

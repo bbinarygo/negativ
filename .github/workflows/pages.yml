@@ -5,7 +5,8 @@ on:
     branches: [main]
     paths:
       - "docs/**"
-      - "registry/index.json"
+      - "registry/**"
+      - "localization/**"
 
 permissions:
   contents: read
@@ -24,6 +25,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build site (generate detail pages)
+        run: node scripts/build-site.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

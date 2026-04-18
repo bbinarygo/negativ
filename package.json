@@ -8,7 +8,8 @@
     "validate": "node scripts/validate.js",
     "migrate": "node scripts/migrate.js",
     "llm-context": "node scripts/generate-llm-context.js",
-    "build:core": "npm run build --workspace=packages/core"
+    "build:core": "npm run build --workspace=packages/core",
+    "build-site": "node scripts/build-site.js"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
