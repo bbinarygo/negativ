@@ -15,5 +15,15 @@
     "accessibility": {
         "ariaRole": "alert",
         "ariaLive": "assertive"
-    }
+    },
+    "triggers": [
+        "Payment provider returns a declined status for the card at authorization time",
+        "Insufficient funds are detected by the issuing bank during authorization",
+        "Card number passes format validation but fails bank authorization",
+        "The card has been blocked or reported lost by the issuing bank"
+    ],
+    "playbookRules": [
+        "rule-2-say-why",
+        "rule-3-recovery-action"
+    ]
 }

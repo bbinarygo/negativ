@@ -8,5 +8,13 @@
     "messageKey": "payment.expired",
     "recoveryAction": "Update your payment details with a valid card.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" },
+    "triggers": [
+        "The card's expiration month/year has passed at the time of the transaction",
+        "A stored payment method's expiry date is in the past when a recurring charge is attempted"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }
