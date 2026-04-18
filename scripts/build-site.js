@@ -57,6 +57,10 @@ function buildSite() {
     const localeMessages = {};
     for (const [locale, localeConf] of Object.entries(supportedLocales)) {
       const base         = localeConf.inherits;
+      if (!base) {
+        console.warn(`  WARN: locale '${locale}' has no 'inherits' field — skipping`);
+        continue;
+      }
       const overridePath = path.join(atomPath, 'localization', `${locale}.json`);
       if (fs.existsSync(overridePath)) {
         const d = JSON.parse(fs.readFileSync(overridePath, 'utf8'));
