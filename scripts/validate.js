@@ -116,6 +116,24 @@ for (const category of VALID_CATEGORIES) {
     // 7. journey-refs.json must exist
     checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
 
+    // 9. playbookRules values must match known enum if present
+    const VALID_PLAYBOOK_RULES = [
+      'rule-1-say-what-happened',
+      'rule-2-say-why',
+      'rule-3-recovery-action',
+      'rule-4-match-severity',
+    ];
+    if (code.playbookRules) {
+      for (const rule of code.playbookRules) {
+        if (!VALID_PLAYBOOK_RULES.includes(rule)) {
+          err(`playbookRules contains unknown rule ID "${rule}"`);
+        }
+      }
+    }
+    if (code.triggers && code.triggers.length === 0) {
+      console.warn(`  ⚠️  triggers is present but empty in ${codeDir}`);
+    }
+
     // 8. Optional locale override files
     const foundLocales = [];
     for (const locale of localeKeys) {
@@ -194,6 +212,24 @@ if (fs.existsSync(VERTICALS_DIR)) {
       }
       checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
 
+      // playbookRules values must match known enum if present
+      const VALID_PLAYBOOK_RULES = [
+        'rule-1-say-what-happened',
+        'rule-2-say-why',
+        'rule-3-recovery-action',
+        'rule-4-match-severity',
+      ];
+      if (code.playbookRules) {
+        for (const rule of code.playbookRules) {
+          if (!VALID_PLAYBOOK_RULES.includes(rule)) {
+            err(`playbookRules contains unknown rule ID "${rule}"`);
+          }
+        }
+      }
+      if (code.triggers && code.triggers.length === 0) {
+        console.warn(`  ⚠️  triggers is present but empty in ${codeDir}`);
+      }
+
       const foundLocales = [];
       for (const locale of localeKeys) {
         const locPath = path.join(atomDir, 'localization', `${locale}.json`);
@@ -247,10 +283,8 @@ const playbookFiles = fs.readdirSync(playbooksDir).filter(f => f.endsWith('.md')
 const playbookIndex = playbookFiles.map(filename => {
   const raw = fs.readFileSync(path.join(playbooksDir, filename), 'utf8');
   const lines = raw.split('\n');
-  // Title: first line starting with "# "
   const titleLine = lines.find(l => l.startsWith('# ')) || '';
   const title = titleLine.replace(/^# /, '').trim();
-  // Summary: first non-empty paragraph after the title (skip "---" separators)
   let summary = '';
   let pastTitle = false;
   for (const line of lines) {
@@ -258,8 +292,16 @@ const playbookIndex = playbookFiles.map(filename => {
     if (line.startsWith('#') || line.startsWith('---')) continue;
     if (line.trim()) { summary = line.trim(); break; }
   }
+  // Extract rule IDs from headings with {#rule-id} anchors
+  const rules = [];
+  for (const line of lines) {
+    const match = line.match(/^##\s+(.+?)\s+\{#([a-z0-9-]+)\}/);
+    if (match) {
+      rules.push({ id: match[2], label: match[1].replace(/^Rule \d+:\s*/, '').trim() });
+    }
+  }
   const slug = filename.replace(/\.md$/, '');
-  return { slug, title, summary, path: `playbooks/${filename}` };
+  return { slug, title, summary, path: `playbooks/${filename}`, ...(rules.length > 0 ? { rules } : {}) };
 });
 fs.writeFileSync(
   path.join(playbooksDir, 'index.json'),

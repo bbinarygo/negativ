@@ -17,7 +17,25 @@
       "slug": "writing-error-messages",
       "title": "Writing Error Messages",
       "summary": "The four rules every error message must follow in Negativ.",
-      "path": "playbooks/writing-error-messages.md"
+      "path": "playbooks/writing-error-messages.md",
+      "rules": [
+        {
+          "id": "rule-1-say-what-happened",
+          "label": "Say what happened"
+        },
+        {
+          "id": "rule-2-say-why",
+          "label": "Say why (if it helps)"
+        },
+        {
+          "id": "rule-3-recovery-action",
+          "label": "Say what to do next"
+        },
+        {
+          "id": "rule-4-match-severity",
+          "label": "Match the severity"
+        }
+      ]
     }
   ]
 }
