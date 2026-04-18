@@ -25,6 +25,7 @@ async function fetchJSON(url) {
     return fetchCache[url];
   }
   const response = await fetch(url);
+  if (!response.ok) throw new Error('HTTP ' + response.status + ' for ' + url);
   const data = await response.json();
   fetchCache[url] = data;
   return data;

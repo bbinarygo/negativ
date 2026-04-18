@@ -50,6 +50,7 @@ console.log('\n📋 Testing fetchJSON() with cache');
     // Simulate network delay
     await new Promise(r => setTimeout(r, 10));
     return {
+      ok: true,
       json: async () => ({ url, data: 'test-data', timestamp: Date.now() })
     };
   };

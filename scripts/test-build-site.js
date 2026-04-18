@@ -27,6 +27,9 @@ console.assert(neg400.includes('lang-tag-override'),     'FAIL: NEG-400 locale o
 console.assert(neg400.includes('breadcrumb'),            'FAIL: NEG-400 breadcrumb missing');
 console.assert(neg400.includes('a11y-grid'),             'FAIL: NEG-400 accessibility section missing');
 
+const okBtn = neg400.includes('onclick="copyMsg(this,&quot;');
+console.assert(okBtn, 'FAIL: copy button onclick not correctly entity-encoded');
+
 // Spot-check NEG-401 for CCPA locale override
 const neg401 = fs.readFileSync(path.join(DOCS_REG, 'NEG-401-auth-unauthorized', 'index.html'), 'utf8');
 console.assert(neg401.includes('CCPA'),                                 'FAIL: NEG-401 CCPA badge missing');

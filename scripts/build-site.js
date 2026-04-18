@@ -113,7 +113,7 @@ function generateHTML({ atom, messages, localeMessages, related, langMeta, suppo
         esc(msg) +
         regulatory.map(r => ' <span class="locale-badge">' + esc(r) + '</span>').join('') +
       '</td>' +
-      '<td><button class="copy-btn" onclick="copyMsg(this,' + JSON.stringify(msg) + ')">Copy</button></td>' +
+      '<td><button class="copy-btn" onclick="copyMsg(this,' + JSON.stringify(msg).replace(/"/g, '&quot;') + ')">Copy</button></td>' +
     '</tr>';
   }).filter(Boolean).join('\n');
 
