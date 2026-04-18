@@ -93,7 +93,6 @@
         Utils.fetchJSON(RAW_TOKENS)
       ]);
 
-      const cats = new Set(index.codes.map(c => c.category));
       document.getElementById('hero-eyebrow').textContent =
         'Open-source \u00b7 ' + index.count + ' codes \u00b7 6 languages';
       document.getElementById('see-all-link').textContent = 'See all ' + index.count + ' codes \u2192';
