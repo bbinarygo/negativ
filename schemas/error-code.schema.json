@@ -84,7 +84,9 @@
         },
         "triggers": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+                "type": "string"
+            },
             "description": "Platform-agnostic conditions that cause this error to fire"
         },
         "playbookRules": {
