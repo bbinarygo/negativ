@@ -8,5 +8,13 @@
     "messageKey": "timeout.gateway",
     "recoveryAction": "Wait a moment and try again.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" },
+    "triggers": [
+        "A reverse proxy or API gateway does not receive a timely response from an upstream service",
+        "A downstream microservice call exceeds the gateway's configured upstream timeout"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }

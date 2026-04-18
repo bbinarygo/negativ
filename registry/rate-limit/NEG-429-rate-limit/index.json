@@ -15,5 +15,14 @@
     "accessibility": {
         "ariaRole": "alert",
         "ariaLive": "polite"
-    }
+    },
+    "triggers": [
+        "A client exceeds the allowed number of requests per time window (e.g. 100 requests per minute)",
+        "An automated script or rapid user action triggers the per-endpoint throttle"
+    ],
+    "playbookRules": [
+        "rule-2-say-why",
+        "rule-3-recovery-action",
+        "rule-4-match-severity"
+    ]
 }

@@ -8,5 +8,13 @@
     "messageKey": "rate-limit.daily",
     "recoveryAction": "Come back tomorrow or upgrade your plan.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "polite" },
+    "triggers": [
+        "A user or API key has consumed their full daily quota of allowed requests",
+        "A free-tier account hits a 24-hour rolling request cap"
+    ],
+    "playbookRules": [
+        "rule-2-say-why",
+        "rule-3-recovery-action"
+    ]
 }

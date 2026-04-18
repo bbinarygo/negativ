@@ -8,5 +8,13 @@
     "messageKey": "network.slow",
     "recoveryAction": "Move closer to your router or switch to a better network.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "status", "ariaLive": "polite" }
+    "accessibility": { "ariaRole": "status", "ariaLive": "polite" },
+    "triggers": [
+        "A request exceeds a client-side timeout threshold due to high latency",
+        "Network throughput is too low to load required assets within an acceptable window"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-4-match-severity"
+    ]
 }

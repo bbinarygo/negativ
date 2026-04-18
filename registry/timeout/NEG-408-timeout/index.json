@@ -15,5 +15,13 @@
     "accessibility": {
         "ariaRole": "alert",
         "ariaLive": "polite"
-    }
+    },
+    "triggers": [
+        "The server closes the connection because the client did not send a complete request within the configured timeout",
+        "A long-running form submission or upload exceeds the server's read timeout"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }
