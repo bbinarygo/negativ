@@ -34,6 +34,25 @@ const validateLocalization = ajv.compile(localizationSchema);
 
 const VALID_CATEGORIES = ['validation', 'auth', 'permission', 'resource', 'timeout', 'rate-limit', 'server', 'network', 'payment'];
 const REQUIRED_PLATFORMS = ['desktop', 'mobile'];
+const VALID_PLAYBOOK_RULES = [
+  'rule-1-say-what-happened',
+  'rule-2-say-why',
+  'rule-3-recovery-action',
+  'rule-4-match-severity',
+];
+
+function validateCodeEnrichment(code, codeDir) {
+  if (Array.isArray(code.playbookRules) && code.playbookRules.length > 0) {
+    for (const rule of code.playbookRules) {
+      if (!VALID_PLAYBOOK_RULES.includes(rule)) {
+        err(`playbookRules contains unknown rule ID "${rule}"`);
+      }
+    }
+  }
+  if (code.triggers && code.triggers.length === 0) {
+    console.warn(`  ⚠️  triggers is present but empty in ${codeDir}`);
+  }
+}
 
 let errors = 0;
 const index = [];
@@ -116,25 +135,10 @@ for (const category of VALID_CATEGORIES) {
     // 7. journey-refs.json must exist
     checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
 
-    // 9. playbookRules values must match known enum if present
-    const VALID_PLAYBOOK_RULES = [
-      'rule-1-say-what-happened',
-      'rule-2-say-why',
-      'rule-3-recovery-action',
-      'rule-4-match-severity',
-    ];
-    if (code.playbookRules) {
-      for (const rule of code.playbookRules) {
-        if (!VALID_PLAYBOOK_RULES.includes(rule)) {
-          err(`playbookRules contains unknown rule ID "${rule}"`);
-        }
-      }
-    }
-    if (code.triggers && code.triggers.length === 0) {
-      console.warn(`  ⚠️  triggers is present but empty in ${codeDir}`);
-    }
+    // 8. playbookRules values must match known enum if present
+    validateCodeEnrichment(code, codeDir);
 
-    // 8. Optional locale override files
+    // 9. Optional locale override files
     const foundLocales = [];
     for (const locale of localeKeys) {
       const locPath = path.join(atomDir, 'localization', `${locale}.json`);
@@ -213,22 +217,7 @@ if (fs.existsSync(VERTICALS_DIR)) {
       checkExists(path.join(atomDir, 'journey-refs.json'), 'journey-refs.json');
 
       // playbookRules values must match known enum if present
-      const VALID_PLAYBOOK_RULES = [
-        'rule-1-say-what-happened',
-        'rule-2-say-why',
-        'rule-3-recovery-action',
-        'rule-4-match-severity',
-      ];
-      if (code.playbookRules) {
-        for (const rule of code.playbookRules) {
-          if (!VALID_PLAYBOOK_RULES.includes(rule)) {
-            err(`playbookRules contains unknown rule ID "${rule}"`);
-          }
-        }
-      }
-      if (code.triggers && code.triggers.length === 0) {
-        console.warn(`  ⚠️  triggers is present but empty in ${codeDir}`);
-      }
+      validateCodeEnrichment(code, codeDir);
 
       const foundLocales = [];
       for (const locale of localeKeys) {
