@@ -11,5 +11,14 @@
   "accessibility": {
     "ariaRole": "status",
     "ariaLive": "polite"
-  }
+  },
+  "triggers": [
+    "The system is taken offline intentionally for a scheduled maintenance window",
+    "A deployment or database migration temporarily makes the service unavailable"
+  ],
+  "playbookRules": [
+    "rule-1-say-what-happened",
+    "rule-2-say-why",
+    "rule-3-recovery-action"
+  ]
 }

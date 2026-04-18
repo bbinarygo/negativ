@@ -8,5 +8,13 @@
     "messageKey": "server.bad-gateway",
     "recoveryAction": "Try again in a few minutes.",
     "platforms": ["web", "mobile", "tablet"],
-    "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" }
+    "accessibility": { "ariaRole": "alert", "ariaLive": "assertive" },
+    "triggers": [
+        "A reverse proxy receives an invalid response from the upstream application server",
+        "An upstream service crashes mid-response, sending a malformed or empty reply to the gateway"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }

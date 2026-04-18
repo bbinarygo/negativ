@@ -15,5 +15,13 @@
     "accessibility": {
         "ariaRole": "alert",
         "ariaLive": "assertive"
-    }
+    },
+    "triggers": [
+        "An unhandled exception occurs in the server application during request processing",
+        "A null reference, assertion failure, or unexpected state causes the request handler to crash"
+    ],
+    "playbookRules": [
+        "rule-1-say-what-happened",
+        "rule-3-recovery-action"
+    ]
 }
