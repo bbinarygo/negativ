@@ -81,6 +81,24 @@
                     "type": "string"
                 }
             }
+        },
+        "triggers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Platform-agnostic conditions that cause this error to fire"
+        },
+        "playbookRules": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "rule-1-say-what-happened",
+                    "rule-2-say-why",
+                    "rule-3-recovery-action",
+                    "rule-4-match-severity"
+                ]
+            },
+            "description": "IDs of writing-error-messages playbook rules that apply to this code"
         }
     }
 }
