@@ -32,7 +32,10 @@
       "Bash(npm test:*)",
       "Bash(git -C /Users/baonguyen/Documents/negativ/.worktrees/feat-discoverability status --short)",
       "Bash(node *)",
-      "Bash(jq)"
+      "Bash(jq)",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(echo \"Exit code: $?\")"
     ]
   },
   "outputStyle": "Explanatory"

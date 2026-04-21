@@ -2,6 +2,31 @@
 
 Thank you for wanting to make digital products more resilient! Negativ is 100% community-driven. Every error code, screen, or journey you add helps thousands of developers and designers ship better negative experiences.
 
+We made it simple for our 3 target audiences to contribute in the exact way that solves their daily pain.
+
+### 🧭 Product Manager track
+**Pain you solve:** “We have no standardized way to measure or prioritize negative UX impact.”  
+**Start here:**
+1. Open `playbooks/negative-ux-roi.md`
+2. Add your company’s real benchmark (cart abandonment, support tickets, etc.)
+3. Submit PR — you’ll be featured in the public Impact Dashboard
+
+### 💻 Developer track
+**Pain you solve:** “Error handling is tribal knowledge.”  
+**Start here:**
+1. Copy `registry/_template/`
+2. Add your stack’s integration (Shadcn, Material, Tailwind, etc.) in `integration/`
+3. Run `npm run validate` → PR
+
+### 🔬 UX Researcher track
+**Pain you solve:** “Negative journeys are invisible.”  
+**Start here:**
+1. Pick any journey in `journeys/`
+2. Add research kit (test script + survey + metrics)
+3. PR — your name goes on the Research-Ready badge
+
+---
+
 ## Ways to Contribute
 - Add or improve an error code (most common & highest impact)
 - Submit new multi-platform error screens or variants
