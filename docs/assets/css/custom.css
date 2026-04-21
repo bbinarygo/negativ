@@ -231,3 +231,12 @@ a:hover { text-decoration: underline; }
 .contrib-score { font-size: 0.75rem; color: var(--accent2); font-weight: 600; }
 .contrib-empty { color: var(--text2); font-size: 0.875rem; grid-column: 1 / -1; }
 .contrib-skel { pointer-events: none; }
+
+/* ── Wizard details/summary toggle ────────────────────────── */
+details.wiz-details-wrapper, details#wiz-details { border-bottom: 1px solid var(--border); }
+.wiz-summary { display: flex; align-items: baseline; gap: 1rem; padding: 1.25rem 2rem; cursor: pointer; list-style: none; user-select: none; }
+.wiz-summary::-webkit-details-marker { display: none; }
+.wiz-summary::before { content: '▶'; font-size: 0.7rem; color: var(--text3); transition: transform 0.2s; margin-right: 0.25rem; }
+details[open] .wiz-summary::before { transform: rotate(90deg); }
+.wiz-summary-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+.wiz-summary-hint { font-size: 0.8rem; color: var(--text2); }
