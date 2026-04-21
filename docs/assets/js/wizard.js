@@ -132,4 +132,13 @@ window.wizardSubmit = () => {
 function val(id) { return (document.getElementById(id)?.value || ''); }
 function setErr(id, msg) { const el = document.getElementById(id); if (el) { el.textContent = msg; el.hidden = !msg; } }
 
-document.addEventListener('DOMContentLoaded', wizardInit);
+document.addEventListener('DOMContentLoaded', () => {
+  wizardInit();
+  const det = document.getElementById('wiz-details');
+  if (det) {
+    det.open = localStorage.getItem('negativ-wiz-open') !== 'false';
+    det.addEventListener('toggle', () => {
+      localStorage.setItem('negativ-wiz-open', String(det.open));
+    });
+  }
+});
