@@ -36,3 +36,14 @@ console.assert(neg401.includes('CCPA'),                                 'FAIL: N
 console.assert(neg401.includes('California Consumer Privacy Act'),      'FAIL: NEG-401 CCPA override text missing');
 
 console.log(`\nbuild-site tests: PASS — ${generated.length}/${expectedCount} detail pages generated`);
+
+// Impact page assertions
+const impactPath = path.join(ROOT, 'docs/impact/index.html');
+console.assert(fs.existsSync(impactPath), 'FAIL: docs/impact/index.html not generated');
+const impact = fs.readFileSync(impactPath, 'utf8');
+console.assert(impact.includes('Impact Dashboard'),         'FAIL: impact page title missing');
+console.assert(impact.includes('Industry Benchmarks'),     'FAIL: impact page benchmarks section missing');
+console.assert(impact.includes('Community Contributions'), 'FAIL: impact page contributions section missing');
+console.assert(impact.includes('negative-ux-roi.md'),      'FAIL: impact page CTA link missing');
+console.assert(impact.includes('Baymard'),                 'FAIL: impact page benchmark data missing');
+console.log('build-site tests: impact page PASS');
