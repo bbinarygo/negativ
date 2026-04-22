@@ -46,6 +46,7 @@
         return '<div class="reg-card">' +
           '<div class="card-meta">' +
             '<span class="code-badge" style="font-family:var(--font)">' + esc(p.title) + '</span>' +
+            (p.persona ? ' <span class="locale-badge">' + esc(p.persona.toUpperCase()) + '</span>' : '') +
           '</div>' +
           '<div class="screen-preview" style="min-height:60px">' +
             '<div class="preview-msg" style="-webkit-line-clamp:3">' + esc(p.summary) + '</div>' +
