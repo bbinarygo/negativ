@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "version": "2026-Q2",
+    "generated": "2026-04-23",
+    "source": "https://github.com/bbinarygo/negativ",
+    "description": "Crowdsourced + industry benchmarks for Negative UX ROI. PMs: add your data via PR!"
+  },
+  "benchmarks": [
+    {
+      "id": "baymard-cart-abandonment-2026",
+      "category": "checkout",
+      "metric": "Average cart abandonment rate",
+      "value": "70.19-70.22%",
+      "impact": "$260B recoverable US/EU revenue",
+      "source": "Baymard Institute",
+      "year": 2026
+    },
+    {
+      "id": "pwc-bad-experience-retention",
+      "category": "general",
+      "metric": "Users who stop doing business after one bad experience",
+      "value": "32%",
+      "source": "PwC"
+    },
+    {
+      "id": "inline-validation-baymard",
+      "category": "validation",
+      "metric": "Error reduction with inline validation",
+      "value": "-42% errors, -22% abandonment",
+      "source": "Baymard Institute"
+    }
+  ],
+  "contributions": []
+}
