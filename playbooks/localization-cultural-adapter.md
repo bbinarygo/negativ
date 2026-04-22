@@ -1,3 +1,6 @@
+---
+persona: global
+---
 # Localization & Cultural Adapter Playbook
 
 **Tone rules + cultural notes for negative UX messages.**

@@ -271,7 +271,23 @@ const playbooksDir = path.join(__dirname, '..', 'playbooks');
 const playbookFiles = fs.readdirSync(playbooksDir).filter(f => f.endsWith('.md'));
 const playbookIndex = playbookFiles.map(filename => {
   const raw = fs.readFileSync(path.join(playbooksDir, filename), 'utf8');
-  const lines = raw.split('\n');
+  const allLines = raw.split('\n');
+
+  // Parse optional YAML frontmatter
+  const frontmatter = {};
+  let contentLines = allLines;
+  if (allLines[0] === '---') {
+    const closeIdx = allLines.indexOf('---', 1);
+    if (closeIdx !== -1) {
+      allLines.slice(1, closeIdx).forEach(l => {
+        const m = l.match(/^(\w+):\s*(.+)$/);
+        if (m) frontmatter[m[1]] = m[2].trim();
+      });
+      contentLines = allLines.slice(closeIdx + 1);
+    }
+  }
+
+  const lines = contentLines;
   const titleLine = lines.find(l => l.startsWith('# ')) || '';
   const title = titleLine.replace(/^# /, '').trim();
   let summary = '';
@@ -281,7 +297,6 @@ const playbookIndex = playbookFiles.map(filename => {
     if (line.startsWith('#') || line.startsWith('---')) continue;
     if (line.trim()) { summary = line.trim(); break; }
   }
-  // Extract rule IDs from headings with {#rule-id} anchors
   const rules = [];
   for (const line of lines) {
     const match = line.match(/^##\s+(.+?)\s+\{#([a-z0-9-]+)\}/);
@@ -290,7 +305,11 @@ const playbookIndex = playbookFiles.map(filename => {
     }
   }
   const slug = filename.replace(/\.md$/, '');
-  return { slug, title, summary, path: `playbooks/${filename}`, ...(rules.length > 0 ? { rules } : {}) };
+  return {
+    slug, title, summary, path: `playbooks/${filename}`,
+    ...(rules.length > 0 ? { rules } : {}),
+    ...(frontmatter.persona ? { persona: frontmatter.persona } : {}),
+  };
 });
 fs.writeFileSync(
   path.join(playbooksDir, 'index.json'),

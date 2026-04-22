@@ -1,3 +1,6 @@
+---
+persona: pm
+---
 # Negative UX ROI Playbook
 
 **How poor error handling, validation failures, and negative journeys quietly destroy revenue — and how Negativ fixes it.**
