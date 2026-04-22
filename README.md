@@ -8,6 +8,7 @@
 [![Live Registry](https://img.shields.io/badge/📋-Live_Registry-7c3aed)](https://bbinarygo.github.io/negativ/registry/)
 [![Docs](https://img.shields.io/badge/📖-negativ.dev-7c3aed)](https://bbinarygo.github.io/negativ)
 [![Roadmap](https://img.shields.io/badge/🗺️-Roadmap-7c3aed)](ROADMAP.md)
+[![Impact Dashboard](https://img.shields.io/badge/📊-Impact_Dashboard-7c3aed)](https://bbinarygo.github.io/negativ/impact/)
 
 > Most user sessions hit errors.  
 > Most design systems completely ignore them.  
@@ -21,6 +22,8 @@
 - **[Contribute in <15 minutes →](https://bbinarygo.github.io/negativ/contribute/)** (persona-specific tracks + Good First Issues)
 - **[Copy LLM-ready context](https://raw.githubusercontent.com/bbinarygo/negativ/main/llm-context.json)** (for Cursor, Claude, Windsurf, etc.)
 - **[Full Roadmap →](ROADMAP.md)** (Q2 2026 — Phase 0 live)
+- **[Impact Dashboard →](https://bbinarygo.github.io/negativ/impact/)** (industry benchmarks + community ROI data)
+- **[ROI Playbook →](playbooks/negative-ux-roi.md)** (add your company's metrics via PR)
 
 ### Why teams are already bookmarking Negativ
 Negative UX is where loyalty is won or lost — yet it remains undocumented tribal knowledge.  
@@ -36,6 +39,16 @@ Negativ is the **centralized, open, fundamentals-first knowledge base** that tur
 - **Design-system ready** — Tailwind, Shadcn, Material, Ant Design mappings included.
 
 **Philosophy:** Stronger core matters more than chasing platforms. We ship knowledge, not another SaaS.
+
+### Negative UX by the numbers
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| Average cart abandonment rate | 70.19–70.22% | Baymard Institute |
+| Users who never return after one bad experience | 32% | PwC |
+| Error reduction with inline validation | -42% errors, -22% abandonment | Baymard Institute |
+
+→ **[See the full Impact Dashboard](https://bbinarygo.github.io/negativ/impact/)** — contribute your company's data via PR.
 
 ### How to Contribute (pick your track)
 We built Negativ **for** Product Managers, Developers, and UX Researchers. Choose your path:
