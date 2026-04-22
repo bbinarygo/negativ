@@ -148,6 +148,7 @@ function generateHTML({ atom, messages, localeMessages, related, langMeta, suppo
   <div class="nav-links">
     <a href="../../registry/">Registry</a>
     <a href="../../playbooks/">Playbooks</a>
+    <a href="../../impact/">Impact</a>
     <a href="../../contribute/">Contribute</a>
     <a class="nav-gh" href="https://github.com/bbinarygo/negativ" target="_blank" rel="noopener">&#9733; GitHub</a>
   </div>
