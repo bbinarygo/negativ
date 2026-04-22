@@ -1,5 +1,5 @@
 {
-  "count": 3,
+  "count": 5,
   "playbooks": [
     {
       "slug": "accessibility-checklist",
@@ -19,23 +19,25 @@
       "summary": "The four rules every error message must follow in Negativ.",
       "path": "playbooks/writing-error-messages.md",
       "rules": [
-        {
-          "id": "rule-1-say-what-happened",
-          "label": "Say what happened"
-        },
-        {
-          "id": "rule-2-say-why",
-          "label": "Say why (if it helps)"
-        },
-        {
-          "id": "rule-3-recovery-action",
-          "label": "Say what to do next"
-        },
-        {
-          "id": "rule-4-match-severity",
-          "label": "Match the severity"
-        }
+        { "id": "rule-1-say-what-happened", "label": "Say what happened" },
+        { "id": "rule-2-say-why", "label": "Say why (if it helps)" },
+        { "id": "rule-3-recovery-action", "label": "Say what to do next" },
+        { "id": "rule-4-match-severity", "label": "Match the severity" }
       ]
+    },
+    {
+      "slug": "negative-ux-roi",
+      "title": "Negative UX ROI",
+      "summary": "How poor error handling, validation failures, and negative journeys quietly destroy revenue — and how Negativ fixes it. Includes industry benchmarks and a PM contribution template.",
+      "path": "playbooks/negative-ux-roi.md",
+      "persona": "pm"
+    },
+    {
+      "slug": "localization-cultural-adapter",
+      "title": "Localization & Cultural Adapter",
+      "summary": "Tone rules and cultural notes for negative UX messages. Covers Vietnamese (vi-VN) formality patterns — Quý khách vs bạn — with expanded examples for auth, payment, and validation.",
+      "path": "playbooks/localization-cultural-adapter.md",
+      "persona": "global"
     }
   ]
 }
